@@ -6,7 +6,11 @@ Al finalizar esta unidad, el alumnado dominará Figma como herramienta profesion
 
 ## Relación con los Resultados de Aprendizaje
 
-Esta unidad se vincula directamente con el Resultado de Aprendizaje 1 del currículo del módulo 0615 Diseño de Interfaces Web: "Planificar la creación de una interfaz web a partir de las especificaciones de diseño, utilizando herramientas de prototipado y wireframing". Figma es la herramienta de prototipado y wireframing más utilizada en la industria actual, y el dominio de sus funcionalidades permite al alumnado materializar las especificaciones de diseño en prototipos validables antes de abordar la implementación técnica. También se relaciona con el RA2, ya que el alumno extraerá desde Figma los valores de estilos (colores, tipografías, dimensiones) que aplicará posteriormente en HTML y CSS. El RA3, sobre guías de estilo y sistemas de diseño, encuentra en las bibliotecas de componentes y los tokens de diseño de Figma su manifestación práctica en la fase de diseño. Por último, el RA4 sobre accesibilidad se ve reforzado por el uso de plugins como Stark y A11y que permiten validar contrastes y simular condiciones de accesibilidad directamente sobre el diseño en Figma.
+Esta unidad se vincula directamente con los Resultados de Aprendizaje oficiales del módulo 0615 *Diseño de interfaces web* (RD 405/2023, BOE; currículo andaluz):
+
+- **RA1. Planifica la creación de una interfaz web valorando y aplicando especificaciones de diseño.** Figma es la herramienta de prototipado y wireframing más utilizada en la industria actual; el dominio de sus funcionalidades permite al alumnado materializar las especificaciones de diseño en prototipos validables antes de abordar la implementación técnica (CE 1.f).
+- **RA2. Crea interfaces web homogéneos definiendo y aplicando estilos.** El alumno extrae desde Figma los valores de estilos (colores, tipografías, dimensiones) que aplicará posteriormente en HTML y CSS; las bibliotecas de componentes y los tokens de diseño son la manifestación práctica de un sistema visual coherente en la fase de diseño (CE 2.g).
+- **RA5. Desarrolla interfaces web accesibles, analizando las pautas establecidas y aplicando técnicas de verificación.** El uso de plugins como Stark o A11y permite validar contrastes y simular condiciones de accesibilidad directamente sobre el diseño en Figma (CE 5.f).
 
 ## Conocimientos previos
 

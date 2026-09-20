@@ -1,0 +1,1495 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Apuntes básicos de Angular para Martos y alrededores.">
+      
+      
+        <meta name="author" content="Jose Quesada">
+      
+      
+      
+        <link rel="prev" href="../16-diseno-centrado-usuario/">
+      
+      
+        <link rel="next" href="../18-preprocesadores-css/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="zensical-0.0.44">
+    
+    
+      
+        <title>Unidad 17: Tailwind CSS 4 — Fundamentos y Aplicación Práctica - Curso de Angular</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../assets/stylesheets/modern/main.fba56155.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../assets/stylesheets/modern/palette.dfe2e883.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,500,500i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/css/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-label="Navegación"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#unidad-17-tailwind-css-4-fundamentos-y-aplicacion-practica" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="./.." title="Curso de Angular" class="md-header__button md-logo" aria-label="Curso de Angular" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 7v14M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer" aria-label="Navegación">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Curso de Angular
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Unidad 17: Tailwind CSS 4 — Fundamentos y Aplicación Práctica
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="none" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="none" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-moon" viewBox="0 0 24 24"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search" aria-label="Buscar">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Buscar">
+  <button type="button" class="md-search__button">
+    Buscar
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="./.." title="Curso de Angular" class="md-nav__button md-logo" aria-label="Curso de Angular" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 7v14M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
+
+    </a>
+    Curso de Angular
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="./.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  01. Introducción
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-psicologia-diseno/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  02. Psicología del diseño
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-color-tipografia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  03. Color y tipografía
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-guias-estilo-design-systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  04. Guías de estilo y design systems
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-figma-profesional/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  05. Figma profesional
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-arquitectura-informacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  06. Arquitectura de la información
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-html-semantico/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  07. HTML semántico
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-css-profesional/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  08. CSS profesional
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-flexbox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  09. Flexbox
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-css-grid-layout/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  10. CSS Grid
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-responsive-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  11. Diseño responsive
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-multimedia-web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  12. Multimedia web
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-interactividad-web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  13. Interactividad web
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-accesibilidad-web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  14. Accesibilidad web
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-usabilidad-web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  15. Usabilidad web
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-diseno-centrado-usuario/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  16. Diseño centrado en usuario
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  17. Tailwind CSS 4
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  17. Tailwind CSS 4
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objetivos-de-aprendizaje" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Objetivos de aprendizaje
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relacion-con-los-resultados-de-aprendizaje" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Relación con los Resultados de Aprendizaje
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conocimientos-previos" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Conocimientos previos
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contenidos" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Contenidos
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#desarrollo-teorico" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Desarrollo teórico
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Desarrollo teórico">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-el-paradigma-utility-first-una-revolucion-en-la-forma-de-escribir-css" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        1. El paradigma Utility First: una revolución en la forma de escribir CSS
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-tailwind-css-4-la-evolucion-del-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        2. Tailwind CSS 4: la evolución del framework
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-instalacion-paso-a-paso-con-vite" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        3. Instalación paso a paso con Vite
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-el-sistema-de-diseno-de-tailwind-escala-numerica-y-restricciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        4. El sistema de diseño de Tailwind: escala numérica y restricciones
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-la-paleta-de-colores-de-tailwind" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        5. La paleta de colores de Tailwind
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-tipografia-con-utilidades-de-tailwind" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        6. Tipografía con utilidades de Tailwind
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-espaciado-layout-y-dimensionamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        7. Espaciado, layout y dimensionamiento
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-flexbox-y-grid-con-utilidades-de-tailwind" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        8. Flexbox y Grid con utilidades de Tailwind
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-diseno-responsivo-mobile-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        9. Diseño responsivo Mobile First
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-estados-interactivos-bordes-sombras-animaciones-y-modo-oscuro" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        10. Estados interactivos, bordes, sombras, animaciones y modo oscuro
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-valores-arbitrarios-y-personalizacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        11. Valores arbitrarios y personalización
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-preprocesadores-css/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  18. Preprocesadores CSS
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-marco-legal-multimedia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  19. Marco legal multimedia
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../markdown/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.27 19.385H1.73A1.73 1.73 0 0 1 0 17.655V6.345a1.73 1.73 0 0 1 1.73-1.73h20.54A1.73 1.73 0 0 1 24 6.345v11.308a1.73 1.73 0 0 1-1.73 1.731zM5.769 15.923v-4.5l2.308 2.885 2.307-2.885v4.5h2.308V8.078h-2.308l-2.307 2.885-2.308-2.885H3.46v7.847zM21.232 12h-2.309V8.077h-2.307V12h-2.308l3.461 4.039z"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+  Markdown (referencia)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                    
+                    
+                    
+                      
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objetivos-de-aprendizaje" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Objetivos de aprendizaje
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relacion-con-los-resultados-de-aprendizaje" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Relación con los Resultados de Aprendizaje
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conocimientos-previos" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Conocimientos previos
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contenidos" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Contenidos
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#desarrollo-teorico" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Desarrollo teórico
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Desarrollo teórico">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-el-paradigma-utility-first-una-revolucion-en-la-forma-de-escribir-css" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        1. El paradigma Utility First: una revolución en la forma de escribir CSS
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-tailwind-css-4-la-evolucion-del-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        2. Tailwind CSS 4: la evolución del framework
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-instalacion-paso-a-paso-con-vite" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        3. Instalación paso a paso con Vite
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-el-sistema-de-diseno-de-tailwind-escala-numerica-y-restricciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        4. El sistema de diseño de Tailwind: escala numérica y restricciones
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-la-paleta-de-colores-de-tailwind" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        5. La paleta de colores de Tailwind
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-tipografia-con-utilidades-de-tailwind" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        6. Tipografía con utilidades de Tailwind
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-espaciado-layout-y-dimensionamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        7. Espaciado, layout y dimensionamiento
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-flexbox-y-grid-con-utilidades-de-tailwind" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        8. Flexbox y Grid con utilidades de Tailwind
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-diseno-responsivo-mobile-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        9. Diseño responsivo Mobile First
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-estados-interactivos-bordes-sombras-animaciones-y-modo-oscuro" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        10. Estados interactivos, bordes, sombras, animaciones y modo oscuro
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-valores-arbitrarios-y-personalizacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        11. Valores arbitrarios y personalización
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+<h1 id="unidad-17-tailwind-css-4-fundamentos-y-aplicacion-practica">Unidad 17: Tailwind CSS 4 — Fundamentos y Aplicación Práctica</h1>
+<h2 id="objetivos-de-aprendizaje">Objetivos de aprendizaje</h2>
+<p>Al finalizar esta unidad, el alumnado será capaz de identificar el paradigma Utility First como alternativa metodológica al enfoque tradicional de hojas de estilo en cascada. El estudiante comprenderá el modelo de clases atómicas propuesto por Tailwind CSS y lo contrastará con las técnicas convencionales de maquetación, valorando las ventajas en productividad, consistencia visual y mantenibilidad que ofrece un framework basado en restricciones. El alumnado instalará y configurará Tailwind CSS 4 en un proyecto real gestionado con Vite, comprendiendo cada paso del proceso de construcción y el rol del plugin específico para el empaquetador. Aprenderá a interpretar y aplicar la escala numérica del sistema de diseño (espaciado, tipografía, colores, bordes) entendiendo la correspondencia entre valores nominales y unidades reales (rem, píxeles). Manejará con soltura las utilidades de layout, incluyendo display, posicionamiento, dimensionamiento, Flexbox y Grid, reconociendo la nomenclatura específica de Tailwind para cada propiedad CSS. Aplicará los conceptos de diseño responsivo Mobile First utilizando los breakpoints del framework y dominará la sintaxis de estados interactivos (hover, focus, active, disabled) y pseudoselectores (first, last, odd, even). Conocerá las novedades introducidas en la versión 4, incluyendo la nueva arquitectura de motor interno, la sintaxis de configuración mediante CSS nativo y la integración optimizada con Vite. Finalmente, el alumno será capaz de construir interfaces reales completas combinando utilidades de Tailwind, comparando el resultado con implementaciones equivalentes en CSS tradicional y valorando críticamente cuándo cada enfoque resulta más adecuado según el contexto del proyecto.</p>
+<h2 id="relacion-con-los-resultados-de-aprendizaje">Relación con los Resultados de Aprendizaje</h2>
+<p>Esta unidad desarrolla directamente el <strong>Resultado de Aprendizaje 2 (RA2)</strong> del módulo 0615 <em>Diseño de interfaces web</em> —"Crea interfaces web homogéneos definiendo y aplicando estilos"—, según el currículo oficial (RD 405/2023, BOE; currículo andaluz). El trabajo con Tailwind CSS permite alcanzar los criterios relacionados con la aplicación de estilos mediante frameworks CSS de utilidad (CE 2.i), la creación de layouts adaptables y responsivos y la implementación de componentes visuales coherentes con una guía de estilo definida (CE 2.g). Asimismo, se relaciona transversalmente con el <strong>RA1</strong> (planificación de interfaces, en cuanto a la selección razonada de frameworks y herramientas: CE 1.e) y con el <strong>RA4</strong> (integración de contenidos multimedia e interactivos), ya que los componentes construidos con Tailwind constituyen la base visual sobre la que se implementan las funcionalidades interactivas con JavaScript. La unidad contribuye a que el alumnado desarrolle la competencia profesional de maquetación avanzada, comprendiendo que la elección entre CSS tradicional, preprocesadores y frameworks utility-first no es arbitraria sino que responde a criterios de escalabilidad, mantenibilidad y productividad del equipo de desarrollo. Se trabajará también la competencia digital avanzada mediante el uso del ecosistema Node.js y herramientas de construcción modernas como Vite, así como la competencia de aprender a aprender al fomentar la consulta autónoma de la documentación oficial de Tailwind CSS como recurso de referencia continuo en el ejercicio profesional.</p>
+<p>Esta unidad también contribuye al desarrollo de la competencia transversal de trabajo en equipo, ya que el enfoque Utility First de Tailwind CSS facilita la colaboración entre desarrolladores al proporcionar un lenguaje común de clases atómicas que elimina ambigüedades y reduce la fricción en las revisiones de código. Los estudiantes comprenderán que la adopción de un framework de diseño como Tailwind no es solo una decisión técnica sino estratégica, que impacta en la velocidad de desarrollo, la consistencia del producto final y la capacidad de incorporación de nuevos miembros al equipo.</p>
+<h2 id="conocimientos-previos">Conocimientos previos</h2>
+<p>Para abordar con éxito esta unidad, el alumnado debe dominar los fundamentos de HTML5 semántico, incluyendo la estructura correcta del DOM, el uso de etiquetas como header, nav, main, section, article, aside y footer, y la comprensión del modelo de caja (box model). Es imprescindible un conocimiento sólido de CSS3 a nivel de propiedades: selectores (tipo, clase, ID, atributo, pseudoclases, pseudoelementos), especificidad y cascada, propiedades de tipografía, color y fondo, modelo de caja (margin, padding, border), display y posicionamiento, Flexbox y Grid básicos, media queries y diseño responsivo Mobile First, transiciones y animaciones simples. El alumnado debe tener experiencia práctica previa en la maquetación de al menos tres interfaces completas (landing page, dashboard, formulario de registro) utilizando CSS tradicional o preprocesadores.</p>
+<p>Se requiere también un conocimiento operativo del entorno Node.js: qué es npm, cómo inicializar un proyecto con package.json, cómo instalar dependencias de desarrollo y de producción, para qué sirve la carpeta node_modules y el archivo package-lock.json. Es recomendable haber trabajado previamente con algún empaquetador como Vite o Webpack a nivel básico (entender qué hace un bundler, qué es el hot module replacement, cómo se ejecutan los scripts de desarrollo y build). A nivel conceptual, el alumno debería haber experimentado las dificultades que plantea el CSS tradicional en proyectos grandes: colisiones de nombres de clases, especificidad descontrolada, dificultad para mantener la consistencia visual, archivos CSS que crecen sin control, y la paradoja de tener que inventar nombres semánticos para cada contenedor. Esta experiencia previa de "dolor CSS" es el mejor punto de partida para valorar el cambio de paradigma que propone Tailwind.</p>
+<p>Adicionalmente, el alumnado debe tener conocimientos fundamentales de diseño web responsivo, comprendiendo conceptos como viewport, breakpoints, unidades relativas (em, rem, vw, vh, %) frente a absolutas (px), y la filosofía Mobile First. Es recomendable familiaridad con las herramientas de desarrollo del navegador (Chrome DevTools o Firefox Developer Edition), ya que serán esenciales para depurar los estilos generados por Tailwind durante el desarrollo.</p>
+<h2 id="contenidos">Contenidos</h2>
+<ol>
+<li>
+<p><strong>Introducción a Tailwind CSS</strong>: origen, filosofía Utility First, comparativa con metodologías tradicionales (BEM, SMACSS, OOCSS) y con frameworks basados en componentes (Bootstrap, Foundation). Ventajas y desventajas del enfoque.</p>
+</li>
+<li>
+<p><strong>Tailwind CSS 4</strong>: novedades de la versión, diferencias con v3, nueva arquitectura del motor de generación de CSS (Oxide, escrito en Rust), sistema de configuración CSS-first, eliminación de dependencias de PostCSS en la integración con Vite.</p>
+</li>
+<li>
+<p><strong>Instalación y configuración con Vite</strong>: inicialización del proyecto con plantilla vanilla, instalación de dependencias (tailwindcss, @tailwindcss/vite), configuración del plugin en vite.config.js, importación del CSS base con @import "tailwindcss". Verificación del funcionamiento.</p>
+</li>
+<li>
+<p><strong>Sistema de diseño y escala numérica</strong>: correspondencia entre valores de clase y unidades rem/píxeles, fundamentos del diseño por restricciones. Escala completa (1 al 96) y su justificación práctica.</p>
+</li>
+<li>
+<p><strong>Paleta de colores</strong>: nombres de color disponibles (slate, gray, zinc, neutral, stone, red, orange, amber, yellow, lime, green, emerald, teal, cyan, sky, blue, indigo, violet, purple, fuchsia, pink, rose), escala 50-950, transparencia con notación de barra (bg-red-500/75), colores personalizados mediante @theme.</p>
+</li>
+<li>
+<p><strong>Utilidades tipográficas</strong>: tamaño de fuente (text-xs a text-9xl), peso (font-thin a font-black), alineación, color, decoración, altura de línea, espaciado de letras, familias tipográficas (font-sans, font-serif, font-mono).</p>
+</li>
+<li>
+<p><strong>Espaciado</strong>: margen (m-<em>), padding (p-</em>), espacio entre elementos flex/grid (gap-*). Direccionalidad: t, r, b, l, x, y.</p>
+</li>
+<li>
+<p><strong>Layout</strong>: display (block, inline, inline-block, flex, grid, hidden), posición (static, fixed, absolute, relative, sticky), z-index (z-0 a z-50, z-auto).</p>
+</li>
+<li>
+<p><strong>Dimensionamiento</strong>: anchura (w-<em>, w-full, w-screen, fracciones w-1/2), altura (h-</em>, h-full, h-screen), dimensiones mínimas y máximas.</p>
+</li>
+<li>
+<p><strong>Flexbox con utilidades Tailwind</strong>: dirección, envoltura, justificación, alineación, crecimiento (flex-1, flex-auto, flex-initial, flex-none), orden.</p>
+</li>
+<li>
+<p><strong>Grid con utilidades Tailwind</strong>: columnas (grid-cols-1 a grid-cols-12), filas, spanning (col-span-<em>, row-span-</em>), alineación, flujo automático.</p>
+</li>
+<li>
+<p><strong>Diseño responsivo Mobile First</strong>: breakpoints (sm: 640px, md: 768px, lg: 1024px, xl: 1280px, 2xl: 1536px). Sintaxis de prefijos. Estrategias de maquetación adaptativa.</p>
+</li>
+<li>
+<p><strong>Estados interactivos y pseudoselectores</strong>: hover:, focus:, focus-visible:, active:, visited:, disabled:, first:, last:, odd:, even:, group-hover:, peer-focus:, dark:.</p>
+</li>
+<li>
+<p><strong>Bordes y anillos</strong>: radio (rounded, rounded-md, rounded-lg, rounded-full), grosor, color, estilo (solid, dashed, dotted), outline y ring.</p>
+</li>
+<li>
+<p><strong>Efectos visuales</strong>: sombras (shadow-sm a shadow-2xl, shadow-inner), opacidad (opacity-0 a opacity-100), desenfoque (blur-sm a blur-3xl), backdrop-blur.</p>
+</li>
+<li>
+<p><strong>Tablas</strong>: table, table-auto, table-fixed, border-collapse, border-separate. Construcción de tablas estilizadas con utilidades.</p>
+</li>
+<li>
+<p><strong>Animaciones y transiciones</strong>: transition, duration, ease, delay, animate-spin, animate-ping, animate-pulse, animate-bounce. Animaciones personalizadas.</p>
+</li>
+<li>
+<p><strong>Modo oscuro</strong>: estrategias de implementación (class vs media), el prefijo dark:, toggle con JavaScript y localStorage, transición suave entre temas.</p>
+</li>
+<li>
+<p><strong>Valores arbitrarios y personalización</strong>: notación de corchetes (w-[300px], bg-[#1a1a1a]), cuándo usar arbitrary values vs configuración del tema. Configuración con @theme en Tailwind v4.</p>
+</li>
+<li>
+<p><strong>Herramientas complementarias</strong>: Prettier plugin para ordenación automática de clases, Headless UI para componentes accesibles con React, Tailwind CSS IntelliSense para VS Code.</p>
+</li>
+</ol>
+<h2 id="desarrollo-teorico">Desarrollo teórico</h2>
+<h3 id="1-el-paradigma-utility-first-una-revolucion-en-la-forma-de-escribir-css">1. El paradigma Utility First: una revolución en la forma de escribir CSS</h3>
+<p>La historia del desarrollo web frontend ha transitado por diversas etapas en lo que respecta a la gestión de estilos. En los primeros años de la web, el CSS se escribía de forma monolítica en uno o pocos archivos, con selectores anidados que reflejaban la estructura del DOM. Este enfoque, aunque intuitivo al principio, generaba problemas graves de especificidad, acoplamiento entre estructura HTML y estilos CSS, y una creciente dificultad para modificar componentes sin efectos colaterales imprevistos. Para resolver estos problemas surgieron metodologías como BEM (Block Element Modifier), SMACSS (Scalable and Modular Architecture for CSS) y OOCSS (Object Oriented CSS), que propusieron convenciones de nomenclatura y organización basadas en componentes. Estas metodologías mejoraron la mantenibilidad pero introdujeron una nueva carga cognitiva: la necesidad de inventar nombres de clases semánticos para cada elemento, decisión que a menudo derivaba en debates interminables dentro del equipo de desarrollo. Paralelamente, frameworks como Bootstrap, Foundation o Materialize ofrecieron componentes preconstruidos con estilos ya definidos, acelerando el desarrollo pero limitando la personalización y generando sitios web con una apariencia reconocible y poco diferenciada.</p>
+<p>Es en este contexto donde Adam Wathan, creador de Tailwind CSS, propone un cambio de paradigma radical: en lugar de escribir CSS semántico con nombres de clases descriptivos, utilizamos clases atómicas de propósito único que se aplican directamente en el HTML. Cada clase de Tailwind corresponde, aproximadamente, a una declaración CSS individual. Por ejemplo, en lugar de crear una clase <code>.card</code> con múltiples propiedades, construimos la tarjeta componiendo clases como <code>bg-white</code>, <code>rounded-lg</code>, <code>shadow-md</code>, <code>p-6</code>, <code>flex</code>, <code>flex-col</code>, <code>gap-4</code>. Esta aproximación, denominada Utility First, genera inicialmente rechazo en muchos desarrolladores acostumbrados al CSS tradicional, pues el HTML resultante parece más verboso y aparentemente menos semántico. Sin embargo, la experiencia práctica en proyectos reales demuestra que esta verbosidad se compensa con creces mediante la eliminación de la fricción constante que supone tener que alternar entre archivos HTML y CSS, la desaparición de problemas de cascada y especificidad, la garantía de consistencia visual al trabajar con un sistema de diseño predefinido mediante restricciones, y el hecho de que el CSS resultante en producción es mínimo, pues solo contiene las clases realmente utilizadas en el proyecto (purgado de CSS o tree-shaking). Tailwind no es un simple conjunto de utilidades: es un sistema de diseño completo materializado en clases atómicas, que ofrece una paleta de colores, una escala tipográfica, una escala de espaciado, unas sombras, unos bordes y unos breakpoints responsivos que, por restricción, garantizan coherencia visual. Como afirma el propio Adam Wathan: "Tailwind te da el poder de construir cualquier diseño sin tener que luchar contra estilos predefinidos".</p>
+<p>Las ventajas del enfoque Utility First incluyen: (1) Productividad máxima: no se pierde tiempo cambiando de contexto entre HTML y CSS, ya que todo se define en el mismo archivo. (2) Consistencia garantizada: la escala de valores predefinidos impide que cada desarrollador use medidas arbitrarias, resultando en un diseño más cohesionado. (3) CSS mínimo en producción: Tailwind analiza el proyecto y elimina automáticamente las clases no utilizadas, generando archivos CSS de solo unos pocos kilobytes. (4) No hay que inventar nombres: se elimina la carga cognitiva de nombrar cada contenedor, cada wrapper, cada variante. (5) Refactorización sin miedo: al modificar una clase en el HTML, no hay riesgo de afectar a otros componentes, ya que cada clase es independiente y no hay herencia CSS compleja.</p>
+<p>Entre las desventajas, se suelen citar: (1) Verbosidad en el HTML, que puede resultar abrumadora al principio, especialmente en componentes complejos que acumulan muchas clases. (2) Curva de aprendizaje inicial para memorizar la nomenclatura de las clases, aunque la documentación y las extensiones IDE resuelven esto rápidamente. (3) Tendencia a repetir combinaciones de clases, que en Tailwind se soluciona extrayendo componentes (en el framework de tu elección) o usando @apply para crear clases personalizadas. (4) Dificultad para desarrolladores acostumbrados a la separación estricta de concerns (HTML semántico + CSS separado), que deben adaptarse a un nuevo modelo mental.</p>
+<h3 id="2-tailwind-css-4-la-evolucion-del-framework">2. Tailwind CSS 4: la evolución del framework</h3>
+<p>La versión 4 de Tailwind CSS, lanzada a principios de 2025, representa la mayor reescritura del framework desde su creación. El objetivo principal de esta versión ha sido simplificar radicalmente la experiencia de instalación y configuración, eliminando gran parte del boilerplate que las versiones anteriores requerían. La novedad más significativa es la introducción de un nuevo motor interno, denominado "Oxide", escrito en Rust, que reemplaza al antiguo generador de CSS basado en JavaScript. Este nuevo motor es hasta diez veces más rápido en la generación del CSS y reduce drásticamente el tiempo de compilación tanto en desarrollo (hot reload instantáneo) como en producción (builds significativamente más rápidas).</p>
+<p>Otra innovación fundamental de la versión 4 es la configuración CSS-first. En Tailwind v3, la configuración principal residía en un archivo JavaScript (<code>tailwind.config.js</code>) donde se definían las extensiones de tema, los plugins, el contenido a escanear y las variantes personalizadas. En v4, esta configuración migra hacia el propio CSS, permitiendo definir la configuración mediante directivas CSS nativas y funciones como <code>@theme</code>. Esto acerca Tailwind a los estándares CSS emergentes y reduce la dependencia de archivos de configuración JavaScript, simplificando la integración con cualquier herramienta que procese CSS.</p>
+<p>La instalación también se simplifica: en lugar de necesitar PostCSS más el plugin de Tailwind más el archivo de configuración, en v4 basta con instalar el paquete <code>tailwindcss</code> y, si usamos Vite, el plugin <code>@tailwindcss/vite</code>, importando posteriormente Tailwind en el CSS principal con un simple <code>@import "tailwindcss"</code>. Esta única línea reemplaza a las tres directivas <code>@tailwind base</code>, <code>@tailwind components</code> y <code>@tailwind utilities</code> de versiones anteriores.</p>
+<p>Entre las mejoras adicionales destacan: compatibilidad mejorada con CSS nesting nativo (sin necesidad de PostCSS nesting), soporte nativo para capas CSS (@layer), ampliación de la paleta de colores, nuevas utilidades para animaciones y transiciones, y la eliminación de dependencias internas que lastraban el rendimiento. La migración desde v3 a v4 está asistida por una herramienta automática que analiza el proyecto y sugiere los cambios necesarios. Para nuevos proyectos, la recomendación oficial es comenzar directamente con v4.</p>
+<p>Las diferencias clave entre v3 y v4 son: (1) v4 no requiere archivo tailwind.config.js por defecto (aunque se puede usar si se prefiere). (2) La configuración del tema se realiza con @theme en CSS en lugar de theme.extend en JS. (3) El motor Oxide en Rust reemplaza al generador JS. (4) La instalación con Vite usa @tailwindcss/vite en lugar de postcss + autoprefixer. (5) Las directivas @tailwind son reemplazadas por @import "tailwindcss". (6) El rendimiento de compilación mejora en un factor de 5-10x.</p>
+<h3 id="3-instalacion-paso-a-paso-con-vite">3. Instalación paso a paso con Vite</h3>
+<p>El entorno de desarrollo recomendado por el equipo de Tailwind CSS para la versión 4 es Vite, un empaquetador ultrarrápido que aprovecha los módulos ES nativos del navegador durante el desarrollo y genera builds optimizadas con Rollup para producción. El proceso de instalación completo consta de los siguientes pasos, que el alumnado debe ejecutar y comprender:</p>
+<p><strong>Paso 1: Crear un nuevo proyecto con Vite.</strong> Ejecutamos el comando <code>npm create vite@latest mi-proyecto -- --template vanilla</code>. El flag <code>--template vanilla</code> indica que queremos un proyecto con HTML, CSS y JavaScript puros, sin frameworks como React o Vue. Esto genera una estructura mínima con <code>index.html</code>, <code>style.css</code>, <code>main.js</code> y <code>package.json</code>. Accedemos al directorio: <code>cd mi-proyecto</code>.</p>
+<p><strong>Paso 2: Instalar dependencias base.</strong> Con <code>npm install</code> instalamos Vite y las dependencias listadas en el package.json generado. En este punto, el proyecto funciona pero no incluye Tailwind.</p>
+<p><strong>Paso 3: Instalar Tailwind CSS v4.</strong> Ejecutamos <code>npm install tailwindcss @tailwindcss/vite</code>. El paquete <code>tailwindcss</code> contiene el núcleo del framework con el motor Oxide, mientras que <code>@tailwindcss/vite</code> es el adaptador que permite a Vite procesar correctamente las directivas de Tailwind durante el desarrollo y la construcción. A diferencia de v3, no necesitamos instalar PostCSS ni autoprefixer, ya que el plugin de Vite se encarga de todo internamente.</p>
+<p><strong>Paso 4: Configurar Vite.</strong> Editamos el archivo <code>vite.config.js</code> para importar y registrar el plugin de Tailwind:</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// vite.config.js</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">defineConfig</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;vite&#39;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">import</span><span class="w"> </span><span class="nx">tailwindcss</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@tailwindcss/vite&#39;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">defineConfig</span><span class="p">({</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="nx">plugins</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="nx">tailwindcss</span><span class="p">(),</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="p">],</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="p">})</span>
+</span></code></pre></div>
+<p>Esta configuración indica a Vite que procese todos los archivos CSS a través de Tailwind durante el desarrollo y la construcción. El plugin se encarga de escanear los archivos HTML y JavaScript en busca de clases de Tailwind, generar el CSS correspondiente y aplicar tree-shaking para eliminar las clases no utilizadas en producción.</p>
+<p><strong>Paso 5: Importar Tailwind en el CSS.</strong> Abrimos el archivo <code>style.css</code> y sustituimos su contenido (o añadimos al inicio) la directiva de importación:</p>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c">/* style.css */</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="p">@</span><span class="k">import</span><span class="w"> </span><span class="s2">&quot;tailwindcss&quot;</span><span class="p">;</span>
+</span></code></pre></div>
+<p>Esta única línea es todo lo necesario. El motor de Tailwind v4 interpreta esta directiva y genera todo el CSS base (reset, variables CSS, utilidades) en función de las clases que se utilicen en el proyecto. No se necesitan las antiguas directivas @tailwind base, components y utilities.</p>
+<p><strong>Paso 6: Verificar el funcionamiento.</strong> En el archivo <code>index.html</code>, añadimos una línea de prueba que use clases de Tailwind:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">&lt;</span><span class="nt">h1</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;text-3xl font-bold text-blue-600&quot;</span><span class="p">&gt;</span>¡Tailwind CSS 4 funciona!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>Iniciamos el servidor de desarrollo con <code>npm run dev</code>. Si el navegador muestra el texto con el estilo esperado (tamaño grande, negrita, color azul), la configuración está completa y funcionando correctamente. A partir de este momento, podemos utilizar cualquier clase de Tailwind en nuestro HTML y los cambios se reflejarán instantáneamente gracias al Hot Module Replacement (HMR) de Vite.</p>
+<h3 id="4-el-sistema-de-diseno-de-tailwind-escala-numerica-y-restricciones">4. El sistema de diseño de Tailwind: escala numérica y restricciones</h3>
+<p>Uno de los pilares que explican la productividad y consistencia que proporciona Tailwind CSS es su sistema de diseño numérico, que traduce propiedades CSS a una escala predefinida y razonada de valores. En lugar de escribir valores arbitrarios como <code>padding: 13px</code> o <code>margin: 27px</code>, Tailwind nos ofrece una escala de números que van desde el 0 hasta el 96, donde cada número representa un múltiplo de 0.25rem (equivalente a 4px con la configuración por defecto de 16px por rem). Esta escala no es arbitraria: ha sido cuidadosamente diseñada para cubrir prácticamente todas las necesidades de espaciado en diseño web, evitando la proliferación de valores inconsistentes que surge cuando cada desarrollador elige sus propias medidas.</p>
+<p>La correspondencia es la siguiente: <code>p-1</code> aplica <code>padding: 0.25rem</code> (4px), <code>p-2</code> aplica <code>padding: 0.5rem</code> (8px), <code>p-3</code> aplica <code>padding: 0.75rem</code> (12px), <code>p-4</code> aplica <code>padding: 1rem</code> (16px), y así sucesivamente. La progresión no es estrictamente lineal: los primeros valores crecen de 1 en 1 (0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64, 72, 80, 96). Esta progresión concentra los incrementos pequeños donde más se necesitan (diseño de detalle, espaciados finos) y amplía los saltos en valores grandes (márgenes de sección).</p>
+<p>Trabajar con una escala restringida tiene un beneficio psicológico y práctico inmediato: elimina la parálisis por análisis. En CSS tradicional, cuando un desarrollador necesita aplicar un margen, tiene a su disposición infinitos valores (11px, 13px, 17px...) y debe tomar una decisión. Con Tailwind, la escala limita las opciones a valores que ya han demostrado funcionar bien juntos. Si el diseño necesita 16px de padding, usamos <code>p-4</code>. Si necesita 24px, usamos <code>p-6</code>. Esta restricción acelera la toma de decisiones y garantiza que todos los espaciados del proyecto sean múltiplos consistentes de 4px, creando un ritmo visual armónico que los diseñadores denominan "vertical rhythm". La misma filosofía se aplica a tipografía, bordes redondeados, sombras y opacidades.</p>
+<p>Es importante que el alumnado entienda que Tailwind utiliza rem como unidad base. Un rem equivale al font-size del elemento raíz (html), que por defecto son 16px en la mayoría de navegadores. Esto significa que los espaciados y tamaños de Tailwind escalan proporcionalmente si el usuario modifica el tamaño de fuente base en su navegador, contribuyendo a la accesibilidad. Si en un proyecto se necesita cambiar la base a 10px (para facilitar cálculos mentales), se puede configurar mediante <code>font-size: 62.5%</code> en el html, pero esta práctica no se recomienda ya que rompe la correspondencia natural de la escala de Tailwind.</p>
+<h3 id="5-la-paleta-de-colores-de-tailwind">5. La paleta de colores de Tailwind</h3>
+<p>Tailwind CSS incluye una paleta de colores excepcionalmente completa y cuidadosamente curada por expertos en diseño. Está compuesta por 22 familias de color, cada una de las cuales se despliega en una escala de 11 tonos numerados del 50 al 950. Las familias disponibles son: slate (gris azulado, el neutro por defecto en Tailwind), gray (gris puro), zinc (gris cálido con matiz amarillento), neutral (gris verdaderamente neutro, sin matiz), stone (gris piedra con matiz marrón), red (rojo), orange (naranja), amber (ámbar), yellow (amarillo), lime (lima), green (verde), emerald (esmeralda), teal (verde azulado), cyan (cian), sky (azul cielo), blue (azul), indigo (índigo), violet (violeta), purple (púrpura), fuchsia (fucsia), pink (rosa) y rose (rosa rojizo).</p>
+<p>Cada familia sigue una convención de nomenclatura que combina el nombre del color con el tono mediante un guión: <code>bg-red-500</code>, <code>text-blue-700</code>, <code>border-emerald-400</code>. Los tonos más bajos (50, 100, 200) son más claros, útiles para fondos sutiles y superficies de tarjeta; los tonos medios (400, 500, 600) suelen ser los colores base, los que representan la identidad del color; los tonos altos (700, 800, 900, 950) son más oscuros, apropiados para texto sobre fondos claros y para crear contraste. Por ejemplo, un botón primario típico usaría <code>bg-blue-600 text-white</code> (fondo azul medio, texto blanco), y al hacer hover <code>hover:bg-blue-700</code> (se oscurece ligeramente).</p>
+<p>Tailwind ofrece soporte para transparencia mediante la notación de barra. La sintaxis <code>bg-red-500/75</code> aplica el color red-500 con una opacidad del 75%. Esto es equivalente a <code>background-color: rgba(239, 68, 68, 0.75)</code>. La notación usa la sintaxis <code>&lt;color&gt;-&lt;tono&gt;/&lt;opacidad&gt;</code>, donde la opacidad es un número de 0 a 100. Esta característica es extremadamente útil para crear overlays semitransparentes, fondos con efecto vidrio esmerilado, o texto con opacidad reducida para crear jerarquía visual. Ejemplos: <code>bg-black/50</code> (negro al 50%), <code>text-white/70</code> (texto blanco al 70%), <code>bg-indigo-600/20</code> (índigo muy suave para fondos).</p>
+<p>Para proyectos que requieren una paleta corporativa personalizada, Tailwind permite extender o reemplazar la paleta mediante la directiva <code>@theme</code> en el archivo CSS principal (en v4). Por ejemplo, para añadir colores de marca corporativa:</p>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">@</span><span class="k">import</span><span class="w"> </span><span class="s2">&quot;tailwindcss&quot;</span><span class="p">;</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="p">@</span><span class="k">theme</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="nt">--color-primary</span><span class="o">:</span><span class="w"> </span><span class="p">#</span><span class="nn">3b82f6</span><span class="o">;</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="nt">--color-primary-dark</span><span class="o">:</span><span class="w"> </span><span class="p">#</span><span class="nn">1e40af</span><span class="o">;</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="nt">--color-secondary</span><span class="o">:</span><span class="w"> </span><span class="p">#</span><span class="nn">f59e0b</span><span class="o">;</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="nt">--color-accent</span><span class="o">:</span><span class="w"> </span><span class="p">#</span><span class="nn">ec4899</span><span class="o">;</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Esto genera automáticamente las clases <code>bg-primary</code>, <code>text-primary</code>, <code>border-primary-dark</code>, etc., integrándose con los estados hover, focus y breakpoints responsivos. Además, al definir colores como variables CSS, se mantiene la consistencia con el sistema de diseño y se facilita la implementación de temas oscuros o múltiples temas.</p>
+<h3 id="6-tipografia-con-utilidades-de-tailwind">6. Tipografía con utilidades de Tailwind</h3>
+<p>El control tipográfico en Tailwind es exhaustivo y cubre todas las propiedades CSS relacionadas con texto. La escala de tamaños de fuente va desde <code>text-xs</code> (0.75rem, 12px) hasta <code>text-9xl</code> (8rem, 128px), pasando por <code>text-sm</code>, <code>text-base</code> (1rem, 16px, el tamaño por defecto), <code>text-lg</code>, <code>text-xl</code>, <code>text-2xl</code>, <code>text-3xl</code>, <code>text-4xl</code>, <code>text-5xl</code>, <code>text-6xl</code>, <code>text-7xl</code> y <code>text-8xl</code>. Cada tamaño incluye automáticamente una altura de línea (line-height) razonable y proporcionada. Por ejemplo, <code>text-xl</code> aplica <code>font-size: 1.25rem</code> (20px) y <code>line-height: 1.75rem</code> (28px), mientras que <code>text-sm</code> aplica <code>font-size: 0.875rem</code> (14px) y <code>line-height: 1.25rem</code> (20px). Esta relación tamaño/altura de línea está calibrada para garantizar una legibilidad óptima.</p>
+<p>El peso tipográfico se controla con clases como <code>font-thin</code> (100), <code>font-extralight</code> (200), <code>font-light</code> (300), <code>font-normal</code> (400), <code>font-medium</code> (500), <code>font-semibold</code> (600), <code>font-bold</code> (700), <code>font-extrabold</code> (800) y <code>font-black</code> (900). La alineación dispone de <code>text-left</code>, <code>text-center</code>, <code>text-right</code> y <code>text-justify</code>. El color de texto se aplica con el prefijo <code>text-</code> seguido del nombre de color y tono: <code>text-gray-900</code>, <code>text-blue-600</code>, <code>text-white</code>. La decoración incluye <code>underline</code>, <code>line-through</code> y <code>no-underline</code> (útil para quitar el subrayado por defecto de los enlaces). La transformación de texto ofrece <code>uppercase</code>, <code>lowercase</code>, <code>capitalize</code> y <code>normal-case</code>.</p>
+<p>Para la altura de línea independiente del tamaño, Tailwind dispone de: <code>leading-none</code> (1, sin espacio extra), <code>leading-tight</code> (1.25, compacto para títulos), <code>leading-snug</code> (1.375), <code>leading-normal</code> (1.5, legible para texto corrido), <code>leading-relaxed</code> (1.625, aireado) y <code>leading-loose</code> (2, muy espaciado). El espaciado entre letras se maneja con <code>tracking-tighter</code> (-0.05em), <code>tracking-tight</code> (-0.025em), <code>tracking-normal</code> (0), <code>tracking-wide</code> (0.025em), <code>tracking-wider</code> (0.05em) y <code>tracking-widest</code> (0.1em). El <code>tracking-tight</code> es especialmente útil para títulos grandes, ya que un espaciado ligeramente reducido mejora la cohesión visual de las letras a tamaños grandes.</p>
+<p>Las familias tipográficas se agrupan en tres categorías predefinidas: <code>font-sans</code> (pila sans-serif moderna: Inter, ui-sans-serif, system-ui, -apple-system, etc.), <code>font-serif</code> (pila serif: ui-serif, Georgia, Cambria, Times New Roman, serif) y <code>font-mono</code> (pila monoespaciada: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace). Para tipografías personalizadas, se pueden importar desde Google Fonts o servicios similares y registrarlas en el tema:</p>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">@</span><span class="k">import</span><span class="w"> </span><span class="s2">&quot;tailwindcss&quot;</span><span class="p">;</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="p">@</span><span class="k">import</span><span class="w"> </span><span class="nt">url</span><span class="o">(</span><span class="s1">&#39;https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap&#39;</span><span class="o">)</span><span class="p">;</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="p">@</span><span class="k">theme</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span><span class="nt">--font-display</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Playfair Display&#39;</span><span class="o">,</span><span class="w"> </span><span class="nt">Georgia</span><span class="o">,</span><span class="w"> </span><span class="nt">serif</span><span class="o">;</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="nt">--font-body</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Inter&#39;</span><span class="o">,</span><span class="w"> </span><span class="nt">ui-sans-serif</span><span class="o">,</span><span class="w"> </span><span class="nt">system-ui</span><span class="o">,</span><span class="w"> </span><span class="nt">sans-serif</span><span class="o">;</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Esto genera las clases <code>font-display</code> y <code>font-body</code> que pueden usarse como cualquier otra utilidad tipográfica de Tailwind.</p>
+<h3 id="7-espaciado-layout-y-dimensionamiento">7. Espaciado, layout y dimensionamiento</h3>
+<p>El sistema de espaciado de Tailwind abarca margin, padding y gap usando la escala numérica común. Las utilidades de margen se escriben con el prefijo <code>m-</code> y las de padding con <code>p-</code>. Ambas pueden aplicarse con direccionalidad específica mediante sufijos: <code>mt-</code> (margin-top), <code>mr-</code> (margin-right), <code>mb-</code> (margin-bottom), <code>ml-</code> (margin-left), <code>mx-</code> (margin-left y margin-right), <code>my-</code> (margin-top y margin-bottom). La misma lógica se aplica al padding. Los valores negativos de margen, útiles para solapar elementos o ajustar posiciones, se aplican anteponiendo un guión: <code>-mt-4</code> (margen superior negativo de 1rem), <code>-ml-2</code> (margen izquierdo negativo de 0.5rem). El espaciado entre elementos hijos de contenedores flex y grid se gestiona con <code>gap-*</code>, <code>gap-x-*</code> y <code>gap-y-*</code>. A diferencia de <code>space-x-*</code> y <code>space-y-*</code> (que añaden margen entre hijos excepto al primero, técnica legacy), <code>gap</code> es la recomendación moderna ya que funciona en ambos contextos (flex y grid) y no presenta problemas con elementos que se envuelven a la siguiente línea.</p>
+<p>Las utilidades de display abarcan <code>block</code>, <code>inline-block</code>, <code>inline</code>, <code>flex</code>, <code>inline-flex</code>, <code>grid</code>, <code>inline-grid</code>, <code>hidden</code> (equivale a <code>display: none</code>), <code>flow-root</code> (crea un nuevo contexto de formato de bloque, útil para clearfix moderno) y <code>contents</code> (hace que el elemento desaparezca del árbol de caja, exponiendo sus hijos al padre). Para posicionamiento: <code>static</code>, <code>fixed</code>, <code>absolute</code>, <code>relative</code> y <code>sticky</code>, combinables con las propiedades de desplazamiento <code>top-*</code>, <code>right-*</code>, <code>bottom-*</code>, <code>left-*</code> e <code>inset-*</code> (shorthand para las cuatro direcciones). El control de z-index ofrece valores predefinidos: <code>z-0</code>, <code>z-10</code>, <code>z-20</code>, <code>z-30</code>, <code>z-40</code>, <code>z-50</code> y <code>z-auto</code>.</p>
+<p>El dimensionamiento de anchura utiliza <code>w-*</code> (con la escala numérica), <code>w-full</code> (100%), <code>w-screen</code> (100vw), <code>w-min</code> (min-content), <code>w-max</code> (max-content), <code>w-fit</code> (fit-content) y fracciones: <code>w-1/2</code> (50%), <code>w-1/3</code>, <code>w-2/3</code>, <code>w-1/4</code>, <code>w-3/4</code>, <code>w-1/5</code>, <code>w-2/5</code>, <code>w-3/5</code>, <code>w-4/5</code>, <code>w-1/6</code>, <code>w-5/6</code>, <code>w-1/12</code>, <code>w-2/12</code> y así sucesivamente. Para altura: <code>h-*</code>, <code>h-full</code>, <code>h-screen</code>, <code>h-min</code>, <code>h-max</code>, <code>h-fit</code>. Las dimensiones mínimas y máximas: <code>min-w-*</code>, <code>max-w-*</code>, <code>min-h-*</code>, <code>max-h-*</code>. Tailwind incluye contenedores predefinidos para <code>max-w-</code>: <code>max-w-xs</code> (20rem, 320px), <code>max-w-sm</code> (24rem, 384px), <code>max-w-md</code> (28rem, 448px), <code>max-w-lg</code> (32rem, 512px), <code>max-w-xl</code> (36rem, 576px), <code>max-w-2xl</code> (42rem, 672px), <code>max-w-3xl</code> (48rem, 768px), <code>max-w-4xl</code> (56rem, 896px), <code>max-w-5xl</code> (64rem, 1024px), <code>max-w-6xl</code> (72rem, 1152px) y <code>max-w-7xl</code> (80rem, 1280px). Estos contenedores, combinados con <code>mx-auto</code>, son la forma recomendada de limitar la anchura del contenido en páginas web.</p>
+<h3 id="8-flexbox-y-grid-con-utilidades-de-tailwind">8. Flexbox y Grid con utilidades de Tailwind</h3>
+<p>Tailwind ofrece un mapeo completo y expresivo de Flexbox. Un contenedor flex se crea con <code>flex</code> (o <code>inline-flex</code>). La dirección con <code>flex-row</code>, <code>flex-row-reverse</code>, <code>flex-col</code> y <code>flex-col-reverse</code>. La envoltura con <code>flex-wrap</code>, <code>flex-wrap-reverse</code> y <code>flex-nowrap</code>. La justificación del eje principal: <code>justify-start</code>, <code>justify-end</code>, <code>justify-center</code>, <code>justify-between</code>, <code>justify-around</code>, <code>justify-evenly</code>. La alineación del eje transversal: <code>items-start</code>, <code>items-end</code>, <code>items-center</code>, <code>items-baseline</code>, <code>items-stretch</code>. La alineación de líneas múltiples: <code>content-start</code>, <code>content-center</code>, <code>content-end</code>, <code>content-between</code>, <code>content-around</code>, <code>content-evenly</code>. La alineación individual de un hijo: <code>self-auto</code>, <code>self-start</code>, <code>self-end</code>, <code>self-center</code>, <code>self-stretch</code>, <code>self-baseline</code>. El control de crecimiento: <code>flex-1</code> (flex: 1 1 0%), <code>flex-auto</code> (flex: 1 1 auto), <code>flex-initial</code> (flex: 0 1 auto), <code>flex-none</code> (flex: none), así como <code>grow</code>, <code>grow-0</code>, <code>shrink</code> y <code>shrink-0</code>. El orden: <code>order-first</code>, <code>order-last</code>, <code>order-none</code> y <code>order-1</code> a <code>order-12</code>.</p>
+<p>El sistema Grid de Tailwind es igualmente completo. Un contenedor se crea con <code>grid</code> (o <code>inline-grid</code>). Las columnas: <code>grid-cols-1</code> hasta <code>grid-cols-12</code>, más <code>grid-cols-none</code>. Para layouts responsive se combinan con breakpoints: <code>grid-cols-1 md:grid-cols-2 lg:grid-cols-3</code>. El spanning: <code>col-span-1</code> a <code>col-span-12</code> y <code>col-span-full</code>. Las filas: <code>grid-rows-1</code> a <code>grid-rows-6</code> y <code>grid-rows-none</code>. El spanning de filas: <code>row-span-1</code> a <code>row-span-6</code> y <code>row-span-full</code>. El flujo automático: <code>grid-flow-row</code> (por defecto), <code>grid-flow-col</code>, <code>grid-flow-row-dense</code>, <code>grid-flow-col-dense</code>. El inicio y final explícitos: <code>col-start-*</code>, <code>col-end-*</code>, <code>row-start-*</code>, <code>row-end-*</code>, con valores del 1 al 13 y <code>auto</code>. Las propiedades abreviadas de alineación: <code>place-items-*</code>, <code>place-content-*</code>, <code>place-self-*</code>, que combinan align y justify en una sola clase.</p>
+<h3 id="9-diseno-responsivo-mobile-first">9. Diseño responsivo Mobile First</h3>
+<p>Tailwind adopta el enfoque Mobile First como filosofía de diseño. Las clases sin prefijo definen el estilo base para el viewport más pequeño (móvil). Los breakpoints se aplican como prefijos que sobrescriben o añaden estilos en viewports progresivamente mayores. Los breakpoints predefinidos son: <code>sm:</code> (min-width: 640px), <code>md:</code> (768px), <code>lg:</code> (1024px), <code>xl:</code> (1280px) y <code>2xl:</code> (1536px). La sintaxis es simple: se antepone el prefijo del breakpoint seguido de dos puntos a cualquier utilidad: <code>sm:p-4</code>, <code>md:flex</code>, <code>lg:grid-cols-3</code>, <code>xl:text-5xl</code>.</p>
+<p>Un patrón común es definir un grid que se adapta progresivamente: <code>grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4</code>. En móvil, una columna; a partir de 640px, dos columnas; desde 1024px, tres; y en pantallas grandes de 1280px, cuatro. Similarmente, un menú que se oculta en móvil y se muestra en escritorio: <code>hidden lg:flex</code>. Un padding que crece con el viewport: <code>px-4 sm:px-6 lg:px-8</code>. Un texto responsivo: <code>text-lg md:text-xl lg:text-2xl</code>.</p>
+<p>La estrategia de trabajo recomendada es: (1) Comenzar maquetando para móvil (las clases base sin prefijo). (2) Comprobar que la experiencia es óptima en pantallas pequeñas. (3) Agregar progresivamente los prefijos <code>sm:</code>, <code>md:</code>, <code>lg:</code>, <code>xl:</code> para puntos de ruptura donde el diseño necesita adaptarse. (4) No intentar cubrir todos los breakpoints para cada elemento; solo añadir variantes donde sea necesario. Esta metodología evita el error común de diseñar para escritorio y luego intentar "comprimir" el diseño para móvil.</p>
+<h3 id="10-estados-interactivos-bordes-sombras-animaciones-y-modo-oscuro">10. Estados interactivos, bordes, sombras, animaciones y modo oscuro</h3>
+<p>Los estados interactivos se aplican con prefijos similares a los breakpoints. <code>hover:</code> aplica estilos al pasar el cursor: <code>hover:bg-blue-700 hover:text-white</code>. <code>focus:</code> se activa al recibir el foco: <code>focus:outline-none focus:ring-2 focus:ring-blue-500</code>. <code>focus-visible:</code> solo para navegación por teclado, ideal para accesibilidad. <code>active:</code> durante la pulsación: <code>active:scale-95</code>. <code>disabled:</code> para elementos deshabilitados: <code>disabled:opacity-50 disabled:cursor-not-allowed</code>. Los pseudoselectores estructurales: <code>first:</code>, <code>last:</code>, <code>odd:</code>, <code>even:</code> (para tablas con filas alternas). <code>group-hover:</code> permite que un elemento reaccione al hover sobre su ancestro con clase <code>group</code>. <code>peer-focus:</code> permite que un elemento reaccione al focus de un hermano con clase <code>peer</code>. Ambos son extremadamente potentes para crear interacciones complejas sin JavaScript.</p>
+<p>Los bordes ofrecen <code>rounded</code>, <code>rounded-md</code>, <code>rounded-lg</code>, <code>rounded-xl</code>, <code>rounded-2xl</code>, <code>rounded-3xl</code>, <code>rounded-full</code> (círculo/píldora). El grosor: <code>border</code>, <code>border-0</code>, <code>border-2</code>, <code>border-4</code>, <code>border-8</code>. Direccional: <code>border-t-*</code>, <code>border-b-*</code>, etc. El color: <code>border-gray-300</code>, <code>border-blue-500</code>. El estilo: <code>border-solid</code>, <code>border-dashed</code>, <code>border-dotted</code>, <code>border-double</code>, <code>border-none</code>. El outline: <code>outline-none</code>, <code>outline-*</code>, <code>outline-offset-*</code>. El ring (alternativa moderna al outline): <code>ring-0</code>, <code>ring-1</code>, <code>ring-2</code>, <code>ring-4</code>, <code>ring-8</code>, <code>ring-inset</code>, <code>ring-blue-500</code>.</p>
+<p>Las sombras: <code>shadow-sm</code>, <code>shadow</code>, <code>shadow-md</code>, <code>shadow-lg</code>, <code>shadow-xl</code>, <code>shadow-2xl</code>, <code>shadow-inner</code>, <code>shadow-none</code>. Con color: <code>shadow-red-500/30</code>. La opacidad: <code>opacity-0</code> a <code>opacity-100</code> en incrementos de 5 y de 10. Los filtros: <code>blur-none</code>, <code>blur-sm</code>, <code>blur</code>, <code>blur-md</code>, <code>blur-lg</code>, <code>blur-xl</code>, <code>blur-2xl</code>, <code>blur-3xl</code>. Backdrop blur: <code>backdrop-blur-sm</code> a <code>backdrop-blur-3xl</code>, útil para overlays con efecto vidrio esmerilado.</p>
+<p>Las transiciones: <code>transition</code> (aplica a propiedades comunes), <code>transition-all</code>, <code>transition-colors</code>, <code>transition-opacity</code>, <code>transition-shadow</code>, <code>transition-transform</code>. Duración: <code>duration-75</code>, <code>duration-100</code>, <code>duration-150</code>, <code>duration-200</code>, <code>duration-300</code>, <code>duration-500</code>, <code>duration-700</code>, <code>duration-1000</code>. Easing: <code>ease-linear</code>, <code>ease-in</code>, <code>ease-out</code>, <code>ease-in-out</code>. Delay: <code>delay-75</code> a <code>delay-1000</code>. Animaciones predefinidas: <code>animate-spin</code> (rotación infinita), <code>animate-ping</code> (escala y fade, notificaciones), <code>animate-pulse</code> (opacidad oscilante, skeleton loaders), <code>animate-bounce</code> (rebote). Personalización de keyframes en @theme.</p>
+<p>El modo oscuro usa el prefijo <code>dark:</code>. Dos estrategias: <code>@media (prefers-color-scheme: dark)</code> (automática según SO) y selector <code>.dark</code> (manual con toggle JS). La recomendada es la de clase, que permite toggle independiente. Implementación: añadir/quitar clase <code>dark</code> en <code>&lt;html&gt;</code> con JS, persistir en localStorage. Ejemplo: <code>&lt;body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300"&gt;</code>. La transición <code>transition-colors duration-300</code> suaviza el cambio entre temas, mejorando la experiencia de usuario.</p>
+<h3 id="11-valores-arbitrarios-y-personalizacion">11. Valores arbitrarios y personalización</h3>
+<p>Tailwind ofrece un mecanismo de escape: los valores arbitrarios mediante notación de corchetes <code>[]</code>. Permiten inyectar cualquier valor CSS directamente: <code>w-[300px]</code>, <code>bg-[#1a1a1a]</code>, <code>text-[clamp(1rem,2vw,2rem)]</code>, <code>grid-cols-[200px_minmax(900px,_1fr)_100px]</code>, <code>shadow-[0_4px_20px_rgba(0,0,0,0.3)]</code>. Esta característica cubre casos donde la escala predefinida no contempla un valor específico. Solo se genera la regla CSS exacta para el valor especificado, manteniendo el CSS final reducido. La regla práctica: si un valor arbitrario aparece una sola vez, está bien; si se repite, debe extraerse a un token de diseño en @theme.</p>
+<p>La configuración con @theme en v4 permite extender o sobrescribir cualquier parte del sistema:</p>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">@</span><span class="k">import</span><span class="w"> </span><span class="s2">&quot;tailwindcss&quot;</span><span class="p">;</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="p">@</span><span class="k">theme</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="nt">--color-accent</span><span class="o">:</span><span class="w"> </span><span class="p">#</span><span class="nn">ff6b35</span><span class="o">;</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="nt">--font-size-display</span><span class="o">:</span><span class="w"> </span><span class="nt">3</span><span class="p">.</span><span class="nc">5rem</span><span class="o">;</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">  </span><span class="nt">--font-size-display--line-height</span><span class="o">:</span><span class="w"> </span><span class="nt">4rem</span><span class="o">;</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">  </span><span class="nt">--spacing-section</span><span class="o">:</span><span class="w"> </span><span class="nt">6rem</span><span class="o">;</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">  </span><span class="nt">--radius-card</span><span class="o">:</span><span class="w"> </span><span class="nt">1rem</span><span class="o">;</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Esta configuración CSS-first es una de las grandes ventajas de Tailwind v4, eliminando la necesidad de un archivo JS de configuración separado.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pie" >
+        
+          
+          <a href="../16-diseno-centrado-usuario/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: 16. Diseño centrado en usuario">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                16. Diseño centrado en usuario
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../18-preprocesadores-css/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: 18. Preprocesadores CSS">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              <div class="md-ellipsis">
+                18. Preprocesadores CSS
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 The authors
+
+    </div>
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate":null,"base":"..","features":["announce.dismiss","content.code.annotate","content.code.copy","content.code.select","content.footnote.tooltips","content.tabs.link","content.tooltips","navigation.footer","navigation.indexes","navigation.instant","navigation.instant.prefetch","navigation.path","navigation.sections","navigation.top","navigation.tracking","search.highlight"],"search":"../assets/javascripts/workers/search.e2d2d235.min.js","tags":null,"translations":{"clipboard.copied":"Copiado al portapapeles","clipboard.copy":"Copiar al portapapeles","search.result.more.one":"1 más en esta página","search.result.more.other":"# más en esta página","search.result.none":"No se encontraron documentos","search.result.one":"1 documento encontrado","search.result.other":"# documentos encontrados","search.result.placeholder":"Teclee para comenzar búsqueda","search.result.term.missing":"Falta","select.version":"Seleccionar versión"},"version":null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.6e5f0216.min.js"></script>
+      
+    
+  </body>
+</html>

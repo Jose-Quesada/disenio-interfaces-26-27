@@ -1,0 +1,2804 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Apuntes básicos de Angular para Martos y alrededores.">
+      
+      
+        <meta name="author" content="Jose Quesada">
+      
+      
+      
+        <link rel="prev" href="../14-accesibilidad-web/">
+      
+      
+        <link rel="next" href="../16-diseno-centrado-usuario/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="zensical-0.0.44">
+    
+    
+      
+        <title>Unidad 15: Usabilidad Web - Curso de Angular</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../assets/stylesheets/modern/main.fba56155.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../assets/stylesheets/modern/palette.dfe2e883.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,500,500i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/css/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-label="Navegación"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#unidad-15-usabilidad-web" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="./.." title="Curso de Angular" class="md-header__button md-logo" aria-label="Curso de Angular" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 7v14M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer" aria-label="Navegación">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Curso de Angular
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Unidad 15: Usabilidad Web
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="none" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="none" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-moon" viewBox="0 0 24 24"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search" aria-label="Buscar">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Buscar">
+  <button type="button" class="md-search__button">
+    Buscar
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="./.." title="Curso de Angular" class="md-nav__button md-logo" aria-label="Curso de Angular" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 7v14M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
+
+    </a>
+    Curso de Angular
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="./.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  01. Introducción
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-psicologia-diseno/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  02. Psicología del diseño
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-color-tipografia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  03. Color y tipografía
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-guias-estilo-design-systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  04. Guías de estilo y design systems
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-figma-profesional/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  05. Figma profesional
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-arquitectura-informacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  06. Arquitectura de la información
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-html-semantico/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  07. HTML semántico
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-css-profesional/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  08. CSS profesional
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-flexbox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  09. Flexbox
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-css-grid-layout/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  10. CSS Grid
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-responsive-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  11. Diseño responsive
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-multimedia-web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  12. Multimedia web
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-interactividad-web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  13. Interactividad web
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-accesibilidad-web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  14. Accesibilidad web
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  15. Usabilidad web
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  15. Usabilidad web
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objetivos-de-aprendizaje" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Objetivos de aprendizaje
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relacion-con-los-resultados-de-aprendizaje" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Relación con los Resultados de Aprendizaje
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conocimientos-previos" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Conocimientos previos
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contenidos" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Contenidos
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Contenidos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-fundamentos-de-la-usabilidad-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        1. Fundamentos de la usabilidad web
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-las-10-heuristicas-de-nielsen" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        2. Las 10 Heurísticas de Nielsen
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-evaluacion-heuristica" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        3. Evaluación heurística
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-otras-tecnicas-de-inspeccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        4. Otras técnicas de inspección
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-test-de-usuarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        5. Test de usuarios
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-metricas-de-usabilidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        6. Métricas de usabilidad
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-eye-tracking-y-heat-maps" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        7. Eye Tracking y Heat Maps
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-ab-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        8. A/B Testing
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-analitica-web-para-usabilidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        9. Analítica web para usabilidad
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-tests-de-guerrilla" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        10. Tests de guerrilla
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#desarrollo-teorico" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Desarrollo teórico
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Desarrollo teórico">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-que-es-la-usabilidad-web-y-por-que-es-importante" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        1. ¿Qué es la usabilidad web y por qué es importante?
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-las-10-heuristicas-de-nielsen-en-profundidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        2. Las 10 Heurísticas de Nielsen en profundidad
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-evaluacion-heuristica-metodologia" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        3. Evaluación heurística: metodología
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-test-de-usuarios-la-evidencia-empirica" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        4. Test de usuarios: la evidencia empírica
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-metricas-de-usabilidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        5. Métricas de usabilidad
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-eye-tracking-heat-maps-y-analitica-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        6. Eye Tracking, Heat Maps y Analítica Web
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplos-guiados" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ejemplos guiados
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejemplos guiados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-guiado-1-evaluacion-heuristica-de-un-checkout" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ejemplo Guiado 1: Evaluación Heurística de un Checkout
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-guiado-2-diseno-de-un-test-de-usuario-para-app-de-banca-movil" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ejemplo Guiado 2: Diseño de un Test de Usuario para App de Banca Móvil
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-guiado-3-analisis-de-scroll-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ejemplo Guiado 3: Análisis de Scroll Map
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-guiado-4-calculo-e-interpretacion-del-sus" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ejemplo Guiado 4: Cálculo e Interpretación del SUS
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#casos-reales" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Casos reales
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Casos reales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caso-real-1-analisis-de-usabilidad-de-amazon" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Caso Real 1: Análisis de Usabilidad de Amazon
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caso-real-2-analisis-de-usabilidad-de-renfecom" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Caso Real 2: Análisis de Usabilidad de Renfe.com
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caso-real-3-analisis-de-portal-de-empleo-publico" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Caso Real 3: Análisis de Portal de Empleo Público
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actividades-guiadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Actividades guiadas
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Actividades guiadas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#actividad-guiada-1-evaluacion-heuristica-de-un-sitio-web-real" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Actividad Guiada 1: Evaluación Heurística de un Sitio Web Real
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actividad-guiada-2-diseno-y-ejecucion-de-un-mini-test-de-usuario" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Actividad Guiada 2: Diseño y Ejecución de un Mini Test de Usuario
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actividad-guiada-3-calculo-e-interpretacion-de-metricas-sus" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Actividad Guiada 3: Cálculo e Interpretación de Métricas SUS
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actividad-guiada-4-analisis-de-heat-maps-con-datos-reales-de-hotjar" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Actividad Guiada 4: Análisis de Heat Maps con Datos Reales de Hotjar
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actividad-guiada-5-diseno-de-un-test-ab" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Actividad Guiada 5: Diseño de un Test A/B
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actividades-propuestas" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Actividades propuestas
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Actividades propuestas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#actividad-propuesta-1-evaluacion-heuristica-comparativa" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Actividad Propuesta 1: Evaluación Heurística Comparativa
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actividad-propuesta-2-test-de-usuario-completo-documentado" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Actividad Propuesta 2: Test de Usuario Completo Documentado
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actividad-propuesta-3-propuesta-de-rediseno-basada-en-analitica-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Actividad Propuesta 3: Propuesta de Rediseño Basada en Analítica Web
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actividad-propuesta-4-analisis-heuristico-de-una-aplicacion-movil" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Actividad Propuesta 4: Análisis Heurístico de una Aplicación Móvil
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actividad-propuesta-5-creacion-de-un-panel-de-metricas-de-usabilidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Actividad Propuesta 5: Creación de un Panel de Métricas de Usabilidad
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actividades-de-ampliacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Actividades de ampliación
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Actividades de ampliación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#actividad-de-ampliacion-1-investigacion-sobre-roi-de-usabilidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Actividad de Ampliación 1: Investigación sobre ROI de Usabilidad
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actividad-de-ampliacion-2-implementacion-de-un-proceso-de-ux-continua" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Actividad de Ampliación 2: Implementación de un Proceso de UX Continua
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actividad-de-ampliacion-3-benchmarking-de-usabilidad-sectorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Actividad de Ampliación 3: Benchmarking de Usabilidad Sectorial
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#buenas-practicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Buenas prácticas
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#errores-frecuentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Errores frecuentes
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Errores frecuentes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#error-1-testear-con-el-numero-equivocado-de-participantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Error 1: Testear con el número equivocado de participantes
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-2-creer-que-el-disenador-puede-evaluar-su-propio-diseno" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Error 2: Creer que el diseñador puede evaluar su propio diseño
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-3-usar-metricas-sin-contexto" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Error 3: Usar métricas sin contexto
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-4-detener-un-test-ab-antes-de-tiempo" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Error 4: Detener un test A/B antes de tiempo
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-5-ayudar-al-participante-durante-el-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Error 5: Ayudar al participante durante el test
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-6-usar-jerga-tecnica-con-los-participantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Error 6: Usar jerga técnica con los participantes
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-7-interpretar-los-mapas-de-calor-sin-contexto-cualitativo" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Error 7: Interpretar los mapas de calor sin contexto cualitativo
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-8-calcular-la-media-cuando-los-datos-tienen-valores-atipicos-extremos" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Error 8: Calcular la media cuando los datos tienen valores atípicos extremos
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumen" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Resumen
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recursos-complementarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Recursos complementarios
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recursos complementarios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#libros" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Libros
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#herramientas" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Herramientas
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#referencias-online" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Referencias online
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-diseno-centrado-usuario/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  16. Diseño centrado en usuario
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-tailwindcss4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  17. Tailwind CSS 4
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-preprocesadores-css/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  18. Preprocesadores CSS
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-marco-legal-multimedia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  19. Marco legal multimedia
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../markdown/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.27 19.385H1.73A1.73 1.73 0 0 1 0 17.655V6.345a1.73 1.73 0 0 1 1.73-1.73h20.54A1.73 1.73 0 0 1 24 6.345v11.308a1.73 1.73 0 0 1-1.73 1.731zM5.769 15.923v-4.5l2.308 2.885 2.307-2.885v4.5h2.308V8.078h-2.308l-2.307 2.885-2.308-2.885H3.46v7.847zM21.232 12h-2.309V8.077h-2.307V12h-2.308l3.461 4.039z"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+  Markdown (referencia)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                    
+                    
+                    
+                      
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objetivos-de-aprendizaje" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Objetivos de aprendizaje
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relacion-con-los-resultados-de-aprendizaje" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Relación con los Resultados de Aprendizaje
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conocimientos-previos" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Conocimientos previos
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contenidos" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Contenidos
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Contenidos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-fundamentos-de-la-usabilidad-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        1. Fundamentos de la usabilidad web
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-las-10-heuristicas-de-nielsen" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        2. Las 10 Heurísticas de Nielsen
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-evaluacion-heuristica" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        3. Evaluación heurística
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-otras-tecnicas-de-inspeccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        4. Otras técnicas de inspección
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-test-de-usuarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        5. Test de usuarios
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-metricas-de-usabilidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        6. Métricas de usabilidad
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-eye-tracking-y-heat-maps" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        7. Eye Tracking y Heat Maps
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-ab-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        8. A/B Testing
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-analitica-web-para-usabilidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        9. Analítica web para usabilidad
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-tests-de-guerrilla" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        10. Tests de guerrilla
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#desarrollo-teorico" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Desarrollo teórico
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Desarrollo teórico">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-que-es-la-usabilidad-web-y-por-que-es-importante" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        1. ¿Qué es la usabilidad web y por qué es importante?
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-las-10-heuristicas-de-nielsen-en-profundidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        2. Las 10 Heurísticas de Nielsen en profundidad
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-evaluacion-heuristica-metodologia" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        3. Evaluación heurística: metodología
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-test-de-usuarios-la-evidencia-empirica" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        4. Test de usuarios: la evidencia empírica
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-metricas-de-usabilidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        5. Métricas de usabilidad
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-eye-tracking-heat-maps-y-analitica-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        6. Eye Tracking, Heat Maps y Analítica Web
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplos-guiados" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ejemplos guiados
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejemplos guiados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-guiado-1-evaluacion-heuristica-de-un-checkout" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ejemplo Guiado 1: Evaluación Heurística de un Checkout
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-guiado-2-diseno-de-un-test-de-usuario-para-app-de-banca-movil" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ejemplo Guiado 2: Diseño de un Test de Usuario para App de Banca Móvil
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-guiado-3-analisis-de-scroll-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ejemplo Guiado 3: Análisis de Scroll Map
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-guiado-4-calculo-e-interpretacion-del-sus" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ejemplo Guiado 4: Cálculo e Interpretación del SUS
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#casos-reales" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Casos reales
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Casos reales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caso-real-1-analisis-de-usabilidad-de-amazon" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Caso Real 1: Análisis de Usabilidad de Amazon
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caso-real-2-analisis-de-usabilidad-de-renfecom" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Caso Real 2: Análisis de Usabilidad de Renfe.com
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caso-real-3-analisis-de-portal-de-empleo-publico" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Caso Real 3: Análisis de Portal de Empleo Público
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actividades-guiadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Actividades guiadas
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Actividades guiadas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#actividad-guiada-1-evaluacion-heuristica-de-un-sitio-web-real" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Actividad Guiada 1: Evaluación Heurística de un Sitio Web Real
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actividad-guiada-2-diseno-y-ejecucion-de-un-mini-test-de-usuario" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Actividad Guiada 2: Diseño y Ejecución de un Mini Test de Usuario
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actividad-guiada-3-calculo-e-interpretacion-de-metricas-sus" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Actividad Guiada 3: Cálculo e Interpretación de Métricas SUS
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actividad-guiada-4-analisis-de-heat-maps-con-datos-reales-de-hotjar" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Actividad Guiada 4: Análisis de Heat Maps con Datos Reales de Hotjar
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actividad-guiada-5-diseno-de-un-test-ab" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Actividad Guiada 5: Diseño de un Test A/B
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actividades-propuestas" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Actividades propuestas
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Actividades propuestas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#actividad-propuesta-1-evaluacion-heuristica-comparativa" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Actividad Propuesta 1: Evaluación Heurística Comparativa
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actividad-propuesta-2-test-de-usuario-completo-documentado" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Actividad Propuesta 2: Test de Usuario Completo Documentado
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actividad-propuesta-3-propuesta-de-rediseno-basada-en-analitica-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Actividad Propuesta 3: Propuesta de Rediseño Basada en Analítica Web
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actividad-propuesta-4-analisis-heuristico-de-una-aplicacion-movil" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Actividad Propuesta 4: Análisis Heurístico de una Aplicación Móvil
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actividad-propuesta-5-creacion-de-un-panel-de-metricas-de-usabilidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Actividad Propuesta 5: Creación de un Panel de Métricas de Usabilidad
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actividades-de-ampliacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Actividades de ampliación
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Actividades de ampliación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#actividad-de-ampliacion-1-investigacion-sobre-roi-de-usabilidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Actividad de Ampliación 1: Investigación sobre ROI de Usabilidad
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actividad-de-ampliacion-2-implementacion-de-un-proceso-de-ux-continua" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Actividad de Ampliación 2: Implementación de un Proceso de UX Continua
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actividad-de-ampliacion-3-benchmarking-de-usabilidad-sectorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Actividad de Ampliación 3: Benchmarking de Usabilidad Sectorial
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#buenas-practicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Buenas prácticas
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#errores-frecuentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Errores frecuentes
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Errores frecuentes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#error-1-testear-con-el-numero-equivocado-de-participantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Error 1: Testear con el número equivocado de participantes
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-2-creer-que-el-disenador-puede-evaluar-su-propio-diseno" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Error 2: Creer que el diseñador puede evaluar su propio diseño
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-3-usar-metricas-sin-contexto" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Error 3: Usar métricas sin contexto
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-4-detener-un-test-ab-antes-de-tiempo" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Error 4: Detener un test A/B antes de tiempo
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-5-ayudar-al-participante-durante-el-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Error 5: Ayudar al participante durante el test
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-6-usar-jerga-tecnica-con-los-participantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Error 6: Usar jerga técnica con los participantes
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-7-interpretar-los-mapas-de-calor-sin-contexto-cualitativo" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Error 7: Interpretar los mapas de calor sin contexto cualitativo
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-8-calcular-la-media-cuando-los-datos-tienen-valores-atipicos-extremos" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Error 8: Calcular la media cuando los datos tienen valores atípicos extremos
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumen" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Resumen
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recursos-complementarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Recursos complementarios
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recursos complementarios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#libros" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Libros
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#herramientas" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Herramientas
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#referencias-online" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Referencias online
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+<h1 id="unidad-15-usabilidad-web">Unidad 15: Usabilidad Web</h1>
+<h2 id="objetivos-de-aprendizaje">Objetivos de aprendizaje</h2>
+<p>Al finalizar esta unidad, el alumnado será capaz de:</p>
+<ul>
+<li>Comprender el concepto de usabilidad según la norma ISO 9241-11, diferenciando claramente entre eficacia, eficiencia y satisfacción, y distinguiendo usabilidad de conceptos relacionados como UX y accesibilidad.</li>
+<li>Dominar las 10 heurísticas de Nielsen como herramienta fundamental de evaluación de interfaces, sabiendo identificar ejemplos concretos de cumplimiento y violación en cualquier sitio web o aplicación.</li>
+<li>Planificar y ejecutar una evaluación heurística completa siguiendo la metodología de Nielsen: preparación, evaluación individual, puesta en común, escala de severidad (0-4) e informe de resultados.</li>
+<li>Realizar un recorrido cognitivo (cognitive walkthrough) de una interfaz, analizando paso a paso si las decisiones de diseño facilitan que un usuario novel complete tareas sin ayuda externa.</li>
+<li>Diseñar, planificar y ejecutar tests de usuario en sus diferentes modalidades (presencial, remoto, moderado, no moderado), incluyendo la definición de objetivos, reclutamiento, guion de tareas y análisis de resultados.</li>
+<li>Calcular e interpretar las principales métricas de usabilidad: tasa de éxito, tiempo de tarea, tasa de errores, eficiencia, y satisfacción mediante cuestionarios estandarizados como SUS, NPS y SEQ.</li>
+<li>Comprender el eye tracking como técnica de investigación, interpretando mapas de calor y gaze plots, y conociendo sus aplicaciones prácticas y limitaciones.</li>
+<li>Analizar heat maps (de clic, scroll y movimiento) generados por herramientas como Hotjar y Microsoft Clarity para identificar patrones de comportamiento y problemas de usabilidad.</li>
+<li>Diseñar y ejecutar tests A/B para comparar objetivamente variantes de diseño, comprendiendo los fundamentos de significancia estadística y el tamaño de muestra necesario.</li>
+<li>Utilizar Google Analytics para identificar problemas de usabilidad a partir de datos cuantitativos: tasas de rebote, embudos de conversión, páginas de salida.</li>
+<li>Aplicar tests de guerrilla como método ágil y económico de validación temprana de diseños.</li>
+<li>Analizar críticamente la usabilidad de sitios web reales como Amazon, Renfe y portales de empleo público, identificando problemas y proponiendo soluciones.</li>
+</ul>
+<h2 id="relacion-con-los-resultados-de-aprendizaje">Relación con los Resultados de Aprendizaje</h2>
+<ul>
+<li><strong>RA1: Planifica la creación de una interfaz web.</strong> Los principios de usabilidad deben integrarse desde la fase de planificación, definiendo flujos de tareas eficientes, arquitectura de información intuitiva y patrones de interacción que minimicen la carga cognitiva.</li>
+<li><strong>RA2: Crea interfaces web homogéneas.</strong> Las heurísticas de consistencia y estándares (heurística 4 de Nielsen) guían la creación de interfaces homogéneas donde patrones similares se comportan de manera predecible.</li>
+<li><strong>RA5: Evalúa la accesibilidad de la interfaz web.</strong> La usabilidad y la accesibilidad comparten metodologías de evaluación complementarias; muchas barreras de accesibilidad son también problemas de usabilidad para todos los usuarios.</li>
+<li><strong>RA6: Verifica la usabilidad de la interfaz web.</strong> Este RA es el núcleo de la unidad. El alumnado aprende a aplicar evaluación heurística, test de usuarios, métricas de usabilidad, analítica web y otras técnicas para verificar que una interfaz cumple con criterios de calidad de uso establecidos.</li>
+</ul>
+<h2 id="conocimientos-previos">Conocimientos previos</h2>
+<ul>
+<li><strong>Diseño de interfaces básico:</strong> Principios de diseño visual, teoría del color, tipografía, jerarquía visual, uso de espacio en blanco, responsive design.</li>
+<li><strong>HTML y CSS:</strong> Capacidad para construir prototipos funcionales de interfaces web sobre los que realizar pruebas de usabilidad.</li>
+<li><strong>Metodologías ágiles:</strong> Familiaridad con Scrum, sprints y el rol del diseño en entornos ágiles, donde la usabilidad debe validarse iterativamente.</li>
+<li><strong>Estadística básica:</strong> Media, mediana, desviación estándar, concepto de muestra y población, interpretación de porcentajes. Sin estos fundamentos, las métricas de usabilidad no pueden interpretarse correctamente.</li>
+<li><strong>Observación y empatía:</strong> Habilidad para observar el comportamiento de usuarios sin interferir ni sesgar sus acciones. Escucha activa y capacidad de hacer preguntas sin sugerir respuestas.</li>
+</ul>
+<h2 id="contenidos">Contenidos</h2>
+<h3 id="1-fundamentos-de-la-usabilidad-web">1. Fundamentos de la usabilidad web</h3>
+<p>1.1. Definición de usabilidad según ISO 9241-11: eficacia, eficiencia y satisfacción.
+1.2. Diferencias entre usabilidad, UX y accesibilidad: conceptos complementarios pero distintos.
+1.3. Beneficios de la usabilidad: reducción de costes de soporte, aumento de conversión, satisfacción y retención de clientes.
+1.4. Retorno de la inversión (ROI) en usabilidad: evidencia empírica y casos documentados.</p>
+<h3 id="2-las-10-heuristicas-de-nielsen">2. Las 10 Heurísticas de Nielsen</h3>
+<p>2.1. Historia y vigencia de las heurísticas de Jakob Nielsen (1994-presente).
+2.2. Desarrollo detallado de cada heurística con dos ejemplos de cumplimiento y dos de violación por cada una:
+  1. Visibilidad del estado del sistema
+  2. Coincidencia entre el sistema y el mundo real
+  3. Control y libertad del usuario
+  4. Consistencia y estándares
+  5. Prevención de errores
+  6. Reconocimiento antes que recuerdo
+  7. Flexibilidad y eficiencia de uso
+  8. Diseño estético y minimalista
+  9. Ayudar a los usuarios a reconocer, diagnosticar y recuperarse de errores
+  10. Ayuda y documentación</p>
+<h3 id="3-evaluacion-heuristica">3. Evaluación heurística</h3>
+<p>3.1. Definición y propósito: inspección por expertos basada en principios.
+3.2. Proceso completo: preparación, evaluación individual, puesta en común.
+3.3. Número óptimo de evaluadores: 3-5 según la fórmula de Nielsen, curva de rendimiento decreciente.
+3.4. Escala de severidad (0-4): cosmético, menor, mayor, catastrófico.
+3.5. Estructura y formato del informe de resultados.</p>
+<h3 id="4-otras-tecnicas-de-inspeccion">4. Otras técnicas de inspección</h3>
+<p>4.1. Inspección de estándares: checklists de usabilidad, guías de estilo corporativas, ISO 9241.
+4.2. Recorrido cognitivo (Cognitive Walkthrough): definición, proceso paso a paso, cuándo usarlo (ideal para interfaces nuevas sin usuarios).
+4.3. Inspección de consistencia.</p>
+<h3 id="5-test-de-usuarios">5. Test de usuarios</h3>
+<p>5.1. Tipos: presencial vs remoto, moderado vs no moderado.
+5.2. Planificación: objetivos de investigación, criterios de reclutamiento, guion de tareas.
+5.3. Número de participantes: 5 para cualitativo (Nielsen), 20-30 para cuantitativo.
+5.4. Think aloud: la técnica de pensamiento en voz alta.
+5.5. Ejecución: bienvenida, consentimiento, tareas, cierre.
+5.6. Análisis de resultados: de observaciones a hallazgos accionables.
+5.7. Herramientas: UserTesting, Maze, Lookback, Loom, UserZoom, Optimal Workshop.</p>
+<h3 id="6-metricas-de-usabilidad">6. Métricas de usabilidad</h3>
+<p>6.1. Tasa de éxito, tiempo de tarea, tasa de errores, eficiencia.
+6.2. Satisfacción: SUS (System Usability Scale), NPS (Net Promoter Score), SEQ (Single Ease Question), UMUX, SUS-Lite.
+6.3. Métricas de comportamiento vs métricas de actitud.</p>
+<h3 id="7-eye-tracking-y-heat-maps">7. Eye Tracking y Heat Maps</h3>
+<p>7.1. Eye Tracking: principios, hardware, métricas (fijaciones, sacadas, áreas de interés), mapas de calor de mirada, gaze plots.
+7.2. Heat Maps de comportamiento: click maps, scroll maps, move maps. Herramientas: Hotjar, Microsoft Clarity, Crazy Egg, Mouseflow.
+7.3. Interpretación y limitaciones: el dato no es autoevidente, necesita contexto.</p>
+<h3 id="8-ab-testing">8. A/B Testing</h3>
+<p>8.1. Definición y fundamentos: testeo experimental controlado.
+8.2. Proceso: hipótesis, definición de variantes, métrica objetivo, cálculo de tamaño muestral, ejecución, análisis.
+8.3. Significancia estadística, intervalos de confianza, errores tipo I y II.
+8.4. Herramientas: Google Optimize, VWO, Optimizely.</p>
+<h3 id="9-analitica-web-para-usabilidad">9. Analítica web para usabilidad</h3>
+<p>9.1. Google Analytics 4: métricas relevantes (tasa de rebote, tiempo en página, páginas por sesión, flujo de usuarios, embudos de conversión).
+9.2. Identificación de problemas de usabilidad a partir de datos analíticos.
+9.3. Combinación de datos cuantitativos (analítica) y cualitativos (tests, heat maps).</p>
+<h3 id="10-tests-de-guerrilla">10. Tests de guerrilla</h3>
+<p>10.1. Definición: tests rápidos, informales, con pocos recursos.
+10.2. Ventajas: velocidad, bajo coste, iteración rápida.
+10.3. Limitaciones: sesgo de muestra, menor rigor.</p>
+<h2 id="desarrollo-teorico">Desarrollo teórico</h2>
+<h3 id="1-que-es-la-usabilidad-web-y-por-que-es-importante">1. ¿Qué es la usabilidad web y por qué es importante?</h3>
+<p>La usabilidad se define formalmente en la norma ISO 9241-11 como "el grado en que un producto puede ser utilizado por usuarios específicos para alcanzar objetivos específicos con eficacia, eficiencia y satisfacción en un contexto de uso específico." Esta definición establece que la usabilidad no es una propiedad absoluta de un sistema, sino relativa a tres factores: los usuarios concretos que lo utilizan, los objetivos que persiguen, y el contexto (físico, social, organizativo) en el que lo hacen. Un mismo sitio web puede ser altamente usable para un adolescente experto en tecnología e inusable para una persona mayor con poca experiencia digital, aunque ambos quieran realizar la misma tarea. La usabilidad, por tanto, debe evaluarse y diseñarse teniendo en cuenta el perfil de los usuarios reales, no un usuario idealizado.</p>
+<p>La <strong>eficacia</strong> se refiere a si los usuarios pueden alcanzar sus objetivos. Se mide en términos de completitud (¿se completó la tarea?) y precisión (¿se completó correctamente?). Un sistema puede ser altamente eficiente pero ineficaz si los usuarios completan tareas rápidamente pero de forma incorrecta. La <strong>eficiencia</strong> relaciona los recursos gastados (tiempo, esfuerzo mental, pasos) con los resultados obtenidos. Un sistema eficaz puede ser ineficiente si requiere demasiado tiempo o esfuerzo. La <strong>satisfacción</strong> es la respuesta subjetiva del usuario ante el uso del producto: ausencia de incomodidad y actitudes positivas. Un sistema puede ser eficaz y eficiente pero generar frustración (por ejemplo, si cumple su función pero tiene una estética descuidada o interrumpe constantemente con notificaciones).</p>
+<p>Los beneficios empresariales de la usabilidad están ampliamente documentados. Jakob Nielsen estimó que el retorno de inversión (ROI) en usabilidad es de 10:1 a 100:1, es decir, cada euro invertido en mejorar la usabilidad retorna entre 10 y 100 euros en beneficios. La reducción de costes de soporte es uno de los impactos más inmediatos: sitios web usables generan menos llamadas al servicio de atención al cliente, menos emails de consulta y menos devoluciones. El aumento de la tasa de conversión es otro beneficio directo: simplificar un checkout puede aumentar las ventas entre un 10% y un 35%. La satisfacción y retención de clientes se traduce en valor a largo plazo: un cliente satisfecho no solo repite, sino que recomienda. La reducción de costes de desarrollo también es significativa: corregir problemas de usabilidad en etapas tempranas del diseño es mucho más barato que rediseñar tras el lanzamiento.</p>
+<p>Es importante distinguir usabilidad de conceptos relacionados. La <strong>UX</strong> (User Experience) es un concepto más amplio que engloba la usabilidad pero también aspectos como la deseabilidad, el valor emocional, la confianza, la credibilidad y el significado personal. Don Norman, quien acuñó el término UX, lo define como "todos los aspectos de la interacción del usuario final con la empresa, sus servicios y sus productos." La <strong>accesibilidad</strong> es un subconjunto específico de la UX que se centra en garantizar que personas con discapacidad puedan percibir, operar y comprender el producto. Un producto puede ser usable pero inaccesible (fácil de usar con ratón, imposible con teclado), y puede ser accesible pero no usable (técnicamente operable con lector de pantalla pero confuso y mal organizado). La <strong>utilidad</strong> se refiere a si el producto hace lo que el usuario necesita. Un producto puede ser muy usable pero inútil si no resuelve un problema real del usuario.</p>
+<h3 id="2-las-10-heuristicas-de-nielsen-en-profundidad">2. Las 10 Heurísticas de Nielsen en profundidad</h3>
+<p>En colaboración con Rolf Molich, Jakob Nielsen desarrolló en 1990 las primeras heurísticas de usabilidad, refinadas y publicadas en su forma canónica de 10 principios en 1994. Estas heurísticas no son directrices específicas de interfaz, sino principios amplios y generalizables que capturan aspectos fundamentales de la interacción humano-ordenador. Han demostrado una notable longevidad porque operan a un nivel de abstracción que las hace independientes de tecnologías concretas: aplican tanto a interfaces de línea de comandos como a aplicaciones móviles táctiles, pasando por sitios web, aplicaciones de escritorio, cajeros automáticos, electrodomésticos inteligentes y dashboards de vehículos.</p>
+<p><strong>H1: Visibilidad del estado del sistema.</strong> "El diseño siempre debe mantener informados a los usuarios sobre lo que está sucediendo, mediante retroalimentación apropiada en un tiempo razonable." Esta heurística es probablemente la más fundamental y universalmente aplicable. La retroalimentación puede ser visual (un spinner, una barra de progreso, un cambio de color), auditiva (un sonido de notificación), o táctil (una vibración). El tiempo "razonable" depende del contexto: para una acción simple como marcar un checkbox, la respuesta debe ser instantánea (&lt;100 ms); para una carga de página, una barra de progreso con estimación de tiempo es aceptable; para una operación larga como procesar un vídeo, se necesita información sobre el estado, el progreso y el tiempo restante estimado.</p>
+<p><strong>H2: Coincidencia entre el sistema y el mundo real.</strong> "El sistema debe hablar el lenguaje de los usuarios, con palabras, frases y conceptos familiares, en lugar de términos orientados al sistema. Debe seguir las convenciones del mundo real, haciendo que la información aparezca en un orden natural y lógico." Ejemplos de cumplimiento incluyen el uso de metáforas del mundo físico (el carrito de compra, la papelera de reciclaje, el escritorio), iconos basados en objetos reales reconocibles, y lenguaje conversacional en lugar de jerga técnica. Ejemplos de violación incluyen mostrar IDs internos de base de datos al usuario ("Error: FK_Constraint_UserID_3"), usar terminología interna de la empresa que el cliente no conoce, u ordenar información alfabéticamente cuando el orden lógico para el usuario sería por relevancia o cronología.</p>
+<p><strong>H3: Control y libertad del usuario.</strong> "Los usuarios a menudo eligen funciones del sistema por error y necesitan una 'salida de emergencia' claramente marcada para abandonar el estado no deseado sin tener que pasar por un diálogo extendido. El sistema debe ofrecer deshacer y rehacer." Esta heurística aborda la libertad del usuario para explorar sin miedo a consecuencias irreversibles. Los botones "Atrás", "Cancelar", "Cerrar" y los comandos "Deshacer" son materializaciones de este principio. Una interfaz que no ofrece forma de deshacer una acción obliga al usuario a ser perfecto, lo cual genera ansiedad y ralentiza la exploración.</p>
+<p><strong>H4: Consistencia y estándares.</strong> "Los usuarios no deberían tener que preguntarse si diferentes palabras, situaciones o acciones significan lo mismo. Se deben seguir las convenciones de la plataforma y de la industria." La consistencia puede ser interna (dentro del mismo producto: todos los botones primarios tienen el mismo color, la misma acción se etiqueta igual en todas partes) o externa (con otros productos y plataformas: seguir las guías de estilo de iOS/Android/web, usar iconos estándar reconocibles). La consistencia reduce la curva de aprendizaje y la carga cognitiva porque el usuario transfiere conocimiento de una parte del sistema a otra.</p>
+<p><strong>H5: Prevención de errores.</strong> "Mejor que los buenos mensajes de error es un diseño cuidadoso que evite que ocurran errores en primer lugar." Esta heurística aboga por un diseño proactivo que elimine las condiciones propensas a errores. Ejemplos: deshabilitar opciones inválidas en lugar de permitir seleccionarlas y luego mostrar un error; usar selectores de fecha en lugar de campos de texto libre para fechas; mostrar confirmación antes de acciones destructivas; usar valores por defecto sensatos; aplicar máscaras de entrada en campos con formato fijo (DNI, teléfono, IBAN).</p>
+<p><strong>H6: Reconocimiento antes que recuerdo.</strong> "Minimizar la carga de memoria del usuario haciendo visibles los objetos, acciones y opciones. El usuario no debería tener que recordar información de una parte a otra del diálogo." La psicología cognitiva distingue entre recuerdo (generar información de la memoria sin ayudas) y reconocimiento (identificar información entre opciones presentadas). El reconocimiento es mucho más fácil y rápido. Ejemplos: menús visibles en lugar de comandos memorizados, autocompletado que sugiere opciones basadas en el historial, mostrar las opciones de filtro disponibles en lugar de esperar que el usuario sepa qué filtros existen.</p>
+<p><strong>H7: Flexibilidad y eficiencia de uso.</strong> "Los aceleradores —invisibles para el usuario novato— pueden acelerar la interacción del usuario experto, de modo que el sistema pueda adaptarse tanto a usuarios inexpertos como experimentados." Esta heurística reconoce que no todos los usuarios tienen el mismo nivel de experiencia, y que una interfaz debe servir tanto al principiante como al experto. Los atajos de teclado, las opciones de personalización, las plantillas y los flujos rápidos (como "comprar de nuevo" basado en pedidos anteriores) son ejemplos de aceleradores que no estorban al novato pero empoderan al experto.</p>
+<p><strong>H8: Diseño estético y minimalista.</strong> "Los diálogos no deben contener información irrelevante o raramente necesaria. Cada unidad extra de información en un diálogo compite con las unidades relevantes de información y disminuye su visibilidad relativa." Esta heurística se basa en el principio de que menos es más en el diseño de interfaces. El desorden visual, la sobrecarga informativa y la multiplicidad de opciones abruman al usuario y dificultan la toma de decisiones. La ley de Hick, que establece que el tiempo de decisión aumenta logarítmicamente con el número de opciones, proporciona la base científica para esta heurística.</p>
+<p><strong>H9: Ayudar a los usuarios a reconocer, diagnosticar y recuperarse de errores.</strong> "Los mensajes de error deben expresarse en lenguaje claro (no en códigos), indicar con precisión el problema y sugerir una solución de manera constructiva." Un buen mensaje de error tiene tres componentes: (1) qué salió mal, en lenguaje del usuario; (2) por qué salió mal, si es relevante; (3) qué puede hacer el usuario para solucionarlo. "Error 403 Forbidden" es un mal mensaje. "No tienes permiso para acceder a esta página. Si crees que deberías poder acceder, contacta con tu administrador o inicia sesión con una cuenta diferente" es un buen mensaje.</p>
+<p><strong>H10: Ayuda y documentación.</strong> "Aunque es mejor que el sistema pueda utilizarse sin documentación, puede ser necesario proporcionar ayuda y documentación. Esta debe ser fácil de buscar, estar enfocada en las tareas del usuario, listar pasos concretos a seguir, y no ser demasiado extensa." La ayuda debe ser contextual (relevante para lo que el usuario está haciendo), accionable (pasos concretos, no teoría), y concisa. La documentación exhaustiva en PDF rara vez se consulta; la ayuda integrada en la interfaz (tooltips, texto de ayuda junto al campo, preguntas frecuentes enlazadas) es mucho más efectiva.</p>
+<h3 id="3-evaluacion-heuristica-metodologia">3. Evaluación heurística: metodología</h3>
+<p>La evaluación heurística es un método de inspección donde un pequeño número de evaluadores examina una interfaz y juzga si cada elemento cumple con una lista de principios de usabilidad (las heurísticas). Su popularidad en la industria se debe a su excelente relación coste-beneficio: es rápida (se puede completar en días, no semanas), económica (no requiere laboratorio, equipamiento especial ni reclutamiento masivo), y efectiva (encuentra un alto porcentaje de problemas de usabilidad, especialmente los más graves).</p>
+<p>Nielsen y Molich demostraron que el número óptimo de evaluadores para una evaluación heurística es entre 3 y 5. Un único evaluador encuentra aproximadamente el 35% de los problemas de usabilidad de una interfaz. Dos evaluadores encuentran alrededor del 50%. Cinco evaluadores encuentran aproximadamente el 75-80%. La curva tiene un claro rendimiento decreciente: añadir más evaluadores por encima de 5 encuentra proporcionalmente pocos problemas nuevos y aumenta el coste considerablemente. Esto se debe a que diferentes evaluadores tienden a encontrar diferentes tipos de problemas, y tras 5 evaluadores, la mayoría de los problemas significativos ya han sido identificados.</p>
+<p>La escala de severidad permite priorizar los hallazgos para que el equipo de desarrollo sepa qué corregir primero. La escala propuesta por Nielsen tiene 5 niveles: 0 = No es un problema de usabilidad (falso positivo, no necesita acción). 1 = Problema cosmético (solo necesita arreglarse si hay tiempo extra; no afecta significativamente a la experiencia). 2 = Problema menor (baja prioridad; debería arreglarse pero no es urgente). 3 = Problema mayor (alta prioridad; importante arreglarlo; causa dificultades significativas a muchos usuarios). 4 = Problema catastrófico (imperativo arreglarlo antes del lanzamiento; impide a los usuarios completar tareas esenciales). La severidad se determina combinando tres factores: la frecuencia con la que ocurre el problema, el impacto que tiene en el usuario cuando ocurre, y la persistencia del problema (¿es algo que el usuario puede superar una vez que lo conoce, o le afectará cada vez?).</p>
+<h3 id="4-test-de-usuarios-la-evidencia-empirica">4. Test de usuarios: la evidencia empírica</h3>
+<p>El test de usuarios es la técnica de evaluación más convincente y reveladora porque permite observar directamente cómo personas reales interactúan con el producto. Mientras que la evaluación heurística nos dice qué principios se violan, el test de usuarios nos muestra qué sucede realmente: dónde se atascan los usuarios, qué malinterpretan, qué atajos descubren, y qué emociones experimentan durante el proceso.</p>
+<p>La técnica del <strong>think aloud</strong> (pensar en voz alta) es la práctica estándar en tests de usabilidad moderados. Consiste en pedir al participante que verbalice continuamente sus pensamientos, expectativas, confusiones y decisiones mientras realiza las tareas. Esta técnica, desarrollada originalmente en psicología cognitiva, permite al moderador acceder al modelo mental del usuario en tiempo real. No es natural (la mayoría de las personas no verbalizan sus pensamientos al usar un ordenador), por lo que el moderador debe recordar periódicamente al participante que siga hablando si se queda en silencio. Las frases típicas que el moderador usa para reactivar el think aloud incluyen: "¿Qué estás mirando ahora?", "¿Qué esperas que pase si haces clic ahí?", "¿Hay algo que te llame la atención?".</p>
+<p>El <strong>número de participantes</strong> para tests cualitativos (donde el objetivo es encontrar problemas, no medirlos) ha sido establecido por la investigación de Nielsen en 5 usuarios. Con 5 usuarios se descubren aproximadamente el 85% de los problemas de usabilidad de una interfaz. Testear con más usuarios en un estudio cualitativo tiene rendimiento decreciente y es más eficiente realizar múltiples iteraciones de test con 5 usuarios cada una (testear, rediseñar, volver a testear) que un único test masivo. Sin embargo, para estudios cuantitativos (donde se quiere medir con precisión tiempos, tasas de éxito o comparar diseños), se necesitan muestras más grandes, típicamente entre 20 y 40 participantes, para alcanzar significancia estadística.</p>
+<h3 id="5-metricas-de-usabilidad">5. Métricas de usabilidad</h3>
+<p><strong>SUS (System Usability Scale):</strong> Desarrollado por John Brooke en 1986, es el cuestionario de usabilidad más utilizado en el mundo, con miles de estudios que lo referencian. Consta de 10 preguntas con escala Likert de 1 a 5. Su gran ventaja es que proporciona una puntuación única de 0 a 100 que resume la usabilidad percibida, permitiendo comparar cualquier sistema con cualquier otro. La puntuación media del SUS a lo largo de décadas de estudios es aproximadamente 68. Puntuaciones por encima de 80 se consideran excelentes (percentil A). Por debajo de 50 se consideran inaceptables. El SUS no mide dimensiones separadas (no da una puntuación de "facilidad de aprendizaje" frente a "eficiencia"), sino que proporciona una medida unidimensional de usabilidad percibida que ha demostrado ser robusta y fiable.</p>
+<p><strong>SEQ (Single Ease Question):</strong> Es la métrica de satisfacción más simple posible: una única pregunta tras cada tarea: "En general, ¿cómo de fácil o difícil fue completar esta tarea?" en una escala de 1 (muy difícil) a 7 (muy fácil). Su simplicidad es su fortaleza: rápida de administrar, sensible a diferencias entre tareas, y mínimamente intrusiva.</p>
+<p><strong>NPS (Net Promoter Score):</strong> Mide la lealtad del cliente y su disposición a recomendar el producto. Una única pregunta: "¿Qué probabilidad hay de que recomiendes este producto a un amigo o colega?" en escala de 0 a 10. Los que responden 9-10 son "promotores", 7-8 son "neutrales", 0-6 son "detractores". NPS = % promotores - % detractores.</p>
+<h3 id="6-eye-tracking-heat-maps-y-analitica-web">6. Eye Tracking, Heat Maps y Analítica Web</h3>
+<p>El <strong>eye tracking</strong> registra los movimientos oculares mediante hardware especializado (cámaras infrarrojas de alta frecuencia, 60-1200 Hz) para determinar exactamente hacia dónde mira el usuario en cada momento. Los mapas de calor visualizan las zonas más miradas (rojo = mucho, azul = poco) y los gaze plots muestran la secuencia de fijaciones (círculos numerados) conectadas por líneas (sacadas). El eye tracking es muy valioso para estudios académicos y de investigación fundamental (dónde mira la gente en una página de resultados de Google, cómo escanean una landing page), pero tiene limitaciones prácticas: alto coste del hardware, necesidad de calibración individual, entorno de laboratorio artificial, y el hecho de que "mirar" no equivale a "ver" o "comprender". Mirar fijamente un elemento no significa que el usuario lo haya procesado cognitivamente.</p>
+<p>Los <strong>heat maps de comportamiento</strong> (Hotjar, Clarity) registran datos pasivos de usuarios reales en su entorno natural. Los click maps muestran dónde hacen clic los usuarios, revelando elementos que los usuarios creen que son clickables (aunque no lo sean), y qué elementos importantes están recibiendo pocos clics. Los scroll maps son particularmente útiles para páginas de contenido largo: muestran que la mayoría de los usuarios abandonan antes de llegar al 50% de la página, lo que implica que el contenido más importante debe estar "above the fold". Los move maps registran la trayectoria del cursor, que correlaciona aproximadamente con la mirada.</p>
+<p>El <strong>A/B testing</strong> es un experimento controlado donde se divide aleatoriamente el tráfico entre dos o más versiones de una página para medir cuál funciona mejor en una métrica predefinida. Es especialmente poderoso en comercio electrónico y marketing digital para optimizar conversiones. La significancia estadística (p &lt; 0.05) debe alcanzarse antes de declarar un ganador, y el test debe ejecutarse durante ciclos completos de negocio (mínimo una semana, idealmente dos) para evitar sesgos estacionales o de día de la semana.</p>
+<h2 id="ejemplos-guiados">Ejemplos guiados</h2>
+<h3 id="ejemplo-guiado-1-evaluacion-heuristica-de-un-checkout">Ejemplo Guiado 1: Evaluación Heurística de un Checkout</h3>
+<p>A continuación analizamos el proceso de checkout de una tienda online aplicando las 10 heurísticas de Nielsen.</p>
+<p><strong>Checkout analizado:</strong> 4 pasos (identificación, dirección, envío, pago).</p>
+<p><strong>Hallazgos principales:</strong></p>
+<ol>
+<li>
+<p><strong>H1 - Visibilidad del estado:</strong> El checkout no muestra el número de paso actual. El usuario no sabe si está en el paso 2 de 4 o en el 3 de 7. Solución: añadir barra de progreso: "Paso 2 de 4: Dirección de envío". Severidad: 3.</p>
+</li>
+<li>
+<p><strong>H3 - Control y libertad:</strong> No hay botón "Volver" entre pasos del checkout. Si el usuario se equivoca en la dirección, no puede volver a corregirla sin usar el botón Atrás del navegador (que puede perder datos). Solución: añadir botones de navegación visible entre pasos. Severidad: 4.</p>
+</li>
+<li>
+<p><strong>H5 - Prevención de errores:</strong> El campo de código postal acepta cualquier texto sin validar formato. El usuario puede escribir letras donde deberían ir números. Solución: aplicar máscara de entrada o validación en tiempo real. Severidad: 3.</p>
+</li>
+<li>
+<p><strong>H6 - Reconocimiento vs recuerdo:</strong> Los métodos de envío se muestran con nombres técnicos ("Envío estándar 48h", "Envío urgente 24h", "Punto de recogida SEUR") sin explicar qué significa cada uno. Solución: añadir descripciones breves con precio y plazo. Severidad: 2.</p>
+</li>
+</ol>
+<h3 id="ejemplo-guiado-2-diseno-de-un-test-de-usuario-para-app-de-banca-movil">Ejemplo Guiado 2: Diseño de un Test de Usuario para App de Banca Móvil</h3>
+<p><strong>Objetivo:</strong> Evaluar si los usuarios pueden realizar transferencias bancarias desde la app móvil sin errores y en un tiempo razonable.</p>
+<p><strong>Participantes:</strong> 5 clientes del banco, 2 con baja experiencia tecnológica (mayores de 55), 3 con experiencia media. Reclutados mediante agencia de estudios de mercado. Incentivo: 50€.</p>
+<p><strong>Tareas del test:</strong></p>
+<ol>
+<li>Inicia sesión en la app con las credenciales proporcionadas. (Tarea de calentamiento)</li>
+<li>Revisa el saldo de tu cuenta principal y dinos cuál es.</li>
+<li>Realiza una transferencia de 150€ a la cuenta ES12 3456 7890 1234 5678 9012.</li>
+<li>Programa una transferencia periódica de 50€ para el día 1 de cada mes.</li>
+<li>Encuentra y activa la opción de notificaciones push para movimientos superiores a 500€.</li>
+</ol>
+<p><strong>Métricas a medir:</strong> Tasa de éxito por tarea, tiempo por tarea, número de errores, puntuación SEQ tras cada tarea, puntuación SUS al final.</p>
+<h3 id="ejemplo-guiado-3-analisis-de-scroll-map">Ejemplo Guiado 3: Análisis de Scroll Map</h3>
+<p>Analizamos un scroll map de una página de producto:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>|=====================| 100%  Hero: imagen + nombre + precio + CTA
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>|=====================|  98%  Valoraciones en estrellas
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>|==================== |  85%  Descripción corta
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>|================     |  62%  Características técnicas
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>|=========            |  41%  Opiniones de clientes
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>|======               |  28%  Productos relacionados
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>|===                  |  12%  Preguntas frecuentes
+</span></code></pre></div>
+<p><strong>Análisis:</strong> Las opiniones de clientes (41% de visibilidad) y los productos relacionados (28%) están en una posición demasiado baja. Dado que las opiniones son un factor decisivo de compra, deberían estar más arriba. La sección de características técnicas retiene bien (62%), lo que indica que los usuarios la valoran pero quizás es demasiado extensa. Recomendación: mover la sección de opiniones justo después de la descripción, y resumir las características técnicas en bullets con opción de "Ver especificaciones completas".</p>
+<h3 id="ejemplo-guiado-4-calculo-e-interpretacion-del-sus">Ejemplo Guiado 4: Cálculo e Interpretación del SUS</h3>
+<p>5 usuarios evalúan una intranet corporativa. Sus respuestas:</p>
+<table>
+<thead>
+<tr>
+<th>Preg</th>
+<th>U1</th>
+<th>U2</th>
+<th>U3</th>
+<th>U4</th>
+<th>U5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 (impar)</td>
+<td>3</td>
+<td>4</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+</tr>
+<tr>
+<td>2 (par)</td>
+<td>2</td>
+<td>1</td>
+<td>3</td>
+<td>2</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3 (impar)</td>
+<td>4</td>
+<td>3</td>
+<td>3</td>
+<td>4</td>
+<td>3</td>
+</tr>
+<tr>
+<td>4 (par)</td>
+<td>1</td>
+<td>2</td>
+<td>2</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr>
+<td>5 (impar)</td>
+<td>3</td>
+<td>3</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+</tr>
+<tr>
+<td>6 (par)</td>
+<td>2</td>
+<td>1</td>
+<td>3</td>
+<td>2</td>
+<td>1</td>
+</tr>
+<tr>
+<td>7 (impar)</td>
+<td>4</td>
+<td>4</td>
+<td>3</td>
+<td>4</td>
+<td>4</td>
+</tr>
+<tr>
+<td>8 (par)</td>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr>
+<td>9 (impar)</td>
+<td>3</td>
+<td>3</td>
+<td>2</td>
+<td>3</td>
+<td>3</td>
+</tr>
+<tr>
+<td>10 (par)</td>
+<td>2</td>
+<td>1</td>
+<td>3</td>
+<td>2</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Cálculo:</strong> Para impares: valor-1. Para pares: 5-valor. Suma × 2.5.</p>
+<ul>
+<li>U1: (3-1)+(5-2)+(4-1)+(5-1)+(3-1)+(5-2)+(4-1)+(5-1)+(3-1)+(5-2) = 2+3+3+4+2+3+3+4+2+3 = 29. SUS = 29*2.5 = 72.5</li>
+<li>U2: 3+4+2+3+2+4+3+4+2+4 = 31. SUS = 77.5</li>
+<li>U3: 1+2+2+3+1+2+2+3+1+2 = 19. SUS = 47.5</li>
+<li>U4: 2+3+3+4+2+3+3+4+2+3 = 29. SUS = 72.5</li>
+<li>U5: 3+4+2+3+3+4+3+3+2+4 = 31. SUS = 77.5</li>
+</ul>
+<p><strong>SUS medio:</strong> (72.5+77.5+47.5+72.5+77.5)/5 = 69.5</p>
+<p><strong>Interpretación:</strong> La puntuación media de 69.5 está ligeramente por encima de la media histórica de 68. Es un resultado aceptable pero no excelente. El usuario 3 encuentra el sistema claramente peor que los demás (47.5, por debajo de 50), lo que merece investigación: ¿qué perfil tiene? ¿qué tareas le resultaron frustrantes?</p>
+<h2 id="casos-reales">Casos reales</h2>
+<h3 id="caso-real-1-analisis-de-usabilidad-de-amazon">Caso Real 1: Análisis de Usabilidad de Amazon</h3>
+<p>Amazon es citado frecuentemente como referente de usabilidad en ecommerce, pero no es perfecto. Analicemos algunas decisiones de diseño:</p>
+<p><strong>Acierto - One-Click Purchase:</strong> La compra en un clic es un ejemplo magistral de la heurística 7 (Flexibilidad y eficiencia). Para usuarios recurrentes que ya tienen configurados sus datos de envío y pago, elimina todo el proceso de checkout. El usuario ve "Comprar ahora con 1-Clic" y, literalmente, con un clic ha comprado. Esto reduce la fricción al mínimo absoluto y es una ventaja competitiva tan importante que Amazon patentó el concepto durante años.</p>
+<p><strong>Problema - Sobrecarga informativa en página de producto:</strong> Las fichas de producto de Amazon acumulan una cantidad abrumadora de información: galería de imágenes, variantes (color, talla), precio, opciones de envío, "Comprados juntos habitualmente", "Quién compró esto también compró...", fichas técnicas, opiniones, preguntas, productos patrocinados... Viola la heurística 8 (Diseño minimalista). Amazon apuesta por saturar de opciones porque su algoritmo de recomendación y venta cruzada genera un porcentaje muy significativo de sus ingresos, pero desde el punto de vista de la usabilidad pura, es abrumador.</p>
+<p><strong>Problema - Devoluciones y servicio al cliente ocultos:</strong> Encontrar cómo devolver un producto o contactar con atención al cliente requiere navegar por múltiples niveles de menús, páginas de ayuda y preguntas frecuentes. Amazon prioriza que compres y no te vayas, no que resuelvas problemas. Esto es una violación deliberada de la heurística 6 (Reconocimiento antes que recuerdo) y la 3 (Control y libertad) por razones de negocio: hacen que devolver sea inconvenientemente difícil para reducir devoluciones.</p>
+<h3 id="caso-real-2-analisis-de-usabilidad-de-renfecom">Caso Real 2: Análisis de Usabilidad de Renfe.com</h3>
+<p>La web de Renfe es un caso de estudio recurrente (y no precisamente por sus virtudes) en el ámbito de la usabilidad en España:</p>
+<p><strong>Problema crítico - El buscador de trenes:</strong> Durante años, el buscador de trenes de Renfe requería seleccionar estación de origen y destino de listas desplegables enormes sin búsqueda por texto, y no permitía escribir directamente el nombre de la estación. Esto violaba flagrantemente la heurística 7 (Flexibilidad y eficiencia) y la 6 (Reconocimiento). Un usuario que sabe que quiere viajar de "Madrid" a "Barcelona" se veía forzado a buscar en listas de cientos de estaciones, incluyendo apeaderos diminutos. Afortunadamente, esto ha mejorado en versiones recientes.</p>
+<p><strong>Problema - Proceso de pago confuso:</strong> El proceso de compra introduce múltiples pasos con opciones confusas (tarifas con nombres como "Promo", "Promo+", "Flexible", "Mesa" que no son autoexplicativas), selección de asiento en un mapa interactivo poco usable, y múltiples pantallas de confirmación. Un benchmark comparando el tiempo necesario para comprar un billete en Renfe vs Trainline muestra diferencias de 3-5 minutos a favor de la competencia.</p>
+<p><strong>Acierto - Mejora continua:</strong> Es justo reconocer que Renfe ha invertido significativamente en mejorar la usabilidad de su plataforma digital en los últimos años. La introducción de búsqueda con autocompletado, la simplificación del proceso de pago, y la app móvil (aunque mejorable) muestran una trayectoria positiva.</p>
+<h3 id="caso-real-3-analisis-de-portal-de-empleo-publico">Caso Real 3: Análisis de Portal de Empleo Público</h3>
+<p>Los portales de empleo público (como la plataforma de oposiciones de muchas comunidades autónomas) presentan problemas de usabilidad sistémicos:</p>
+<p><strong>Problema - Lenguaje administrativo:</strong> Utilizan terminología jurídico-administrativa que el ciudadano medio no entiende: "subsanación de solicitudes", "baremación de méritos", "lista provisional de personas aspirantes admitidas y excluidas". Viola la heurística 2 (Lenguaje del mundo real). Un ciudadano quiere saber simplemente "¿Me han admitido a la oposición?" o "¿Cuándo es el examen?".</p>
+<p><strong>Problema - Arquitectura de información:</strong> La información está dispersa en múltiples boletines, sedes electrónicas y portales con estructuras diferentes. Un opositor necesita consultar 3 o 4 sitios web diferentes para seguir un único proceso. Viola las heurísticas 6 (Reconocimiento) y 8 (Minimalismo). Solución: unificar en un único portal personalizado donde cada opositor vea solo sus procesos, sus plazos y sus estados.</p>
+<p><strong>Problema - PDFs no accesibles:</strong> Gran parte de la información se publica en PDFs escaneados, no en HTML. Esto es un problema de usabilidad (no se puede buscar texto, no se adapta a móvil) y de accesibilidad (los lectores de pantalla no pueden leer imágenes escaneadas).</p>
+<h2 id="actividades-guiadas">Actividades guiadas</h2>
+<h3 id="actividad-guiada-1-evaluacion-heuristica-de-un-sitio-web-real">Actividad Guiada 1: Evaluación Heurística de un Sitio Web Real</h3>
+<p><strong>Objetivo:</strong> Realizar una evaluación heurística completa de un sitio web elegido por el alumno, aplicando las 10 heurísticas de Nielsen, asignando severidad a cada hallazgo y elaborando un informe profesional.</p>
+<p><strong>Material:</strong> Plantilla de evaluación heurística, capturador de pantalla, editor de textos.</p>
+<p><strong>Duración:</strong> 90 minutos.</p>
+<h3 id="actividad-guiada-2-diseno-y-ejecucion-de-un-mini-test-de-usuario">Actividad Guiada 2: Diseño y Ejecución de un Mini Test de Usuario</h3>
+<p><strong>Objetivo:</strong> Diseñar el guion de un test de usuario, reclutar a 3 compañeros como participantes, ejecutar el test (grabando la pantalla) y analizar los resultados.</p>
+<p><strong>Duración:</strong> 120 minutos.</p>
+<h3 id="actividad-guiada-3-calculo-e-interpretacion-de-metricas-sus">Actividad Guiada 3: Cálculo e Interpretación de Métricas SUS</h3>
+<p><strong>Objetivo:</strong> Administrar el cuestionario SUS a 5 usuarios de un sitio web, calcular las puntuaciones individuales y la media, e interpretar los resultados contrastándolos con los benchmarks de la industria.</p>
+<h3 id="actividad-guiada-4-analisis-de-heat-maps-con-datos-reales-de-hotjar">Actividad Guiada 4: Análisis de Heat Maps con Datos Reales de Hotjar</h3>
+<p><strong>Objetivo:</strong> Utilizar datos de heat maps proporcionados por el profesor para identificar problemas de usabilidad en una página web y proponer soluciones de rediseño.</p>
+<h3 id="actividad-guiada-5-diseno-de-un-test-ab">Actividad Guiada 5: Diseño de un Test A/B</h3>
+<p><strong>Objetivo:</strong> Diseñar un experimento A/B completo: formular hipótesis, definir variantes, calcular tamaño de muestra necesario, y especificar el plan de análisis estadístico.</p>
+<h2 id="actividades-propuestas">Actividades propuestas</h2>
+<h3 id="actividad-propuesta-1-evaluacion-heuristica-comparativa">Actividad Propuesta 1: Evaluación Heurística Comparativa</h3>
+<p>Realiza una evaluación heurística de dos sitios web competidores del mismo sector (por ejemplo, dos aerolíneas, dos supermercados online, dos plataformas de streaming). Compara los resultados identificando fortalezas y debilidades de cada uno. Elabora un informe con tabla comparativa y recomendaciones para cada competidor.</p>
+<p><strong>Criterios de evaluación:</strong> Aplicación correcta de las 10 heurísticas (3 puntos), severidad justificada (2 puntos), calidad del análisis comparativo (3 puntos), formato profesional del informe (2 puntos).</p>
+<h3 id="actividad-propuesta-2-test-de-usuario-completo-documentado">Actividad Propuesta 2: Test de Usuario Completo Documentado</h3>
+<p>Planifica, ejecuta y documenta un test de usuario con 5 participantes para una tarea concreta (por ejemplo, "comprar un billete de avión", "reservar una cita médica online"). Incluye: guion de test, fichas de consentimiento informado, transcripción de hallazgos, métricas calculadas (tasa de éxito, tiempos, errores), cuestionario SUS, y recomendaciones priorizadas de mejora.</p>
+<p><strong>Criterios de evaluación:</strong> Calidad del guion y las tareas (2 puntos), ejecución profesional y grabación (2 puntos), análisis de resultados y métricas (3 puntos), informe con recomendaciones accionables (3 puntos).</p>
+<h3 id="actividad-propuesta-3-propuesta-de-rediseno-basada-en-analitica-web">Actividad Propuesta 3: Propuesta de Rediseño Basada en Analítica Web</h3>
+<p>Accede a los datos de Google Analytics de un sitio web (proporcionados por el profesor o de un proyecto personal). Identifica al menos 5 problemas de usabilidad inferidos de los datos (alta tasa de rebote en ciertas páginas, abandono en pasos del embudo de conversión, bajo tiempo en página). Propón soluciones de rediseño para cada problema y estima el impacto esperado.</p>
+<h3 id="actividad-propuesta-4-analisis-heuristico-de-una-aplicacion-movil">Actividad Propuesta 4: Análisis Heurístico de una Aplicación Móvil</h3>
+<p>Instala una aplicación móvil de banca, transporte público o administración. Realiza una evaluación heurística adaptada a móvil (existen conjuntos de heurísticas específicas para dispositivos táctiles, como las de Inostroza o las de Joyce). Identifica problemas relacionados con el tamaño de los targets táctiles, la navegación por gestos, y la legibilidad en pantallas pequeñas.</p>
+<h3 id="actividad-propuesta-5-creacion-de-un-panel-de-metricas-de-usabilidad">Actividad Propuesta 5: Creación de un Panel de Métricas de Usabilidad</h3>
+<p>Diseña un dashboard (en Excel, Google Sheets o herramienta BI) que consolide y visualice las métricas de usabilidad de un producto digital. Debe incluir: evolución temporal del SUS, tasas de éxito por tarea en los últimos tests, comparativa con benchmarks, y funnel de conversión con tasas de abandono por paso. Explica cómo usarías este panel para tomar decisiones de diseño.</p>
+<h2 id="actividades-de-ampliacion">Actividades de ampliación</h2>
+<h3 id="actividad-de-ampliacion-1-investigacion-sobre-roi-de-usabilidad">Actividad de Ampliación 1: Investigación sobre ROI de Usabilidad</h3>
+<p>Investiga y documenta al menos 10 casos reales documentados donde la inversión en usabilidad produjo un retorno medible. Busca en fuentes como Nielsen Norman Group, MeasuringU, estudios de caso de empresas como Amazon, IBM, Apple, o casos publicados en conferencias como UXPA. Elabora un informe que incluya: empresa, sector, inversión realizada, mejora implementada, resultado medible (en % de conversión, reducción de costes, aumento de ingresos), y fuente de la información.</p>
+<p><strong>Criterios de evaluación:</strong> Variedad de casos y sectores (3 puntos), rigor en la documentación de fuentes (3 puntos), análisis del ROI y lecciones aprendidas (4 puntos).</p>
+<h3 id="actividad-de-ampliacion-2-implementacion-de-un-proceso-de-ux-continua">Actividad de Ampliación 2: Implementación de un Proceso de UX Continua</h3>
+<p>Diseña un proceso completo de usabilidad y UX para integrar en un equipo de desarrollo ágil (Scrum). Define: ceremonias (cuándo se testea, cuándo se evalúa), roles (quién modera, quién observa, quién analiza), métricas (qué se mide y con qué frecuencia), herramientas (stack tecnológico para tests, analítica, heat maps), y entregables por sprint. El proceso debe ser realista para un equipo de 5-7 desarrolladores con 1 diseñador UX.</p>
+<h3 id="actividad-de-ampliacion-3-benchmarking-de-usabilidad-sectorial">Actividad de Ampliación 3: Benchmarking de Usabilidad Sectorial</h3>
+<p>Selecciona un sector (banca online, ecommerce de moda, reserva de viajes, administración electrónica) y realiza un estudio de benchmarking de usabilidad con al menos 5 competidores. Evalúa cada uno con: las 10 heurísticas de Nielsen, métricas de rendimiento (tiempo para tareas clave), un análisis SUS mediante 3 usuarios por sitio, y un heat map de scroll de las páginas principales. Elabora un informe de posicionamiento competitivo con rankings, fortalezas y debilidades, y recomendaciones para un hipotético nuevo entrante en el sector.</p>
+<h2 id="buenas-practicas">Buenas prácticas</h2>
+<ol>
+<li>
+<p><strong>Testea pronto y a menudo.</strong> No esperes a tener el producto "terminado" para hacer tests de usuario. Testea wireframes en papel, prototipos de baja fidelidad, y versiones intermedias. Los problemas encontrados temprano son infinitamente más baratos de arreglar.</p>
+</li>
+<li>
+<p><strong>No testes con familiares, amigos o compañeros de trabajo.</strong> Su conocimiento previo del proyecto y su deseo de no herir sentimientos sesgan completamente los resultados. Recluta participantes que no tengan relación con el equipo.</p>
+</li>
+<li>
+<p><strong>Mide antes y después.</strong> Siempre establece una línea base (métricas del diseño actual) antes de implementar cambios. Sin línea base, no puedes demostrar que tu rediseño mejoró algo.</p>
+</li>
+<li>
+<p><strong>Triangula métodos.</strong> No confíes en un solo método de evaluación. Combina evaluación heurística (rápida y barata), tests de usuario (evidencia directa) y analítica web (datos a gran escala) para obtener una imagen completa.</p>
+</li>
+<li>
+<p><strong>No hagas preguntas que sugieran la respuesta.</strong> En un test de usuario, nunca digas "¿No crees que sería mejor si el botón estuviera aquí?". Pregunta en su lugar: "¿Hay algo que te llame la atención en esta pantalla?".</p>
+</li>
+<li>
+<p><strong>Prioriza los hallazgos.</strong> No todos los problemas de usabilidad son igual de graves. Usa la combinación de frecuencia × impacto × persistencia para priorizar y enfoca los recursos limitados en los problemas catastróficos y mayores.</p>
+</li>
+<li>
+<p><strong>Graba las sesiones (con consentimiento).</strong> Las grabaciones de tests de usuario son evidencia convincente para stakeholders escépticos. Un vídeo de 30 segundos de un usuario frustrado vale más que 30 páginas de informe.</p>
+</li>
+<li>
+<p><strong>Itera.</strong> Un solo test no resuelve todos los problemas. El mantra de la usabilidad es "diseñar, testear, rediseñar, volver a testear". La mejora es iterativa e incremental.</p>
+</li>
+</ol>
+<h2 id="errores-frecuentes">Errores frecuentes</h2>
+<h3 id="error-1-testear-con-el-numero-equivocado-de-participantes">Error 1: Testear con el número equivocado de participantes</h3>
+<p>Testear con 1 o 2 usuarios y pensar que es suficiente, o testear con 30 usuarios en un estudio cualitativo derrochando recursos. <strong>Solución:</strong> 5 usuarios para tests cualitativos, 20-40 para cuantitativos.</p>
+<h3 id="error-2-creer-que-el-disenador-puede-evaluar-su-propio-diseno">Error 2: Creer que el diseñador puede evaluar su propio diseño</h3>
+<p>El sesgo del creador es inevitable. El diseñador sabe cómo se supone que debe funcionar y no puede experimentar la confusión de un usuario novel. <strong>Solución:</strong> Siempre usa evaluadores o usuarios externos.</p>
+<h3 id="error-3-usar-metricas-sin-contexto">Error 3: Usar métricas sin contexto</h3>
+<p>Decir "el tiempo medio de tarea fue de 120 segundos" sin compararlo con una línea base, un benchmark de la competencia o el tiempo mínimo teórico. <strong>Solución:</strong> Siempre contextualiza las métricas.</p>
+<h3 id="error-4-detener-un-test-ab-antes-de-tiempo">Error 4: Detener un test A/B antes de tiempo</h3>
+<p>Ver resultados provisionales prometedores y detener el test para implementar la variante ganadora, sin alcanzar el tamaño de muestra necesario. Esto produce falsos positivos. <strong>Solución:</strong> Precalcula el tamaño de muestra necesario y no mires los resultados hasta alcanzarlo.</p>
+<h3 id="error-5-ayudar-al-participante-durante-el-test">Error 5: Ayudar al participante durante el test</h3>
+<p>Cuando un participante se atasca, el moderador novato tiende a dar pistas o ayudar. Esto invalida el test porque no vemos lo que el usuario habría hecho por sí mismo. <strong>Solución:</strong> Resiste la tentación de ayudar. Si el usuario está completamente bloqueado, pregúntale qué haría en una situación real, pero no le des la solución.</p>
+<h3 id="error-6-usar-jerga-tecnica-con-los-participantes">Error 6: Usar jerga técnica con los participantes</h3>
+<p>Decir "Haz clic en el CTA del hero" en lugar de "Busca un botón para empezar". <strong>Solución:</strong> Usa el lenguaje del usuario, no el del diseñador o desarrollador.</p>
+<h3 id="error-7-interpretar-los-mapas-de-calor-sin-contexto-cualitativo">Error 7: Interpretar los mapas de calor sin contexto cualitativo</h3>
+<p>Ver que una zona es roja (muy mirada o muy cliqueada) y asumir que es buena, cuando podría indicar confusión (los usuarios hacen clic repetidamente en algo que no es un botón). <strong>Solución:</strong> Los heat maps generan hipótesis, no conclusiones. Valídalas con tests cualitativos.</p>
+<h3 id="error-8-calcular-la-media-cuando-los-datos-tienen-valores-atipicos-extremos">Error 8: Calcular la media cuando los datos tienen valores atípicos extremos</h3>
+<p>Si un participante tardó 50 segundos y otro 500 segundos, la media (275 s) no representa a ninguno de los dos. <strong>Solución:</strong> Usa la mediana o la media geométrica para tiempos de tarea, que son menos sensibles a valores atípicos.</p>
+<h2 id="resumen">Resumen</h2>
+<p>La usabilidad es una disciplina central en el desarrollo de productos digitales que va mucho más allá del "sentido común" o la "intuición del diseñador". Se fundamenta en principios de psicología cognitiva, en metodologías de investigación empírica y en métricas rigurosas que permiten evaluar y mejorar objetivamente las interfaces.</p>
+<p>Las 10 heurísticas de Nielsen constituyen la herramienta de inspección más utilizada y accesible, proporcionando un marco sistemático para identificar problemas sin necesidad de usuarios reales. La evaluación heurística, realizada por 3-5 evaluadores independientes, detecta la mayoría de problemas significativos en días, no en semanas, y con costes mínimos.</p>
+<p>El test de usuarios sigue siendo el patrón oro de la evaluación de usabilidad: observar a personas reales intentando completar tareas reales proporciona evidencia que ninguna inspección puede sustituir. La combinación de métodos cualitativos (observación, think aloud) y cuantitativos (tiempos, tasas de éxito, errores) ofrece una imagen completa de la experiencia del usuario.</p>
+<p>Las métricas estandarizadas (SUS, SEQ, NPS) permiten cuantificar la usabilidad percibida y comparar objetivamente diferentes diseños, versiones y productos. Los heat maps y la analítica web aportan datos de comportamiento a gran escala que complementan los hallazgos cualitativos de tests y evaluaciones.</p>
+<p>La práctica de la usabilidad es inherentemente iterativa: diseñar, prototipar, evaluar, aprender, rediseñar. Cada ciclo produce un producto más cercano a las necesidades y capacidades reales de sus usuarios.</p>
+<h2 id="recursos-complementarios">Recursos complementarios</h2>
+<h3 id="libros">Libros</h3>
+<ul>
+<li><strong>"Don't Make Me Think" de Steve Krug</strong> (New Riders). El libro de usabilidad más accesible y práctico. Lectura obligatoria para cualquier persona que diseñe o desarrolle interfaces.</li>
+<li><strong>"Rocket Surgery Made Easy" de Steve Krug</strong> (New Riders). Guía práctica para realizar tests de usabilidad con pocos recursos.</li>
+<li><strong>"Usability Engineering" de Jakob Nielsen</strong> (Morgan Kaufmann). El texto académico fundacional de la ingeniería de usabilidad.</li>
+<li><strong>"Measuring the User Experience" de Tom Tullis y Bill Albert</strong> (Morgan Kaufmann). La referencia definitiva sobre métricas de usabilidad y UX.</li>
+<li><strong>"Quantifying the User Experience" de Jeff Sauro y James R. Lewis</strong> (Morgan Kaufmann). Estadística aplicada a UX.</li>
+</ul>
+<h3 id="herramientas">Herramientas</h3>
+<ul>
+<li><strong>Hotjar:</strong> https://www.hotjar.com - Heat maps, grabaciones de sesión, encuestas.</li>
+<li><strong>Microsoft Clarity:</strong> https://clarity.microsoft.com - Heat maps gratuitos ilimitados.</li>
+<li><strong>Maze:</strong> https://maze.co - Tests de usuario no moderados.</li>
+<li><strong>UserTesting:</strong> https://www.usertesting.com - Plataforma de tests de usuario remotos.</li>
+<li><strong>Optimal Workshop:</strong> https://www.optimalworkshop.com - Card sorting, tree testing, first click testing.</li>
+<li><strong>MeasuringU:</strong> https://measuringu.com - Calculadoras de tamaño muestral, benchmarks SUS.</li>
+</ul>
+<h3 id="referencias-online">Referencias online</h3>
+<ul>
+<li><strong>Nielsen Norman Group:</strong> https://www.nngroup.com - Artículos, investigaciones y formación de referencia en usabilidad.</li>
+<li><strong>UX Collective:</strong> https://uxdesign.cc - Publicación en Medium con artículos de calidad sobre UX y usabilidad.</li>
+<li><strong>Laws of UX:</strong> https://lawsofux.com - Colección visual de principios psicológicos aplicados al diseño de interfaces.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pie" >
+        
+          
+          <a href="../14-accesibilidad-web/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: 14. Accesibilidad web">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                14. Accesibilidad web
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../16-diseno-centrado-usuario/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: 16. Diseño centrado en usuario">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              <div class="md-ellipsis">
+                16. Diseño centrado en usuario
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 The authors
+
+    </div>
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate":null,"base":"..","features":["announce.dismiss","content.code.annotate","content.code.copy","content.code.select","content.footnote.tooltips","content.tabs.link","content.tooltips","navigation.footer","navigation.indexes","navigation.instant","navigation.instant.prefetch","navigation.path","navigation.sections","navigation.top","navigation.tracking","search.highlight"],"search":"../assets/javascripts/workers/search.e2d2d235.min.js","tags":null,"translations":{"clipboard.copied":"Copiado al portapapeles","clipboard.copy":"Copiar al portapapeles","search.result.more.one":"1 más en esta página","search.result.more.other":"# más en esta página","search.result.none":"No se encontraron documentos","search.result.one":"1 documento encontrado","search.result.other":"# documentos encontrados","search.result.placeholder":"Teclee para comenzar búsqueda","search.result.term.missing":"Falta","select.version":"Seleccionar versión"},"version":null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.6e5f0216.min.js"></script>
+      
+    
+  </body>
+</html>

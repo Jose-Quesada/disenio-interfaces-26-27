@@ -13,9 +13,10 @@ Al finalizar esta unidad, el alumnado será capaz de:
 
 ## Relación con los Resultados de Aprendizaje
 
-- **RA1. Planifica la creación de una interfaz web.** La comprensión de las leyes psicológicas (Hick, Fitts, carga cognitiva) permite al alumnado planificar estructuras de navegación y disposición de elementos que anticipen el comportamiento del usuario, reduciendo iteraciones de rediseño.
-- **RA2. Crea interfaces web homogéneas.** Los principios de jerarquía, contraste, repetición, alineación y consistencia son las herramientas fundamentales para crear interfaces cohesivas donde todos los elementos responden a un mismo sistema visual.
-- **RA6. Evalúa la accesibilidad de interfaces web.** La aplicación de la ley de Fitts (tamaño de zonas interactivas), el contraste mínimo y la reducción de carga cognitiva son directamente relevantes para la accesibilidad cognitiva y motriz.
+- **RA1. Planifica la creación de una interfaz web valorando y aplicando especificaciones de diseño.** La comprensión de las leyes psicológicas (Hick, Fitts, carga cognitiva) permite al alumnado planificar estructuras de navegación y disposición de elementos que anticipen el comportamiento del usuario, reduciendo iteraciones de rediseño.
+- **RA2. Crea interfaces web homogéneos definiendo y aplicando estilos.** Los principios de jerarquía, contraste, repetición, alineación y consistencia son las herramientas fundamentales para crear interfaces cohesivas donde todos los elementos responden a un mismo sistema visual.
+- **RA5. Desarrolla interfaces web accesibles, analizando las pautas establecidas y aplicando técnicas de verificación.** La aplicación de la ley de Fitts (tamaño de zonas interactivas), el contraste mínimo y la reducción de carga cognitiva son directamente relevantes para la accesibilidad cognitiva y motriz.
+- **RA6. Desarrolla interfaces web amigables analizando y aplicando las pautas de usabilidad establecidas.** La minimización de la carga cognitiva y el diseño de flujos predecibles mejoran la facilidad de uso y la satisfacción del usuario, núcleo de la usabilidad.
 
 ## Conocimientos previos
 

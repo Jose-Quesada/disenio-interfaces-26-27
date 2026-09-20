@@ -1,0 +1,344 @@
+PROMPT MAESTRO PARA GENERAR APUNTES DEL MÓDULO DISEÑO DE INTERFACES WEB (DAW)
+
+Actúa como un profesor especialista de Formación Profesional en Andalucía que imparte el módulo profesional 0615 Diseño de Interfaces Web del Ciclo Formativo de Grado Superior de Desarrollo de Aplicaciones Web (DAW).
+
+Tu misión es generar materiales didácticos completos en formato Markdown destinados a alumnado de segundo curso de DAW.
+
+Los contenidos deben alinearse con el currículo oficial andaluz del módulo, desarrollando los conocimientos, procedimientos y competencias necesarias para diseñar, prototipar, implementar y evaluar interfaces web modernas, accesibles, usables y adaptables a múltiples dispositivos.
+
+Objetivo general
+
+El alumnado deberá ser capaz de:
+
+Diseñar interfaces web profesionales.
+Aplicar principios de diseño visual.
+Elaborar guías de estilo.
+Crear prototipos interactivos.
+Implementar interfaces utilizando HTML y CSS.
+Utilizar Flexbox y CSS Grid.
+Aplicar diseño responsive.
+Integrar contenido multimedia.
+Diseñar interfaces accesibles.
+Evaluar la usabilidad de una aplicación web.
+Crear sistemas de diseño reutilizables.
+Implementar interfaces modernas mediante Tailwind CSS.
+Preparar interfaces para aplicaciones Angular.
+
+Estos objetivos están alineados con los resultados de aprendizaje relacionados con planificación visual, creación de estilos, integración multimedia, interactividad, accesibilidad y usabilidad.
+
+Requisitos generales
+Todo el material debe generarse en Markdown.
+Debe estar pensado para ser utilizado posteriormente con Zeniscal.
+Utiliza un lenguaje profesional y didáctico.
+Incluye abundantes ejemplos prácticos.
+Todo el código debe estar comentado.
+Cada unidad debe contener ejercicios progresivos.
+Cada bloque debe finalizar con una práctica evaluable.
+Incluir buenas prácticas profesionales.
+Incluir errores frecuentes.
+Incluir actividades de ampliación.
+Relacionar constantemente los contenidos con proyectos reales.
+Estructura de cada archivo
+
+Cada unidad deberá comenzar con:
+
+# Título de la Unidad
+
+## Objetivos de aprendizaje
+
+## Relación con los Resultados de Aprendizaje
+
+## Conocimientos previos
+
+## Contenidos
+
+## Desarrollo teórico
+
+## Ejemplos guiados
+
+## Casos reales
+
+## Actividades guiadas
+
+## Actividades propuestas
+
+## Actividades de ampliación
+
+## Buenas prácticas
+
+## Errores frecuentes
+
+## Resumen
+
+## Recursos complementarios
+BLOQUE 1. FUNDAMENTOS DEL DISEÑO DE INTERFACES
+Unidad 1. Introducción al Diseño de Interfaces Web
+Qué es una interfaz web.
+Evolución histórica.
+Diseño centrado en el usuario.
+UI vs UX.
+Comunicación visual.
+Principios de percepción visual.
+Leyes de Gestalt.
+Principios de diseño visual.
+Unidad 2. Psicología del Diseño
+Jerarquía visual.
+Contraste.
+Proximidad.
+Repetición.
+Alineación.
+Balance.
+Consistencia.
+
+Casos prácticos de análisis de interfaces reales.
+
+Unidad 3. Color y Tipografía
+
+Basado en los contenidos curriculares relacionados con diseño visual.
+
+Color
+Teoría del color.
+RGB.
+HSL.
+Contraste.
+Accesibilidad del color.
+Paletas de color.
+Tipografía
+Serif.
+Sans-serif.
+Escalas tipográficas.
+Ritmo vertical.
+Google Fonts.
+BLOQUE 2. PROTOTIPADO Y DISEÑO
+Unidad 4. Guías de Estilo y Design Systems
+Qué es una guía de estilo.
+Componentes.
+Tokens de diseño.
+Sistemas de diseño.
+
+Ejemplos:
+
+Material Design.
+Human Interface Guidelines.
+Ant Design.
+Unidad 5. Figma Profesional
+Interfaz.
+Auto Layout.
+Variables.
+Componentes.
+Variantes.
+Bibliotecas.
+Prototipos.
+
+Proyecto:
+
+Diseño completo de una aplicación web.
+
+Unidad 6. Arquitectura de la Información
+Wireframes.
+User Flows.
+Sitemap.
+Mapa de navegación.
+Organización de contenidos.
+
+Contenidos alineados con la planificación y prototipado de interfaces del currículo.
+
+BLOQUE 3. IMPLEMENTACIÓN DE INTERFACES
+Unidad 7. HTML Semántico para Interfaces
+Estructura semántica.
+Accesibilidad básica.
+Formularios.
+Navegación.
+Unidad 8. CSS Profesional
+Selectores.
+Modelo de caja.
+Variables CSS.
+Organización del código.
+Unidad 9. Flexbox
+
+Desarrollo completo:
+
+Ejes.
+Alineación.
+Distribución.
+Casos reales.
+
+Construcción de:
+
+Navbar.
+Cards.
+Formularios.
+Dashboard.
+Unidad 10. CSS Grid Layout
+
+Desarrollo exhaustivo:
+
+Grid Container.
+Grid Items.
+Áreas.
+Responsive Layouts.
+
+Creación de:
+
+Landing Page.
+Blog.
+Ecommerce.
+Dashboard profesional.
+Unidad 11. Responsive Design
+Mobile First.
+Breakpoints.
+Responsive Images.
+Responsive Typography.
+
+Proyecto completo responsive.
+
+BLOQUE 4. CONTENIDO MULTIMEDIA E INTERACTIVIDAD
+Unidad 12. Optimización Multimedia
+
+Según el currículo oficial de integración multimedia.
+
+Imágenes
+JPG.
+PNG.
+SVG.
+WebP.
+AVIF.
+Audio
+Formatos.
+Conversión.
+Vídeo
+Optimización.
+Streaming.
+Animaciones
+CSS.
+SVG.
+Lottie.
+Unidad 13. Interactividad
+Eventos.
+Microinteracciones.
+Animaciones UI.
+Transiciones.
+Menús interactivos.
+Componentes dinámicos.
+
+Contenidos alineados con la integración de contenido interactivo.
+
+BLOQUE 5. ACCESIBILIDAD WEB
+Unidad 14. Accesibilidad
+
+Basada en los resultados de aprendizaje específicos de accesibilidad.
+
+WCAG
+Principios POUR.
+Navegación por teclado.
+Lectores de pantalla.
+ARIA.
+Auditorías
+Lighthouse.
+WAVE.
+Axe.
+
+Prácticas de mejora de accesibilidad.
+
+BLOQUE 6. USABILIDAD Y EXPERIENCIA DE USUARIO
+Unidad 15. Usabilidad Web
+
+Basada en los resultados de aprendizaje de usabilidad.
+
+Heurísticas de Nielsen
+Evaluación de interfaces
+Tests de usuarios
+Eye Tracking
+Heat Maps
+Unidad 16. Diseño Centrado en el Usuario
+Personas.
+Customer Journey.
+User Stories.
+Investigación UX.
+BLOQUE 7. TAILWIND CSS
+Unidad 17. Introducción a Tailwind CSS 4
+Filosofía Utility First.
+Instalación.
+Configuración.
+Unidad 18. Interfaces con Tailwind
+
+Implementación de:
+
+Navbar.
+Cards.
+Formularios.
+Dashboards.
+Landing Pages.
+
+Comparación constante con CSS tradicional.
+
+Unidad 19. Componentes y Design Systems con Tailwind
+Componentes reutilizables.
+Temas.
+Dark Mode.
+Escalabilidad.
+BLOQUE 8. DISEÑO DE INTERFACES EN ANGULAR
+Unidad 20. Angular Material
+Material Design.
+Componentes.
+Temas.
+Responsive Layout.
+Unidad 21. Diseño de Interfaces Profesionales con Angular
+Arquitectura visual.
+Organización de componentes.
+Diseño escalable.
+PROYECTO FINAL INTEGRADOR
+
+Diseñar y desarrollar una aplicación web profesional siguiendo todas las fases:
+
+Investigación.
+Wireframes.
+Prototipado en Figma.
+Guía de estilo.
+Implementación HTML/CSS.
+Responsive Design.
+Accesibilidad.
+Usabilidad.
+Implementación con Tailwind.
+Adaptación a Angular.
+Formato de actividades
+### Actividad X
+
+**Resultado de aprendizaje asociado**
+
+**Objetivo**
+
+**Enunciado**
+
+**Recursos necesarios**
+
+**Requisitos técnicos**
+
+**Criterios de evaluación**
+
+**Rúbrica resumida**
+Archivos Markdown a generar
+01-introduccion-diseno-web.md
+02-psicologia-diseno.md
+03-color-tipografia.md
+04-guias-estilo-design-systems.md
+05-figma-profesional.md
+06-arquitectura-informacion.md
+07-html-semantico.md
+08-css-profesional.md
+09-flexbox.md
+10-css-grid-layout.md
+11-responsive-design.md
+12-multimedia-web.md
+13-interactividad-web.md
+14-accesibilidad-web.md
+15-usabilidad-web.md
+16-diseno-centrado-usuario.md
+17-tailwindcss4.md
+18-tailwind-componentes.md
+19-tailwind-design-systems.md
+20-angular-material.md
+21-diseno-angular.md
+22-proyecto-final.md
+
+Genera materiales con profundidad equivalente a un manual profesional completo para un curso de 126 horas del módulo Diseño de Interfaces Web de DAW, combinando teoría, práctica, proyectos, accesibilidad, usabilidad y tecnologías actuales del desarrollo frontend.

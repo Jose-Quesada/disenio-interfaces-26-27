@@ -11,18 +11,18 @@
 # The site_name is shown in the page header and the browser window title
 #
 # Read more: https://zensical.org/docs/setup/basics/#site_name
-site_name = "Documentation"
+site_name = "Curso de Angular"
 
 # The site_description is included in the HTML head and should contain a
 # meaningful description of the site content for use by search engines.
 #
 # Read more: https://zensical.org/docs/setup/basics/#site_description
-site_description = "A new project generated from the default template project."
+site_description = "Apuntes básicos de Angular para Martos y alrededores."
 
 # The site_author attribute. This is used in the HTML head element.
 #
 # Read more: https://zensical.org/docs/setup/basics/#site_author
-site_author = "<your name here>"
+site_author = "Jose Quesada"
 
 # The site_url is the canonical URL for your site. When building online
 # documentation you should set this.
@@ -44,10 +44,28 @@ Copyright &copy; 2026 The authors
 # can be defined using TOML syntax.
 #
 # Read more: https://zensical.org/docs/setup/navigation/
-# nav = [
-#   { "Get started" = "index.md" },
-#   { "Markdown in 5min" = "markdown.md" },
-# ]
+nav = [
+  { "01. Introducción" = "index.md" },
+  { "02. Psicología del diseño" = "02-psicologia-diseno.md" },
+  { "03. Color y tipografía" = "03-color-tipografia.md" },
+  { "04. Guías de estilo y design systems" = "04-guias-estilo-design-systems.md" },
+  { "05. Figma profesional" = "05-figma-profesional.md" },
+  { "06. Arquitectura de la información" = "06-arquitectura-informacion.md" },
+  { "07. HTML semántico" = "07-html-semantico.md" },
+  { "08. CSS profesional" = "08-css-profesional.md" },
+  { "09. Flexbox" = "09-flexbox.md" },
+  { "10. CSS Grid" = "10-css-grid-layout.md" },
+  { "11. Diseño responsive" = "11-responsive-design.md" },
+  { "12. Multimedia web" = "12-multimedia-web.md" },
+  { "13. Interactividad web" = "13-interactividad-web.md" },
+  { "14. Accesibilidad web" = "14-accesibilidad-web.md" },
+  { "15. Usabilidad web" = "15-usabilidad-web.md" },
+  { "16. Diseño centrado en usuario" = "16-diseno-centrado-usuario.md" },
+  { "17. Tailwind CSS 4" = "17-tailwindcss4.md" },
+  { "18. Preprocesadores CSS" = "18-preprocesadores-css.md" },
+  { "19. Marco legal multimedia" = "19-marco-legal-multimedia.md" },
+  { "Markdown (referencia)" = "markdown.md" },
+]
 
 # With the "extra_css" option you can add your own CSS styling to customize
 # your Zensical project according to your needs. You can add any number of
@@ -57,7 +75,7 @@ Copyright &copy; 2026 The authors
 #
 # Read more: https://zensical.org/docs/customization/#additional-css
 #
-#extra_css = ["stylesheets/extra.css"]
+extra_css = ["assets/css/custom.css"]
 
 # With the `extra_javascript` option you can add your own JavaScript to your
 # project to customize the behavior according to your needs.
@@ -108,7 +126,7 @@ Copyright &copy; 2026 The authors
 # Read more:
 # - https://zensical.org/docs/setup/language/
 #
-language = "en"
+language = "es"
 
 # Zensical provides a number of feature toggles that change the behavior
 # of the documentation site.
@@ -250,23 +268,27 @@ features = [
 ]
 
 # ----------------------------------------------------------------------------
-# You can configure your own logo to be shown in the header using the "logo"
-# option in the "theme" subsection. The logo must be a relative path to a file
-# in your "docs_dir", e.g., to use `docs/assets/logo.png` you would set:
-# ----------------------------------------------------------------------------
-#logo = "assets/logo.png"
-
-# ----------------------------------------------------------------------------
-# If you don't have a dedicated project logo, you can use a built-in icon from
-# the icon sets shipped in Zensical. Please note that the setting lives in a
-# different subsection, and that the above take precedence over the icon.
+# In the "palette" subsection you can configure options for the color scheme.
+# You can configure different color # schemes, e.g., to turn on dark mode,
+# that the user can switch between. Each color scheme can be further
+# customized.
 #
 # Read more:
-# - https://zensical.org/docs/setup/logo-and-icons
-# - https://github.com/zensical/ui/tree/master/dist/.icons
+# - https://zensical.org/docs/setup/colors/
 # ----------------------------------------------------------------------------
-#[project.theme.icon]
-#logo = "lucide/smile"
+[[project.theme.palette]]
+scheme = "default"
+toggle.icon = "lucide/sun"
+toggle.name = "Switch to dark mode"
+primary = "blue"
+accent = "blue"
+
+[[project.theme.palette]]
+scheme = "slate"
+toggle.icon = "lucide/moon"
+toggle.name = "Switch to light mode"
+primary = "indigo"
+accent = "indigo"
 
 # ----------------------------------------------------------------------------
 # In the "font" subsection you can configure the fonts used. By default, fonts
@@ -279,23 +301,23 @@ features = [
 #code = "Jetbrains Mono"
 
 # ----------------------------------------------------------------------------
-# In the "palette" subsection you can configure options for the color scheme.
-# You can configure different color schemes, e.g., to turn on dark mode,
-# that the user can switch between. Each color scheme can be further
-# customized.
+# You can configure your own logo to be shown in the header using the "logo"
+# option in the "icons" subsection. The logo can be a path to a file in your
+# "docs_dir" or it can be a path to an icon.
+#
+# Likewise, you can customize the logo used for the repository section of the
+# header. Zensical derives the default logo for this from the repository URL.
+# See below...
+#
+# There are other icons you can customize. See the documentation for details.
 #
 # Read more:
-# - https://zensical.org/docs/setup/colors/
+# - https://zensical.org/docs/setup/logo-and-icons
+# - https://zensical.org/docs/authoring/icons-emojis/#search
 # ----------------------------------------------------------------------------
-[[project.theme.palette]]
-scheme = "default"
-toggle.icon = "lucide/sun"
-toggle.name = "Switch to dark mode"
-
-[[project.theme.palette]]
-scheme = "slate"
-toggle.icon = "lucide/moon"
-toggle.name = "Switch to light mode"
+#[project.theme.icon]
+#logo = "lucide/smile"
+#repo = "lucide/smile"
 
 # ----------------------------------------------------------------------------
 # The "extra" section contains miscellaneous settings.
@@ -304,46 +326,49 @@ toggle.name = "Switch to light mode"
 #icon = "fontawesome/brands/github"
 #link = "https://github.com/user/repo"
 
-# ----------------------------------------------------------------------------
-# In this section you can configure the Markdown extensions that are used when
-# rendering your documentation. We enable the most useful extensions by default,
-# but you can customize this list to your needs.
-#
-# Read more:
-# - https://zensical.org/docs/setup/extensions/
-# ----------------------------------------------------------------------------
-[project.markdown_extensions.abbr]
-[project.markdown_extensions.admonition]
-[project.markdown_extensions.attr_list]
-[project.markdown_extensions.def_list]
-[project.markdown_extensions.footnotes]
-[project.markdown_extensions.md_in_html]
-[project.markdown_extensions.toc]
-permalink = true
-[project.markdown_extensions.pymdownx.arithmatex]
-generic = true
-[project.markdown_extensions.pymdownx.betterem]
-[project.markdown_extensions.pymdownx.caret]
-[project.markdown_extensions.pymdownx.details]
-[project.markdown_extensions.pymdownx.emoji]
-emoji_generator = "zensical.extensions.emoji.to_svg"
-emoji_index = "zensical.extensions.emoji.twemoji"
+# Añadido para mejorar el código
 [project.markdown_extensions.pymdownx.highlight]
 anchor_linenums = true
 line_spans = "__span"
 pygments_lang_class = true
 [project.markdown_extensions.pymdownx.inlinehilite]
-[project.markdown_extensions.pymdownx.keys]
-[project.markdown_extensions.pymdownx.magiclink]
-[project.markdown_extensions.pymdownx.mark]
-[project.markdown_extensions.pymdownx.smartsymbols]
+[project.markdown_extensions.pymdownx.snippets]
 [project.markdown_extensions.pymdownx.superfences]
 custom_fences = [
   { name = "mermaid", class = "mermaid", format = "pymdownx.superfences.fence_code_format" }
 ]
+
+[project.markdown_extensions.admonition]
+[project.markdown_extensions.pymdownx.details]
+
 [project.markdown_extensions.pymdownx.tabbed]
 alternate_style = true
-combine_header_slug = true
+
+
+# 1. Para las notas al pie de página (Footnotes)
+[project.markdown_extensions.footnotes]
+
+# 2. Para las casillas de las listas de tareas (Task Lists)
 [project.markdown_extensions.pymdownx.tasklist]
 custom_checkbox = true
+
+# 3. Para los formatos de texto especiales (Resaltado, subrayado, tachado y teclas)
+[project.markdown_extensions.pymdownx.mark]
+[project.markdown_extensions.pymdownx.caret]
 [project.markdown_extensions.pymdownx.tilde]
+[project.markdown_extensions.pymdownx.keys]
+
+# 4. Para las fórmulas matemáticas complejas (Maths)
+[project.markdown_extensions.pymdownx.arithmatex]
+generic = true
+
+
+# Activar el motor de renderizado matemático (MathJax)
+[[project.javascript]]
+url = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML"
+
+
+# Para activar los iconos y emojis
+[project.markdown_extensions.pymdownx.emoji]
+emoji_index = "zensical.extensions.emoji.twemoji"
+emoji_generator = "zensical.extensions.emoji.to_svg"

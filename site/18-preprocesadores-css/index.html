@@ -1,0 +1,2007 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Apuntes básicos de Angular para Martos y alrededores.">
+      
+      
+        <meta name="author" content="Jose Quesada">
+      
+      
+      
+        <link rel="prev" href="../17-tailwindcss4/">
+      
+      
+        <link rel="next" href="../19-marco-legal-multimedia/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="zensical-0.0.44">
+    
+    
+      
+        <title>Unidad 18: Preprocesadores CSS — SASS/SCSS y LESS - Curso de Angular</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../assets/stylesheets/modern/main.fba56155.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../assets/stylesheets/modern/palette.dfe2e883.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,500,500i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/css/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-label="Navegación"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#unidad-18-preprocesadores-css-sassscss-y-less" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="./.." title="Curso de Angular" class="md-header__button md-logo" aria-label="Curso de Angular" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 7v14M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer" aria-label="Navegación">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Curso de Angular
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Unidad 18: Preprocesadores CSS — SASS/SCSS y LESS
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="none" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="none" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-moon" viewBox="0 0 24 24"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search" aria-label="Buscar">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Buscar">
+  <button type="button" class="md-search__button">
+    Buscar
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="./.." title="Curso de Angular" class="md-nav__button md-logo" aria-label="Curso de Angular" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 7v14M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
+
+    </a>
+    Curso de Angular
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="./.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  01. Introducción
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-psicologia-diseno/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  02. Psicología del diseño
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-color-tipografia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  03. Color y tipografía
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-guias-estilo-design-systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  04. Guías de estilo y design systems
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-figma-profesional/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  05. Figma profesional
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-arquitectura-informacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  06. Arquitectura de la información
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-html-semantico/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  07. HTML semántico
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-css-profesional/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  08. CSS profesional
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-flexbox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  09. Flexbox
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-css-grid-layout/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  10. CSS Grid
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-responsive-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  11. Diseño responsive
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-multimedia-web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  12. Multimedia web
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-interactividad-web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  13. Interactividad web
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-accesibilidad-web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  14. Accesibilidad web
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-usabilidad-web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  15. Usabilidad web
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-diseno-centrado-usuario/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  16. Diseño centrado en usuario
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-tailwindcss4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  17. Tailwind CSS 4
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  18. Preprocesadores CSS
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  18. Preprocesadores CSS
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objetivos-de-aprendizaje" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Objetivos de aprendizaje
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relacion-con-los-resultados-de-aprendizaje" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Relación con los Resultados de Aprendizaje
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conocimientos-previos" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Conocimientos previos
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contenidos" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Contenidos
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#desarrollo-teorico" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Desarrollo teórico
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Desarrollo teórico">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-por-que-un-preprocesador" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        1. ¿Por qué un preprocesador?
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-sintaxis-sass-frente-a-scss" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        2. Sintaxis: SASS frente a SCSS
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-variables-e-interpolacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        3. Variables e interpolación
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-anidacion-y-referencia-al-padre" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        4. Anidación y referencia al padre
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-partials-y-sistema-de-modulos" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        5. Partials y sistema de módulos
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-reutilizacion-con-extend" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        6. Reutilización con <code>@extend</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-mixins" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        7. Mixins
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-funciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        8. Funciones
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-control-de-flujo-bucles-y-condicionales" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        9. Control de flujo: bucles y condicionales
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-mapas-como-design-tokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        10. Mapas como design tokens
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-arquitectura-del-proyecto-de-estilos" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        11. Arquitectura del proyecto de estilos
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-compilacion-e-integracion-con-vite" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        12. Compilación e integración con Vite
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-less-vision-comparativa" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        13. LESS (visión comparativa)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-preprocesador-css-nativo-o-tailwind" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        14. ¿Preprocesador, CSS nativo o Tailwind?
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplos-guiados" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ejemplos guiados
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejemplos guiados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-1-sistema-de-tokens-mixins-responsive-en-scss" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ejemplo 1: Sistema de tokens + mixins responsive en SCSS
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-2-mixin-de-tarjeta-con-variantes-condicionales" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ejemplo 2: Mixin de tarjeta con variantes condicionales
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#casos-reales" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Casos reales
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actividades-guiadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Actividades guiadas
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actividades-propuestas" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Actividades propuestas
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actividades-de-ampliacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Actividades de ampliación
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#buenas-practicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Buenas prácticas
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#errores-frecuentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Errores frecuentes
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumen" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Resumen
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recursos-complementarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Recursos complementarios
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-marco-legal-multimedia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  19. Marco legal multimedia
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../markdown/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.27 19.385H1.73A1.73 1.73 0 0 1 0 17.655V6.345a1.73 1.73 0 0 1 1.73-1.73h20.54A1.73 1.73 0 0 1 24 6.345v11.308a1.73 1.73 0 0 1-1.73 1.731zM5.769 15.923v-4.5l2.308 2.885 2.307-2.885v4.5h2.308V8.078h-2.308l-2.307 2.885-2.308-2.885H3.46v7.847zM21.232 12h-2.309V8.077h-2.307V12h-2.308l3.461 4.039z"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+  Markdown (referencia)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                    
+                    
+                    
+                      
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objetivos-de-aprendizaje" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Objetivos de aprendizaje
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relacion-con-los-resultados-de-aprendizaje" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Relación con los Resultados de Aprendizaje
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conocimientos-previos" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Conocimientos previos
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contenidos" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Contenidos
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#desarrollo-teorico" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Desarrollo teórico
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Desarrollo teórico">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-por-que-un-preprocesador" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        1. ¿Por qué un preprocesador?
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-sintaxis-sass-frente-a-scss" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        2. Sintaxis: SASS frente a SCSS
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-variables-e-interpolacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        3. Variables e interpolación
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-anidacion-y-referencia-al-padre" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        4. Anidación y referencia al padre
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-partials-y-sistema-de-modulos" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        5. Partials y sistema de módulos
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-reutilizacion-con-extend" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        6. Reutilización con <code>@extend</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-mixins" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        7. Mixins
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-funciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        8. Funciones
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-control-de-flujo-bucles-y-condicionales" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        9. Control de flujo: bucles y condicionales
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-mapas-como-design-tokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        10. Mapas como design tokens
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-arquitectura-del-proyecto-de-estilos" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        11. Arquitectura del proyecto de estilos
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-compilacion-e-integracion-con-vite" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        12. Compilación e integración con Vite
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-less-vision-comparativa" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        13. LESS (visión comparativa)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-preprocesador-css-nativo-o-tailwind" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        14. ¿Preprocesador, CSS nativo o Tailwind?
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplos-guiados" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ejemplos guiados
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejemplos guiados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-1-sistema-de-tokens-mixins-responsive-en-scss" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ejemplo 1: Sistema de tokens + mixins responsive en SCSS
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-2-mixin-de-tarjeta-con-variantes-condicionales" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ejemplo 2: Mixin de tarjeta con variantes condicionales
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#casos-reales" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Casos reales
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actividades-guiadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Actividades guiadas
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actividades-propuestas" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Actividades propuestas
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actividades-de-ampliacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Actividades de ampliación
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#buenas-practicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Buenas prácticas
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#errores-frecuentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Errores frecuentes
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumen" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Resumen
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recursos-complementarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Recursos complementarios
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+<h1 id="unidad-18-preprocesadores-css-sassscss-y-less">Unidad 18: Preprocesadores CSS — SASS/SCSS y LESS</h1>
+<h2 id="objetivos-de-aprendizaje">Objetivos de aprendizaje</h2>
+<p>Al finalizar esta unidad, el alumnado será capaz de:</p>
+<ol>
+<li>Explicar qué es un preprocesador de estilos y por qué se necesita, diferenciándolo de las variables CSS nativas (Custom Properties).</li>
+<li>Escribir hojas de estilo con SASS/SCSS empleando variables, interpolación, anidación, partials y <code>@extend</code>.</li>
+<li>Reutilizar patrones mediante <code>@mixin</code> y <code>@include</code>, y encapsular lógica reutilizable con funciones (<code>@function</code>), bucles (<code>@for</code>, <code>@each</code>) y condicionales (<code>@if</code>).</li>
+<li>Organizar un proyecto de estilos a escala real aplicando la arquitectura de módulos (<code>@use</code>/<code>@forward</code>) y una estructura de carpetas escalable (ITCSS / 7-1).</li>
+<li>Compilar SASS a CSS estándar con <code>dart-sass</code> e integrarlo en el flujo de trabajo con Vite, verificando el resultado en el navegador.</li>
+<li>Conocer las equivalencias en LESS y saber cuándo conviene un preprocesador frente a CSS nativo moderno o un framework utility-first (Tailwind).</li>
+</ol>
+<h2 id="relacion-con-los-resultados-de-aprendizaje">Relación con los Resultados de Aprendizaje</h2>
+<p>Esta unidad se vincula directamente con el <strong>Resultado de Aprendizaje 2 (RA2)</strong> del módulo profesional 0615 <em>Diseño de interfaces web</em>: <em>"Crea interfaces web homogéneos definiendo y aplicando estilos"</em>. En concreto, permite alcanzar el <strong>criterio de evaluación 2.j</strong>: <em>"Se han analizado y utilizado preprocesadores de estilos para traducir estilos comunes a un código estándar y reconocible por los navegadores"</em>, así como reforzar los criterios <strong>2.c</strong> (definir y asociar estilos globales en hojas externas), <strong>2.g</strong> (crear clases de estilos) y <strong>2.i</strong> (aplicar técnicas de diseño responsive, aquí mediante mixins de breakpoints).</p>
+<p>Se apoya y complementa a la Unidad 8 (<em>CSS Profesional</em>), donde se trabajan selectores avanzados, especificidad, variables CSS nativas y animaciones, y a la Unidad 17 (<em>Tailwind CSS 4</em>), donde se estudia el enfoque utility-first. Esta unidad cierra el bloque de <strong>estilos</strong> del RA2 mostrando cómo los preprocesadores aportan mantenibilidad, reutilización y abstracción (variables, mixins, funciones, bucles) que el CSS plano no ofrece de forma tan cómoda.</p>
+<blockquote>
+<p>Nota: la numeración de Resultados de Aprendizaje y Criterios de Evaluación empleada en esta unidad corresponde al currículo oficial del módulo 0615 (RD 405/2023, BOE; currículo andaluz). El RA2 es el único resultado centrado en la <strong>creación de interfaces homogéneas mediante estilos</strong>; los preprocesadores son su herramienta natural.</p>
+</blockquote>
+<h2 id="conocimientos-previos">Conocimientos previos</h2>
+<p>Para abordar esta unidad con soltura, el alumnado debe:</p>
+<ol>
+<li>Dominar CSS a nivel profesional (Unidad 8): selectores y especificidad, modelo de caja, <code>display</code>/posicionamiento, variables CSS (<code>--custom-property</code>, <code>var()</code>), media queries y animaciones.</li>
+<li>Conocer Flexbox (Unidad 9) y CSS Grid (Unidad 10) para aplicar los patrones que se reutilizarán mediante mixins.</li>
+<li>Haber trabajado el diseño responsive con metodología <em>mobile first</em> (Unidad 11).</li>
+<li>Manejar la terminal y Node.js a nivel básico: instalar paquetes con <code>npm</code>, ejecutar scripts definidos en <code>package.json</code> y usar Vite como empaquetador (se retomará en la Unidad 17).</li>
+<li>Comprender el concepto de "compilación": transformar un lenguaje intermedio (SASS/LESS) en CSS estándar que los navegadores sí entienden.</li>
+</ol>
+<h2 id="contenidos">Contenidos</h2>
+<ol>
+<li><strong>Introducción a los preprocesadores.</strong> Definición y propósito. Diferencias entre CSS nativo, preprocesador y framework utility-first. Ventajas: abstracción, reutilización, mantenibilidad, escalabilidad. Panorama de herramientas (SASS/SCSS, LESS, Stylus) y elección de SASS/SCSS como estándar de facto.</li>
+<li><strong>Sintaxis SASS vs SCSS.</strong> Sintaxis indented (<code>.sass</code>) frente a sintaxis con llaves y punto y coma (<code>.scss</code>). Convenciones del ecosistema moderno (recomendación de SCSS).</li>
+<li><strong>Variables e interpolación.</strong> Declaración con <code>$</code>, tipado (números, colores, cadenas, listas, mapas), alcance, sobreescritura (<code>!default</code>) e interpolación <code>#{}</code> en selectores y propiedades.</li>
+<li><strong>Anidación y referencia al padre.</strong> Anidación de selectores, uso del <code>&amp;</code> (pseudoestados, selectores descendientes, combinaciones), límites recomendados de profundidad.</li>
+<li><strong>Partials y módulos.</strong> Archivos parciales con prefijo <code>_</code>, sistema de módulos <code>@use</code>/<code>@forward</code> frente al legado <code>@import</code>, namespaces, carga de variables y mixins sin emitir CSS, y organización en carpetas.</li>
+<li><strong>Reutilización: <code>@extend</code>.</strong> Herencia de selectores, ventajas sobre la duplicación, limitaciones (pseudoestados, especificidad).</li>
+<li><strong>Mixins.</strong> <code>@mixin</code>/<code>@include</code>, parámetros con valores por defecto, argumentos nominales y variables (<code>...$args</code>), mixins que generan bloques condicionales, patrones habituales (breakpoints, flex-centrado, truncado de texto, tarjetas).</li>
+<li><strong>Funciones.</strong> <code>@function</code>/<code>@return</code>, funciones propias (escala tipográfica, cálculo de rem, conversión de unidades) y uso del sistema de unidades.</li>
+<li><strong>Control de flujo.</strong> Bucle <code>@for</code>, iteración sobre listas/mapas con <code>@each</code>, condicionales <code>@if</code>/<code>@else</code>, generación programática de clases (escalas de espaciado, grid de columnas).</li>
+<li><strong>Mapas y listas.</strong> Estructuras de datos, acceso por índice/clave (<code>map-get</code>, <code>nth</code>), patrones de "design tokens" en SASS.</li>
+<li><strong>Arquitectura del proyecto de estilos.</strong> Estructura escalable (ITCSS / 7-1: settings, tools, generic, elements, objects, components, utilities), flujo de compilación y buenas prácticas de nomenclatura.</li>
+<li><strong>Compilación e integración.</strong> <code>dart-sass</code> (recomendado frente a Ruby SASS en desuso), scripts de <code>package.json</code>, integración con Vite (<code>vite-plugin-sass</code> o el soporte nativo), opción <code>--watch</code>, minificación y mapas de fuentes (<code>source maps</code>).</li>
+<li><strong>LESS (visión comparativa).</strong> Sintaxis, variables <code>@</code>, mixins y parámetros, diferencias clave frente a SASS y cuándo se encuentra en proyectos legados.</li>
+<li><strong>Preprocesador vs CSS nativo vs Tailwind.</strong> Cuándo usar cada enfoque: variables nativas para temas en runtime, SASS para abstracción en tiempo de compilación, Tailwind para productividad utility-first; combinaciones híbridas (tokens + Custom Properties).</li>
+</ol>
+<h2 id="desarrollo-teorico">Desarrollo teórico</h2>
+<h3 id="1-por-que-un-preprocesador">1. ¿Por qué un preprocesador?</h3>
+<p>El CSS es un lenguaje de <em>hojas de estilos en cascada</em> pensado para describir la presentación, no para programar. Cuando una base de estilos crece (cientos o miles de reglas), surgen limitaciones reales: repetir valores (colores, espaciados, breakpoints) en muchos sitios, duplicar bloques de propiedades similares, o generar patrones repetitivos (escalas, columnas) a mano. Un <strong>preprocesador</strong> añade al CSS las características que todo lenguaje de programación ofrece: variables, funciones, mixins, bucles y condicionales. El resultado es un código más DRY (<em>Don't Repeat Yourself</em>), mantenible y escalable.</p>
+<p>Es importante no confundir tres capas distintas que conviven en el frontend moderno:</p>
+<ul>
+<li><strong>CSS nativo (Custom Properties):</strong> las variables <code>--color</code> se resuelven en <em>tiempo de ejecución</em> por el navegador; pueden cambiar dinámicamente con JavaScript o media queries. Son ideales para <strong>temas</strong> (modo claro/oscuro) y ajustes en runtime.</li>
+<li><strong>Preprocesador (SASS/LESS):</strong> la abstracción ocurre en <em>tiempo de compilación</em>; el navegador solo recibe CSS plano estándar. Es ideal para <strong>reutilización y generación</strong> de código (mixins, funciones, bucles).</li>
+<li><strong>Framework utility-first (Tailwind):</strong> desplaza la decisión a clases utilitarias atómicas directamente en el HTML; maximiza la productividad y la consistencia mediante restricciones.</li>
+</ul>
+<p>Un enfoque profesional suele combinarlos: definir <em>design tokens</em> como variables SASS (compilación) y exponer los que cambian en runtime como Custom Properties. La Unidad 17 profundiza en Tailwind; esta unidad se centra en el preprocesador.</p>
+<h3 id="2-sintaxis-sass-frente-a-scss">2. Sintaxis: SASS frente a SCSS</h3>
+<p>SASS nació con una sintaxis propia basada en indentación (archivos <code>.sass</code>), sin llaves ni punto y coma:</p>
+<div class="language-sass highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nc">.tarjeta</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="na">padding</span><span class="o">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">rem</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="na">border-radius</span><span class="o">:</span><span class="w"> </span><span class="mi">8</span><span class="kt">px</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="k">&amp;</span><span class="nt">__titulo</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="na">font-weight</span><span class="o">:</span><span class="w"> </span><span class="mi">700</span>
+</span></code></pre></div>
+<p>La extensión <strong>SCSS</strong> (<code>.scss</code>) usa la sintaxis clásica de CSS con llaves y <code>;</code>, por lo que todo el CSS válido es SCSS válido. Es la más extendida en el ecosistema actual (Vite, Webpack, la mayoría de bibliotecas) y la que usaremos:</p>
+<div class="language-scss highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nc">.tarjeta</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">padding</span><span class="nd">:</span><span class="w"> </span><span class="nt">1rem</span><span class="o">;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">border-radius</span><span class="nd">:</span><span class="w"> </span><span class="nt">8px</span><span class="o">;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="k">&amp;</span><span class="nt">__titulo</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="nt">font-weight</span><span class="nd">:</span><span class="w"> </span><span class="nt">700</span><span class="o">;</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>La recomendación general es trabajar siempre en SCSS salvo que un proyecto legacy exija <code>.sass</code>.</p>
+<h3 id="3-variables-e-interpolacion">3. Variables e interpolación</h3>
+<p>Las variables se declaran con <code>$</code> y evitan repetir valores:</p>
+<div class="language-scss highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nv">$color-primario</span><span class="o">:</span><span class="w"> </span><span class="mh">#667eea</span><span class="p">;</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nv">$espaciado-base</span><span class="o">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">rem</span><span class="p">;</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nv">$breakpoints</span><span class="o">:</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="s2">&quot;sm&quot;</span><span class="o">:</span><span class="w"> </span><span class="mi">640</span><span class="kt">px</span><span class="o">,</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="s2">&quot;md&quot;</span><span class="o">:</span><span class="w"> </span><span class="mi">768</span><span class="kt">px</span><span class="o">,</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span><span class="s2">&quot;lg&quot;</span><span class="o">:</span><span class="w"> </span><span class="mi">1024</span><span class="kt">px</span><span class="o">,</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="p">);</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="nc">.btn</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">  </span><span class="nt">background</span><span class="nd">:</span><span class="w"> </span><span class="err">$</span><span class="nt">color-primario</span><span class="o">;</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">  </span><span class="nt">padding</span><span class="nd">:</span><span class="w"> </span><span class="err">$</span><span class="nt">espaciado-base</span><span class="w"> </span><span class="o">(</span><span class="err">$</span><span class="nt">espaciado-base</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nt">2</span><span class="o">);</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nt">expresión</span><span class="w"> </span><span class="nt">aritmética</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>La <strong>interpolación</strong> <code>#{}</code> permite inyectar variables dentro de selectores, nombres de propiedades o cadenas donde no se espera un valor simple:</p>
+<div class="language-scss highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nv">$icono</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;buscar&quot;</span><span class="p">;</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nc">.icono-</span><span class="si">#{</span><span class="nv">$icono</span><span class="si">}</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* .icono-buscar */</span><span class="w"> </span><span class="p">}</span>
+</span></code></pre></div>
+<p>La sobreescritura con <code>!default</code> solo asigna el valor si la variable no estaba definida antes (útil en parciales reutilizables):</p>
+<div class="language-scss highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nv">$color-fondo</span><span class="o">:</span><span class="w"> </span><span class="mh">#f5f5f5</span><span class="w"> </span><span class="nv">!default</span><span class="p">;</span><span class="w"> </span><span class="c1">// se respeta si el proyecto ya lo definió</span>
+</span></code></pre></div>
+<h3 id="4-anidacion-y-referencia-al-padre">4. Anidación y referencia al padre</h3>
+<p>La anidación refleja la jerarquía del DOM y agrupa estilos relacionados. El carácter <code>&amp;</code> representa el <strong>selector padre</strong>:</p>
+<div class="language-scss highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nc">.nav</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="k">&amp;</span><span class="nt">__item</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="nt">padding</span><span class="nd">:</span><span class="w"> </span><span class="nt">0</span><span class="nc">.5rem</span><span class="w"> </span><span class="nt">1rem</span><span class="o">;</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="k">&amp;</span><span class="nd">:hover</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">background</span><span class="nd">:</span><span class="w"> </span><span class="nt">rgba</span><span class="o">(</span><span class="nt">0</span><span class="o">,</span><span class="w"> </span><span class="nt">0</span><span class="o">,</span><span class="w"> </span><span class="nt">0</span><span class="o">,</span><span class="w"> </span><span class="nt">0</span><span class="nc">.05</span><span class="o">);</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="c1">// .nav__item:hover</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="k">&amp;</span><span class="nt">--activo</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">font-weight</span><span class="nd">:</span><span class="w"> </span><span class="nt">700</span><span class="o">;</span><span class="w"> </span><span class="p">}</span><span class="w">             </span><span class="c1">// .nav__item--activo</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Buena práctica: limitar la anidación a <strong>2-3 niveles</strong> para no inflar la especificidad ni acoplar demasiado el CSS al HTML.</p>
+<h3 id="5-partials-y-sistema-de-modulos">5. Partials y sistema de módulos</h3>
+<p>Un <strong>partial</strong> es un archivo con prefijo <code>_</code> (p. ej. <code>_botones.scss</code>) que no se compila por sí solo, sino que se incorpora a otros. El sistema moderno de <strong>módulos</strong> usa <code>@use</code> y <code>@forward</code>:</p>
+<div class="language-scss highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1">// _variables.scss</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nv">$color-primario</span><span class="o">:</span><span class="w"> </span><span class="mh">#667eea</span><span class="p">;</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c1">// botones.scss</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="k">@use</span><span class="w"> </span><span class="s2">&quot;variables&quot;</span><span class="w"> </span><span class="nt">as</span><span class="w"> </span><span class="nt">v</span><span class="o">;</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="nc">.btn</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">  </span><span class="nt">background</span><span class="nd">:</span><span class="w"> </span><span class="nt">v</span><span class="nc">.</span><span class="err">$</span><span class="nt">color-primario</span><span class="o">;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nt">namespace</span><span class="w"> </span><span class="s2">&quot;v&quot;</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="p">}</span>
+</span></code></pre></div>
+<p><code>@use</code> carga variables, mixins y funciones <strong>una sola vez</strong> y sin emitir CSS extra (a diferencia del legado <code>@import</code>, que duplicaba reglas). Los namespaces evitan colisiones de nombres. <code>@forward</code> permite re-exportar un módulo desde otro (patrones de <em>facade</em>).</p>
+<h3 id="6-reutilizacion-con-extend">6. Reutilización con <code>@extend</code></h3>
+<p><code>@extend</code> hace que un selector herede las reglas de otro, evitando duplicar bloques:</p>
+<div class="language-scss highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="err">%</span><span class="nt">enlace-base</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="nt">color</span><span class="nd">:</span><span class="w"> </span><span class="err">$</span><span class="nt">color-primario</span><span class="o">;</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">  </span><span class="nt">text-decoration</span><span class="nd">:</span><span class="w"> </span><span class="nt">none</span><span class="o">;</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="p">}</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="nt">a</span><span class="o">,</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="nc">.btn-enlace</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">  </span><span class="k">@extend</span><span class="w"> </span><span class="err">%</span><span class="nt">enlace-base</span><span class="o">;</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>El prefijo <code>%</code> crea un <strong>placeholder</strong> que no se emite como clase real. Limitación: <code>@extend</code> no hereda pseudoestados ni aumenta la especificidad de forma predecible en todos los casos; para lógica condicional es preferible un mixin.</p>
+<h3 id="7-mixins">7. Mixins</h3>
+<p>Los mixins encapsulan bloques reutilizables con parámetros, valores por defecto y argumentos nominales:</p>
+<div class="language-scss highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">@mixin</span><span class="nf"> breakpoint</span><span class="p">(</span><span class="nv">$punto</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="k">@media</span><span class="w"> </span><span class="p">(</span><span class="no">min-width</span><span class="o">:</span><span class="w"> </span><span class="nf">map-get</span><span class="p">(</span><span class="nv">$breakpoints</span><span class="o">,</span><span class="w"> </span><span class="nv">$punto</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="k">@content</span><span class="o">;</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="p">}</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="k">@mixin</span><span class="nf"> centrar-flex</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">  </span><span class="nt">display</span><span class="nd">:</span><span class="w"> </span><span class="nt">flex</span><span class="o">;</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">  </span><span class="nt">align-items</span><span class="nd">:</span><span class="w"> </span><span class="nt">center</span><span class="o">;</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">  </span><span class="nt">justify-content</span><span class="nd">:</span><span class="w"> </span><span class="nt">center</span><span class="o">;</span>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="p">}</span>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="nc">.hero</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="w">  </span><span class="k">@include</span><span class="nd"> breakpoint</span><span class="p">(</span><span class="s2">&quot;md&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="w">    </span><span class="nt">font-size</span><span class="nd">:</span><span class="w"> </span><span class="nt">2rem</span><span class="o">;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nt">media</span><span class="w"> </span><span class="nt">query</span><span class="w"> </span><span class="nt">generada</span><span class="w"> </span><span class="nt">por</span><span class="w"> </span><span class="nt">el</span><span class="w"> </span><span class="nt">mixin</span>
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="w">  </span><span class="k">@include</span><span class="nd"> centrar-flex</span><span class="p">;</span>
+</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Los mixins con <code>@content</code> actúan como <em>plantillas</em> que envuelven el código que les pasamos. Son la herramienta central para generar <strong>breakpoints responsive</strong> de forma DRY (CE 2.i) y patrones recurrentes.</p>
+<h3 id="8-funciones">8. Funciones</h3>
+<p>Las funciones reciben argumentos y devuelven un valor con <code>@return</code>, permitiendo cálculos reutilizables:</p>
+<div class="language-scss highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">@function</span><span class="w"> </span><span class="nt">rem</span><span class="o">(</span><span class="err">$</span><span class="nt">px</span><span class="o">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="k">@return</span><span class="w"> </span><span class="o">(</span><span class="err">$</span><span class="nt">px</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nt">16</span><span class="o">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nt">1rem</span><span class="o">;</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="p">}</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="nc">.titulo</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">  </span><span class="nt">font-size</span><span class="nd">:</span><span class="w"> </span><span class="nt">rem</span><span class="o">(</span><span class="nt">32</span><span class="o">);</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nt">-</span><span class="o">&gt;</span><span class="w"> </span><span class="nt">2rem</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Con mapas y funciones se implementan <strong>design tokens</strong> (escalas de color, tipografía, espaciado) que se consumen en todo el proyecto.</p>
+<h3 id="9-control-de-flujo-bucles-y-condicionales">9. Control de flujo: bucles y condicionales</h3>
+<p>SASS permite generar CSS programáticamente:</p>
+<div class="language-scss highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1">// Escala de espaciado: .p-1 .. .p-6</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="k">@for</span><span class="w"> </span><span class="nv">$i</span><span class="w"> </span><span class="ow">from</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="ow">through</span><span class="w"> </span><span class="mi">6</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">  </span><span class="nc">.p-</span><span class="si">#{</span><span class="nv">$i</span><span class="si">}</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">padding</span><span class="nd">:</span><span class="w"> </span><span class="o">(</span><span class="err">$</span><span class="nt">i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nt">0</span><span class="nc">.25rem</span><span class="o">);</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="p">}</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="c1">// Columnas de grid: .col-1 .. .col-12</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="nv">$columnas</span><span class="o">:</span><span class="w"> </span><span class="mi">12</span><span class="p">;</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="k">@each</span><span class="w"> </span><span class="err">$</span><span class="nt">c</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nt">range</span><span class="o">(</span><span class="nt">1</span><span class="o">,</span><span class="w"> </span><span class="err">$</span><span class="nt">columnas</span><span class="o">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">  </span><span class="nc">.col-</span><span class="si">#{</span><span class="nv">$c</span><span class="si">}</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">grid-column</span><span class="nd">:</span><span class="w"> </span><span class="nt">span</span><span class="w"> </span><span class="nn">#</span><span class="p">{</span><span class="err">$</span><span class="nt">c</span><span class="p">}</span><span class="o">;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="p">}</span>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="k">@if</span><span class="w"> </span><span class="p">(</span><span class="nf">map-has-key</span><span class="p">(</span><span class="nv">$breakpoints</span><span class="o">,</span><span class="w"> </span><span class="s2">&quot;xl&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="w">  </span><span class="c1">// solo se emite si existe el breakpoint xl</span>
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="p">}</span>
+</span></code></pre></div>
+<p><code>@for</code> itera rangos, <code>@each</code> recorre listas/mapas y <code>@if</code>/<code>@else</code> introduce ramas condicionales. Esto elimina la escritura manual de decenas de clases repetitivas.</p>
+<h3 id="10-mapas-como-design-tokens">10. Mapas como design tokens</h3>
+<p>Los mapas (equivalentes a objetos) organizan tokens por categorías:</p>
+<div class="language-scss highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nv">$tokens</span><span class="o">:</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">  </span><span class="s2">&quot;color&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">    </span><span class="s2">&quot;primario&quot;</span><span class="o">:</span><span class="w"> </span><span class="mh">#667eea</span><span class="o">,</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">    </span><span class="s2">&quot;secundario&quot;</span><span class="o">:</span><span class="w"> </span><span class="mh">#764ba2</span><span class="o">,</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">    </span><span class="s2">&quot;texto&quot;</span><span class="o">:</span><span class="w"> </span><span class="mh">#1a202c</span><span class="o">,</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">  </span><span class="p">)</span><span class="o">,</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">  </span><span class="s2">&quot;tipografia&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">    </span><span class="s2">&quot;base&quot;</span><span class="o">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">rem</span><span class="o">,</span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">    </span><span class="s2">&quot;escala&quot;</span><span class="o">:</span><span class="w"> </span><span class="mi">1</span><span class="mf">.25</span><span class="o">,</span><span class="w"> </span><span class="c1">// razón de la escala modular</span>
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="w">  </span><span class="p">)</span><span class="o">,</span>
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="p">);</span>
+</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>
+</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="k">@function</span><span class="w"> </span><span class="nt">token</span><span class="o">(</span><span class="err">$</span><span class="nt">categoria</span><span class="o">,</span><span class="w"> </span><span class="err">$</span><span class="nt">nombre</span><span class="o">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="w">  </span><span class="k">@return</span><span class="w"> </span><span class="nt">map-get</span><span class="o">(</span><span class="nt">map-get</span><span class="o">(</span><span class="err">$</span><span class="nt">tokens</span><span class="o">,</span><span class="w"> </span><span class="err">$</span><span class="nt">categoria</span><span class="o">),</span><span class="w"> </span><span class="err">$</span><span class="nt">nombre</span><span class="o">);</span>
+</span><span id="__span-11-15"><a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a><span class="p">}</span>
+</span><span id="__span-11-16"><a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>
+</span><span id="__span-11-17"><a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a><span class="nt">body</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">color</span><span class="nd">:</span><span class="w"> </span><span class="nt">token</span><span class="o">(</span><span class="s2">&quot;color&quot;</span><span class="o">,</span><span class="w"> </span><span class="s2">&quot;texto&quot;</span><span class="o">);</span><span class="w"> </span><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="11-arquitectura-del-proyecto-de-estilos">11. Arquitectura del proyecto de estilos</h3>
+<p>Una estructura escalable separa responsabilidades (patrones ITCSS / 7-1):</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>styles/
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>├── settings/     # variables, tokens, configuración global
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>│   └── _variables.scss
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>├── tools/        # mixins y funciones (no emiten CSS)
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>│   ├── _mixins.scss
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>│   └── _functions.scss
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>├── generic/      # reset, box-sizing, estilos base
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>├── elements/     # selectores de etiquetas HTML (h1, a, table…)
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>├── objects/      # patrones de layout reutilizables (contenedor, grid)
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>├── components/   # componentes UI concretos (botón, tarjeta, modal)
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>└── utilities/    # clases utilitarias (centrado, espaciado, display)
+</span></code></pre></div>
+<p>El orden de carga importa (de lo genérico a lo específico). Esta arquitectura, combinada con <code>@use</code>, hace mantenible una base de estilos grande.</p>
+<h3 id="12-compilacion-e-integracion-con-vite">12. Compilación e integración con Vite</h3>
+<p><code>dart-sass</code> es el compilador oficial y recomendado (el antiguo Ruby SASS está en desuso). En un proyecto con Vite:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>// package.json
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>{
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>  &quot;scripts&quot;: {
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>    &quot;dev&quot;: &quot;vite&quot;,
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>    &quot;build&quot;: &quot;vite build&quot;
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>  }
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>}
+</span></code></pre></div>
+<p>Vite integra SASS de forma nativa: basta con importar el SCSS principal en el punto de entrada y Vite lo compila al vuelo (con <code>--watch</code> implícito en desarrollo):</p>
+<div class="language-scss highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1">// main.scss</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="k">@use</span><span class="w"> </span><span class="s2">&quot;settings/variables&quot;</span><span class="o">;</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="o">@</span><span class="nt">use</span><span class="w"> </span><span class="s2">&quot;tools/mixins&quot;</span><span class="o">;</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="o">@</span><span class="nt">use</span><span class="w"> </span><span class="s2">&quot;components/botones&quot;</span><span class="o">;</span>
+</span></code></pre></div>
+<p>En producción, <code>vite build</code> emite CSS minificado. Se recomienda activar <strong>source maps</strong> (<code>--source-map</code>) en desarrollo para depurar el SCSS original en las DevTools.</p>
+<h3 id="13-less-vision-comparativa">13. LESS (visión comparativa)</h3>
+<p>LESS es el preprocesador más antiguo y aún aparece en proyectos legados (p. ej., Ant Design usó LESS). Sus diferencias clave: variables con <code>@</code> (<code>@color: red;</code>), mixins por herencia de selector o parámetros, y soporte de operaciones. La sintaxis es más cercana al CSS clásico. En proyectos nuevos se prefiere SASS/SCSS por su ecosistema y el sistema de módulos; conocer LESS permite mantener bases de código existentes.</p>
+<h3 id="14-preprocesador-css-nativo-o-tailwind">14. ¿Preprocesador, CSS nativo o Tailwind?</h3>
+<ul>
+<li><strong>CSS nativo (Custom Properties):</strong> cuando el valor cambia en <em>runtime</em> (temas, modo oscuro) o el proyecto es pequeño y no justifica una herramienta extra.</li>
+<li><strong>SASS/SCSS:</strong> cuando hay mucha lógica reutilizable (mixins de breakpoints, escalas generadas por bucles, design tokens compilados) y se busca mantener un CSS propio mantenible.</li>
+<li><strong>Tailwind (Unidad 17):</strong> cuando se prioriza velocidad y consistencia mediante utilidades atómicas sin escribir hojas de estilo a medida.</li>
+</ul>
+<p>En la práctica profesional es común combinar SASS para <em>tokens</em> y lógica con Custom Properties para <em>temas</em>, o usar Tailwind como capa principal y SASS solo para lo que el framework no cubre. La elección debe responder a criterios de escalabilidad, mantenibilidad y productividad del equipo (CE 2.j).</p>
+<h2 id="ejemplos-guiados">Ejemplos guiados</h2>
+<h3 id="ejemplo-1-sistema-de-tokens-mixins-responsive-en-scss">Ejemplo 1: Sistema de tokens + mixins responsive en SCSS</h3>
+<p><strong>Contexto:</strong> partimos de un proyecto vacío con Vite y creamos una base de estilos reutilizable que genera breakpoints y una escala de espaciado automáticamente.</p>
+<div class="language-scss highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1">// settings/_variables.scss</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="nv">$color-primario</span><span class="o">:</span><span class="w"> </span><span class="mh">#667eea</span><span class="p">;</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="nv">$color-fondo</span><span class="o">:</span><span class="w">    </span><span class="mh">#f7fafc</span><span class="p">;</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="nv">$breakpoints</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="s2">&quot;sm&quot;</span><span class="o">:</span><span class="w"> </span><span class="mi">640</span><span class="kt">px</span><span class="o">,</span><span class="w"> </span><span class="s2">&quot;md&quot;</span><span class="o">:</span><span class="w"> </span><span class="mi">768</span><span class="kt">px</span><span class="o">,</span><span class="w"> </span><span class="s2">&quot;lg&quot;</span><span class="o">:</span><span class="w"> </span><span class="mi">1024</span><span class="kt">px</span><span class="p">);</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="c1">// tools/_mixins.scss</span>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="k">@use</span><span class="w"> </span><span class="s2">&quot;variables&quot;</span><span class="w"> </span><span class="nt">as</span><span class="w"> </span><span class="nt">v</span><span class="o">;</span>
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="o">@</span><span class="nt">mixin</span><span class="w"> </span><span class="nt">bp</span><span class="o">(</span><span class="err">$</span><span class="nt">punto</span><span class="o">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="w">  </span><span class="k">@media</span><span class="w"> </span><span class="p">(</span><span class="no">min-width</span><span class="o">:</span><span class="w"> </span><span class="nf">map-get</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="nv">$breakpoints</span><span class="o">,</span><span class="w"> </span><span class="nv">$punto</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="w">    </span><span class="k">@content</span><span class="o">;</span>
+</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="p">}</span>
+</span><span id="__span-15-14"><a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a>
+</span><span id="__span-15-15"><a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a><span class="c1">// tools/_functions.scss</span>
+</span><span id="__span-15-16"><a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a><span class="k">@function</span><span class="w"> </span><span class="nt">rem</span><span class="o">(</span><span class="err">$</span><span class="nt">px</span><span class="o">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">@return</span><span class="w"> </span><span class="o">(</span><span class="err">$</span><span class="nt">px</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nt">16</span><span class="o">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nt">1rem</span><span class="o">;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-15-17"><a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a>
+</span><span id="__span-15-18"><a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a><span class="c1">// generic/_base.scss</span>
+</span><span id="__span-15-19"><a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a><span class="k">@use</span><span class="w"> </span><span class="s2">&quot;variables&quot;</span><span class="w"> </span><span class="nt">as</span><span class="w"> </span><span class="nt">v</span><span class="o">;</span>
+</span><span id="__span-15-20"><a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a>
+</span><span id="__span-15-21"><a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a><span class="o">*</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">box-sizing</span><span class="nd">:</span><span class="w"> </span><span class="nt">border-box</span><span class="o">;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-15-22"><a id="__codelineno-15-22" name="__codelineno-15-22" href="#__codelineno-15-22"></a><span class="nt">body</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-23"><a id="__codelineno-15-23" name="__codelineno-15-23" href="#__codelineno-15-23"></a><span class="w">  </span><span class="nt">margin</span><span class="nd">:</span><span class="w"> </span><span class="nt">0</span><span class="o">;</span>
+</span><span id="__span-15-24"><a id="__codelineno-15-24" name="__codelineno-15-24" href="#__codelineno-15-24"></a><span class="w">  </span><span class="nt">background</span><span class="nd">:</span><span class="w"> </span><span class="nt">v</span><span class="nc">.</span><span class="err">$</span><span class="nt">color-fondo</span><span class="o">;</span>
+</span><span id="__span-15-25"><a id="__codelineno-15-25" name="__codelineno-15-25" href="#__codelineno-15-25"></a><span class="w">  </span><span class="nt">font-size</span><span class="nd">:</span><span class="w"> </span><span class="nt">rem</span><span class="o">(</span><span class="nt">16</span><span class="o">);</span>
+</span><span id="__span-15-26"><a id="__codelineno-15-26" name="__codelineno-15-26" href="#__codelineno-15-26"></a><span class="p">}</span>
+</span><span id="__span-15-27"><a id="__codelineno-15-27" name="__codelineno-15-27" href="#__codelineno-15-27"></a>
+</span><span id="__span-15-28"><a id="__codelineno-15-28" name="__codelineno-15-28" href="#__codelineno-15-28"></a><span class="c1">// objects/_contenedor.scss</span>
+</span><span id="__span-15-29"><a id="__codelineno-15-29" name="__codelineno-15-29" href="#__codelineno-15-29"></a><span class="k">@use</span><span class="w"> </span><span class="s2">&quot;../tools/mixins&quot;</span><span class="w"> </span><span class="nt">as</span><span class="w"> </span><span class="nt">t</span><span class="o">;</span>
+</span><span id="__span-15-30"><a id="__codelineno-15-30" name="__codelineno-15-30" href="#__codelineno-15-30"></a>
+</span><span id="__span-15-31"><a id="__codelineno-15-31" name="__codelineno-15-31" href="#__codelineno-15-31"></a><span class="nc">.contenedor</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-32"><a id="__codelineno-15-32" name="__codelineno-15-32" href="#__codelineno-15-32"></a><span class="w">  </span><span class="nt">width</span><span class="nd">:</span><span class="w"> </span><span class="nt">min</span><span class="o">(</span><span class="nt">100</span><span class="err">%</span><span class="w"> </span><span class="nt">-</span><span class="w"> </span><span class="nt">2rem</span><span class="o">,</span><span class="w"> </span><span class="nt">72rem</span><span class="o">);</span>
+</span><span id="__span-15-33"><a id="__codelineno-15-33" name="__codelineno-15-33" href="#__codelineno-15-33"></a><span class="w">  </span><span class="nt">margin-inline</span><span class="nd">:</span><span class="w"> </span><span class="nt">auto</span><span class="o">;</span>
+</span><span id="__span-15-34"><a id="__codelineno-15-34" name="__codelineno-15-34" href="#__codelineno-15-34"></a>
+</span><span id="__span-15-35"><a id="__codelineno-15-35" name="__codelineno-15-35" href="#__codelineno-15-35"></a><span class="w">  </span><span class="o">@</span><span class="nt">include</span><span class="w"> </span><span class="nt">t</span><span class="nc">.bp</span><span class="o">(</span><span class="s2">&quot;md&quot;</span><span class="o">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">width</span><span class="nd">:</span><span class="w"> </span><span class="nt">min</span><span class="o">(</span><span class="nt">100</span><span class="err">%</span><span class="w"> </span><span class="nt">-</span><span class="w"> </span><span class="nt">3rem</span><span class="o">,</span><span class="w"> </span><span class="nt">80rem</span><span class="o">);</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-15-36"><a id="__codelineno-15-36" name="__codelineno-15-36" href="#__codelineno-15-36"></a><span class="p">}</span>
+</span><span id="__span-15-37"><a id="__codelineno-15-37" name="__codelineno-15-37" href="#__codelineno-15-37"></a>
+</span><span id="__span-15-38"><a id="__codelineno-15-38" name="__codelineno-15-38" href="#__codelineno-15-38"></a><span class="c1">// utilities/_espaciado.scss</span>
+</span><span id="__span-15-39"><a id="__codelineno-15-39" name="__codelineno-15-39" href="#__codelineno-15-39"></a><span class="k">@for</span><span class="w"> </span><span class="nv">$i</span><span class="w"> </span><span class="ow">from</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="ow">through</span><span class="w"> </span><span class="mi">6</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-40"><a id="__codelineno-15-40" name="__codelineno-15-40" href="#__codelineno-15-40"></a><span class="w">  </span><span class="nc">.p-</span><span class="si">#{</span><span class="nv">$i</span><span class="si">}</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">padding</span><span class="nd">:</span><span class="w"> </span><span class="o">(</span><span class="err">$</span><span class="nt">i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nt">0</span><span class="nc">.25rem</span><span class="o">);</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-15-41"><a id="__codelineno-15-41" name="__codelineno-15-41" href="#__codelineno-15-41"></a><span class="w">  </span><span class="nc">.m-</span><span class="si">#{</span><span class="nv">$i</span><span class="si">}</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">margin</span><span class="nd">:</span><span class="w"> </span><span class="o">(</span><span class="err">$</span><span class="nt">i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nt">0</span><span class="nc">.25rem</span><span class="o">);</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-15-42"><a id="__codelineno-15-42" name="__codelineno-15-42" href="#__codelineno-15-42"></a><span class="p">}</span>
+</span><span id="__span-15-43"><a id="__codelineno-15-43" name="__codelineno-15-43" href="#__codelineno-15-43"></a>
+</span><span id="__span-15-44"><a id="__codelineno-15-44" name="__codelineno-15-44" href="#__codelineno-15-44"></a><span class="c1">// main.scss (punto de entrada)</span>
+</span><span id="__span-15-45"><a id="__codelineno-15-45" name="__codelineno-15-45" href="#__codelineno-15-45"></a><span class="k">@use</span><span class="w"> </span><span class="s2">&quot;generic/base&quot;</span><span class="o">;</span>
+</span><span id="__span-15-46"><a id="__codelineno-15-46" name="__codelineno-15-46" href="#__codelineno-15-46"></a><span class="o">@</span><span class="nt">use</span><span class="w"> </span><span class="s2">&quot;objects/contenedor&quot;</span><span class="o">;</span>
+</span><span id="__span-15-47"><a id="__codelineno-15-47" name="__codelineno-15-47" href="#__codelineno-15-47"></a><span class="o">@</span><span class="nt">use</span><span class="w"> </span><span class="s2">&quot;utilities/espaciado&quot;</span><span class="o">;</span>
+</span></code></pre></div>
+<p><strong>Resultado:</strong> al compilar, Vite genera CSS plano con las media queries ya resueltas y las clases <code>.p-1</code>…<code>.p-6</code> / <code>.m-1</code>…<code>.m-6</code> generadas por el bucle. El navegador no conoce SASS: solo recibe CSS estándar (CE 2.j).</p>
+<h3 id="ejemplo-2-mixin-de-tarjeta-con-variantes-condicionales">Ejemplo 2: Mixin de tarjeta con variantes condicionales</h3>
+<div class="language-scss highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="k">@mixin</span><span class="nf"> tarjeta</span><span class="p">(</span><span class="nv">$radio</span><span class="o">:</span><span class="w"> </span><span class="mi">8</span><span class="kt">px</span><span class="o">,</span><span class="w"> </span><span class="nv">$elevacion</span><span class="o">:</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">  </span><span class="nt">background</span><span class="nd">:</span><span class="w"> </span><span class="nn">#fff</span><span class="o">;</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">  </span><span class="nt">border-radius</span><span class="nd">:</span><span class="w"> </span><span class="err">$</span><span class="nt">radio</span><span class="o">;</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">  </span><span class="nt">padding</span><span class="nd">:</span><span class="w"> </span><span class="nt">1</span><span class="nc">.5rem</span><span class="o">;</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">  </span><span class="nt">box-shadow</span><span class="nd">:</span><span class="w"> </span><span class="nt">0</span><span class="w"> </span><span class="o">(</span><span class="nn">#</span><span class="p">{</span><span class="err">$</span><span class="nt">elevacion</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nt">2</span><span class="p">}</span><span class="nt">px</span><span class="o">)</span><span class="w"> </span><span class="o">(</span><span class="nn">#</span><span class="p">{</span><span class="err">$</span><span class="nt">elevacion</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nt">4</span><span class="p">}</span><span class="nt">px</span><span class="o">)</span><span class="w"> </span><span class="nt">rgba</span><span class="o">(</span><span class="nt">0</span><span class="o">,</span><span class="w"> </span><span class="nt">0</span><span class="o">,</span><span class="w"> </span><span class="nt">0</span><span class="o">,</span><span class="w"> </span><span class="nt">0</span><span class="nc">.08</span><span class="o">);</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="w">  </span><span class="o">@</span><span class="nt">if</span><span class="w"> </span><span class="o">(</span><span class="err">$</span><span class="nt">elevacion</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nt">2</span><span class="o">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="w">    </span><span class="c1">// variante &quot;destacada&quot; con más profundidad</span>
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="w">    </span><span class="nt">border</span><span class="nd">:</span><span class="w"> </span><span class="nt">2px</span><span class="w"> </span><span class="nt">solid</span><span class="w"> </span><span class="nn">#667eea</span><span class="o">;</span>
+</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="p">}</span>
+</span><span id="__span-16-12"><a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>
+</span><span id="__span-16-13"><a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a><span class="nc">.tarjeta</span><span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="k">@include</span><span class="nd"> tarjeta</span><span class="p">(</span><span class="mi">8</span><span class="kt">px</span><span class="o">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-16-14"><a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a><span class="nc">.tarjeta--alta</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">@include</span><span class="nd"> tarjeta</span><span class="p">(</span><span class="mi">12</span><span class="kt">px</span><span class="o">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="casos-reales">Casos reales</h2>
+<ul>
+<li><strong>Material Design / Bootstrap:</strong> sus bases de estilos históricamente se construyeron con preprocesadores (Bootstrap utilizó SASS a partir de la versión 4) para generar utilidades, variantes de componentes y breakpoints mediante bucles y mixins.</li>
+<li><strong>Sistemas de diseño corporativos:</strong> equipos grandes definen <em>design tokens</em> en SASS/LESS y los distribuyen; la migración de Ant Design de LESS a CSS-in-JS ilustra cómo la elección del preprocesador está ligada a necesidades de <em>theming</em> dinámico (temas por cliente).</li>
+<li><strong>Proyectos legados:</strong> es habitual encontrar LESS en aplicaciones antiguas; saber leerlo y, si procede, migrarlo a SCSS o a Tailwind es una tarea profesional recurrente.</li>
+</ul>
+<h2 id="actividades-guiadas">Actividades guiadas</h2>
+<ol>
+<li><strong>Instalación.</strong> Crea un proyecto con Vite (<code>npm create vite@latest</code>), instala <code>sass</code> como dependencia de desarrollo y configura el punto de entrada en SCSS. Verifica que el navegador recibe CSS compilado (inspecciona la hoja de estilos generada).</li>
+<li><strong>Tokens.</strong> Define un mapa <code>$tokens</code> con colores, tipografía y espaciado del proyecto y crea la función <code>token()</code> para consumirlo. Sustituye todos los valores "en crudo" de una hoja existente por tokens.</li>
+<li><strong>Mixins responsive.</strong> Crea el mixin <code>@mixin bp($punto)</code> y refactoriza las media queries repetidas de un layout usando breakpoints nominales.</li>
+</ol>
+<h2 id="actividades-propuestas">Actividades propuestas</h2>
+<ol>
+<li><strong>Refactorización DRY (RA2 / CE 2.j).</strong> Toma una hoja de estilos CSS plana de ~300 líneas con valores repetidos y conviértela en SCSS: extrae variables, crea al menos tres mixins (breakpoint, centrado flex, tarjeta) y una función (<code>rem()</code>). Documenta cuántas líneas se ahorran y cómo mejora la mantenibilidad.</li>
+<li><strong>Generación por bucles.</strong> Genera con <code>@for</code>/<code>@each</code> las utilidades de espaciado (<code>p-*</code>, <code>m-*</code>) y un sistema de columnas de grid (<code>.col-1</code>…<code>.col-12</code>). Comprueba en el navegador que funcionan.</li>
+<li><strong>Arquitectura 7-1.</strong> Reorganiza el proyecto de la actividad anterior en la estructura settings/tools/generic/elements/objects/components/utilities usando <code>@use</code>, y explica el orden de carga elegido.</li>
+</ol>
+<h2 id="actividades-de-ampliacion">Actividades de ampliación</h2>
+<ol>
+<li><strong>Comparativa.</strong> Implementa el mismo componente (una tarjeta con variantes) tres veces: CSS nativo con Custom Properties, SASS y Tailwind. Redacta un informe comparando productividad, tamaño final del CSS emitido y cuándo conviene cada enfoque.</li>
+<li><strong>Migración LESS→SCSS.</strong> Localiza una base de estilos en LESS (p. ej., de un proyecto open source) y migra sus variables, mixins y anidaciones a SCSS, verificando que el resultado visual no cambia.</li>
+</ol>
+<h2 id="buenas-practicas">Buenas prácticas</h2>
+<ol>
+<li>Usa <strong>SCSS</strong> (<code>.scss</code>) salvo que el proyecto exija <code>.sass</code>.</li>
+<li>Prefiere <code>@use</code>/<code>@forward</code> (módulos) sobre el legado <code>@import</code>.</li>
+<li>Limita la anidación a 2-3 niveles para no inflar la especificidad.</li>
+<li>Centraliza valores repetidos en <strong>tokens</strong> (mapas) y consúmelos mediante funciones.</li>
+<li>Genera patrones repetitivos con <strong>bucles</strong>, no a mano.</li>
+<li>Mantén una <strong>arquitectura de carpetas</strong> clara y un orden de carga predecible.</li>
+<li>Activa <strong>source maps</strong> en desarrollo para depurar el SCSS original.</li>
+<li>Documenta mixins y funciones complejos; son la "API" interna del proyecto.</li>
+</ol>
+<h2 id="errores-frecuentes">Errores frecuentes</h2>
+<ol>
+<li><strong>Anidar en exceso:</strong> produce selectores muy específicos que luego son difíciles de sobrescribir. Solución: limita la profundidad y usa BEM/objetos.</li>
+<li><strong>Usar <code>@import</code> en lugar de <code>@use</code>:</strong> duplica reglas y rompe el sistema de módulos. Migra a <code>@use</code>.</li>
+<li><strong>Poner lógica en el HTML cuando corresponde al preprocesador:</strong> los mixins/bucles pertenecen a la capa de estilos, no a clases sueltas repetidas.</li>
+<li><strong>Compilar con Ruby SASS (en desuso):</strong> usa <code>dart-sass</code> para evitar incompatibilidades y problemas de seguridad.</li>
+<li><strong>Confundir variables SASS con Custom Properties:</strong> las primeras se resuelven en compilación (no cambian en runtime); para temas dinámicos usa Custom Properties.</li>
+<li><strong>Olvidar el <code>&amp;</code> al anidar pseudoestados:</strong> escribir <code>:hover</code> sin prefijo dentro de un bloque puede generar el selector equivocado si no se usa <code>&amp;:hover</code>.</li>
+</ol>
+<h2 id="resumen">Resumen</h2>
+<p>Un preprocesador como SASS/SCSS añade al CSS variables, mixins, funciones, bucles y condicionales, permitiendo construir bases de estilos DRY, escalables y mantenibles. El flujo es: escribir SCSS (con tokens, partials y arquitectura por capas) → compilar con <code>dart-sass</code>/Vite → obtener CSS estándar que el navegador entiende (CE 2.j). Las variables nativas resuelven temas en runtime; el preprocesador resuelve la reutilización en compilación; Tailwind ofrece una alternativa utility-first. Elegir entre ellos depende de los criterios de escalabilidad, mantenibilidad y productividad del equipo.</p>
+<h2 id="recursos-complementarios">Recursos complementarios</h2>
+<ul>
+<li><strong>SASS (dart-sass) — documentación oficial:</strong> https://sass-lang.com/documentation/</li>
+<li><strong>Guía de módulos SASS (<code>@use</code>/<code>@forward</code>):</strong> https://sass-lang.com/documentation/best-practices/</li>
+<li><strong>Vite + SASS:</strong> https://vitejs.dev/guide/features.html (sección CSS Pre-processors)</li>
+<li><strong>LESS — documentación oficial:</strong> https://lesscss.org/</li>
+<li><strong>ITCSS (arquitectura de estilos):</strong> https://itcss.io/</li>
+<li><strong>7-1 Architecture:</strong> https://71project.com/</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pie" >
+        
+          
+          <a href="../17-tailwindcss4/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: 17. Tailwind CSS 4">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                17. Tailwind CSS 4
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../19-marco-legal-multimedia/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: 19. Marco legal multimedia">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              <div class="md-ellipsis">
+                19. Marco legal multimedia
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 The authors
+
+    </div>
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate":null,"base":"..","features":["announce.dismiss","content.code.annotate","content.code.copy","content.code.select","content.footnote.tooltips","content.tabs.link","content.tooltips","navigation.footer","navigation.indexes","navigation.instant","navigation.instant.prefetch","navigation.path","navigation.sections","navigation.top","navigation.tracking","search.highlight"],"search":"../assets/javascripts/workers/search.e2d2d235.min.js","tags":null,"translations":{"clipboard.copied":"Copiado al portapapeles","clipboard.copy":"Copiar al portapapeles","search.result.more.one":"1 más en esta página","search.result.more.other":"# más en esta página","search.result.none":"No se encontraron documentos","search.result.one":"1 documento encontrado","search.result.other":"# documentos encontrados","search.result.placeholder":"Teclee para comenzar búsqueda","search.result.term.missing":"Falta","select.version":"Seleccionar versión"},"version":null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.6e5f0216.min.js"></script>
+      
+    
+  </body>
+</html>

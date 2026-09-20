@@ -22,17 +22,15 @@ Al finalizar esta unidad, el alumnado será capaz de:
 
 Esta unidad conecta con la totalidad de los Resultados de Aprendizaje del módulo 0615 Diseño de Interfaces Web, ya que el DCU constituye el marco metodológico y filosófico que da sentido a todo el resto de contenidos del módulo:
 
-- **RA1: Planifica la creación de una interfaz web.** El DCU proporciona los métodos y herramientas para planificar interfaces basadas en una comprensión profunda y contrastada de los usuarios, sus necesidades, sus tareas y sus contextos de uso. Las User Personas, los Journey Maps y los User Stories son artefactos de planificación que garantizan que el diseño responda a necesidades reales.
+- **RA1: Planifica la creación de una interfaz web valorando y aplicando especificaciones de diseño.** El DCU proporciona los métodos y herramientas para planificar interfaces basadas en una comprensión profunda y contrastada de los usuarios, sus necesidades, sus tareas y sus contextos de uso. Las User Personas, los Journey Maps y los User Stories son artefactos de planificación que garantizan que el diseño responda a necesidades reales.
 
-- **RA2: Crea interfaces web homogéneas.** La investigación de usuarios y la definición de patrones de interacción coherentes, derivados de la comprensión de los modelos mentales de los usuarios, contribuyen a crear interfaces homogéneas y consistentes en toda la aplicación.
+- **RA2: Crea interfaces web homogéneos definiendo y aplicando estilos.** La investigación de usuarios y la definición de patrones de interacción coherentes, derivados de la comprensión de los modelos mentales de los usuarios, contribuyen a crear interfaces homogéneas y consistentes en toda la aplicación. Los sistemas de diseño (design systems) que garantizan esa consistencia visual nacen de un profundo conocimiento de las necesidades del usuario y de la identidad de marca, ambos pilares del DCU.
 
-- **RA3: Prepara hojas de estilos para interfaces web.** Los sistemas de diseño (design systems) que garantizan consistencia visual nacen de un profundo conocimiento de las necesidades del usuario y de la identidad de marca, ambos pilares del DCU.
+- **RA4: Integra contenido multimedia en documentos web valorando su aportación y seleccionando adecuadamente los elementos interactivos.** Las decisiones sobre qué contenido y qué componentes incluir, y cómo diseñarlos, emanan de la investigación con usuarios y de la validación iterativa.
 
-- **RA4: Integra contenidos multimedia y componentes interactivos.** Las decisiones sobre qué contenido y qué componentes incluir, y cómo diseñarlos, emanan de la investigación con usuarios y de la validación iterativa.
+- **RA5: Desarrolla interfaces web accesibles, analizando las pautas establecidas y aplicando técnicas de verificación.** El DCU incluye a todos los usuarios, también aquellos con discapacidad. La accesibilidad es un requisito de usuario, y los métodos del DCU (entrevistas, tests, personas) deben incorporar la diversidad funcional.
 
-- **RA5: Evalúa la accesibilidad de la interfaz web.** El DCU incluye a todos los usuarios, también aquellos con discapacidad. La accesibilidad es un requisito de usuario, y los métodos del DCU (entrevistas, tests, personas) deben incorporar la diversidad funcional.
-
-- **RA6: Verifica la usabilidad de la interfaz web.** La evaluación de la usabilidad es una fase fundamental del ciclo iterativo del DCU. Cada iteración incluye evaluación con usuarios reales, cuyos resultados realimentan el rediseño.
+- **RA6: Desarrolla interfaces web amigables analizando y aplicando las pautas de usabilidad establecidas.** La evaluación de la usabilidad es una fase fundamental del ciclo iterativo del DCU. Cada iteración incluye evaluación con usuarios reales, cuyos resultados realimentan el rediseño.
 
 ## Conocimientos previos
 

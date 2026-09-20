@@ -15,9 +15,9 @@ Al finalizar esta unidad, el alumnado será capaz de:
 
 ## Relación con los Resultados de Aprendizaje
 
-- **RA2. Crea interfaces web homogéneas.** El color y la tipografía son los dos pilares de la unidad visual. Esta unidad enseña a seleccionar, combinar y aplicar paletas cromáticas y sistemas tipográficos que garanticen la coherencia estética de toda la interfaz.
-- **RA3. Prepara hojas de estilos.** La implementación de paletas de color mediante variables CSS y la configuración de sistemas tipográficos completos en hojas de estilo externas constituye el núcleo técnico de este resultado de aprendizaje.
-- **RA6. Evalúa la accesibilidad de interfaces web.** El estudio de los ratios de contraste WCAG, el daltonismo y las herramientas de verificación cromática capacita al alumnado para evaluar y garantizar la accesibilidad visual de sus interfaces.
+- **RA1. Planifica la creación de una interfaz web valorando y aplicando especificaciones de diseño.** El análisis y selección de los colores y tipografías adecuados para su visualización en pantalla (CE 1.b) es un paso previo a cualquier diseño: esta unidad enseña a elegir paletas cromáticas y sistemas tipográficos coherentes con el contexto del proyecto.
+- **RA2. Crea interfaces web homogéneos definiendo y aplicando estilos.** El color y la tipografía son los dos pilares de la unidad visual; su implementación mediante variables CSS y hojas de estilo externas garantiza la coherencia estética de toda la interfaz (CE 2.c, CE 2.g).
+- **RA5. Desarrolla interfaces web accesibles, analizando las pautas establecidas y aplicando técnicas de verificación.** El estudio de los ratios de contraste WCAG, el daltonismo y las herramientas de verificación cromática capacita al alumnado para evaluar y garantizar la accesibilidad visual de sus interfaces (CE 5.c).
 
 ## Conocimientos previos
 
@@ -1862,7 +1862,7 @@ Notion, la herramienta de productividad todo-en-uno, utiliza el color y la tipog
 
 ### Actividad guiada 1: Creación de una paleta de color con variables CSS
 
-**Resultado de aprendizaje asociado:** RA2 y RA3 — Crea interfaces web homogéneas y prepara hojas de estilos.
+**Resultado de aprendizaje asociado:** RA2 — Crea interfaces web homogéneas definiendo y aplicando estilos.
 
 **Objetivo:** El alumnado aprenderá a estructurar una paleta de color profesional completa utilizando variables CSS, documentando cada color con su función y verificando los ratios de contraste.
 
@@ -1954,7 +1954,7 @@ Notion, la herramienta de productividad todo-en-uno, utiliza el color y la tipog
 
 ### Actividad guiada 4: Implementación de una escala tipográfica responsive con clamp()
 
-**Resultado de aprendizaje asociado:** RA3 — Prepara hojas de estilos.
+**Resultado de aprendizaje asociado:** RA2 — Crea interfaces web homogéneas definiendo y aplicando estilos.
 
 **Objetivo:** Implementar una escala tipográfica responsive completa utilizando la función CSS clamp(), comprendiendo la relación entre los valores mínimo, preferido y máximo.
 
@@ -1998,7 +1998,7 @@ Notion, la herramienta de productividad todo-en-uno, utiliza el color y la tipog
 
 ### Actividad propuesta 1: Guía de estilo cromática completa para un proyecto real
 
-**Resultado de aprendizaje asociado:** RA2 y RA3.
+**Resultado de aprendizaje asociado:** RA1 y RA2.
 
 **Objetivo:** Elaborar una guía de estilo cromática profesional para un proyecto web, aplicando todos los conocimientos de la unidad: teoría del color, accesibilidad, paletas y variables CSS.
 
@@ -2112,7 +2112,7 @@ Implementa ambas versiones y documenta, con capturas de pantalla simulando deute
 
 ### Actividad propuesta 5: Tipografía responsiva para un artículo de blog multidispositivo
 
-**Resultado de aprendizaje asociado:** RA3.
+**Resultado de aprendizaje asociado:** RA2.
 
 **Objetivo:** Implementar un sistema tipográfico responsive completo para un artículo de blog, optimizando la legibilidad en dispositivos móviles, tabletas y escritorio.
 
